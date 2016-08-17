@@ -90,6 +90,12 @@
     <Compile Include="Enlistar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Lote.Designer.vb">
+      <DependentUpon>Lote.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Lote.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="OrdeñeConfig.Designer.vb">
       <DependentUpon>OrdeñeConfig.vb</DependentUpon>
     </Compile>
@@ -153,6 +159,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Enlistar.resx">
       <DependentUpon>Enlistar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lote.resx">
+      <DependentUpon>Lote.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OrdeñeConfig.resx">
       <DependentUpon>OrdeñeConfig.vb</DependentUpon>

@@ -33,27 +33,17 @@ Partial Class frmTambo
         Me.lblganado_max = New System.Windows.Forms.Label()
         Me.gbxGeneral = New System.Windows.Forms.GroupBox()
         Me.gbxTanque = New System.Windows.Forms.GroupBox()
-        Me.btnTanque_Modificar = New System.Windows.Forms.Button()
+        Me.btnTanque_Consultar = New System.Windows.Forms.Button()
         Me.btnTanque_Quitar = New System.Windows.Forms.Button()
         Me.btnTanque_Agregar = New System.Windows.Forms.Button()
         Me.tbxCapacidad = New System.Windows.Forms.TextBox()
         Me.lblNSerie = New System.Windows.Forms.Label()
         Me.lblCapacidad = New System.Windows.Forms.Label()
         Me.tbxNserie = New System.Windows.Forms.TextBox()
-        Me.gbxAlimento = New System.Windows.Forms.GroupBox()
-        Me.btnAlimento_Quitar = New System.Windows.Forms.Button()
-        Me.btnAlimento_Agregar = New System.Windows.Forms.Button()
-        Me.cbxCantidad = New System.Windows.Forms.ComboBox()
-        Me.lblTipo = New System.Windows.Forms.Label()
-        Me.tbxCantidad = New System.Windows.Forms.TextBox()
-        Me.lblCantidad = New System.Windows.Forms.Label()
         Me.tbxNombre = New System.Windows.Forms.TextBox()
         Me.lblNombre = New System.Windows.Forms.Label()
-        Me.btnTanque_Consultar = New System.Windows.Forms.Button()
-        Me.btnAlimento_Consultar = New System.Windows.Forms.Button()
         Me.gbxGeneral.SuspendLayout()
         Me.gbxTanque.SuspendLayout()
-        Me.gbxAlimento.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlBlue
@@ -145,7 +135,6 @@ Partial Class frmTambo
         'gbxGeneral
         '
         Me.gbxGeneral.Controls.Add(Me.gbxTanque)
-        Me.gbxGeneral.Controls.Add(Me.gbxAlimento)
         Me.gbxGeneral.Controls.Add(Me.tbxNombre)
         Me.gbxGeneral.Controls.Add(Me.lblNombre)
         Me.gbxGeneral.Controls.Add(Me.tbxGanado_max)
@@ -162,7 +151,6 @@ Partial Class frmTambo
         'gbxTanque
         '
         Me.gbxTanque.Controls.Add(Me.btnTanque_Consultar)
-        Me.gbxTanque.Controls.Add(Me.btnTanque_Modificar)
         Me.gbxTanque.Controls.Add(Me.btnTanque_Quitar)
         Me.gbxTanque.Controls.Add(Me.btnTanque_Agregar)
         Me.gbxTanque.Controls.Add(Me.tbxCapacidad)
@@ -170,27 +158,27 @@ Partial Class frmTambo
         Me.gbxTanque.Controls.Add(Me.lblCapacidad)
         Me.gbxTanque.Controls.Add(Me.tbxNserie)
         Me.gbxTanque.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxTanque.Location = New System.Drawing.Point(17, 149)
+        Me.gbxTanque.Location = New System.Drawing.Point(207, 182)
         Me.gbxTanque.Name = "gbxTanque"
-        Me.gbxTanque.Size = New System.Drawing.Size(387, 266)
+        Me.gbxTanque.Size = New System.Drawing.Size(397, 213)
         Me.gbxTanque.TabIndex = 118
         Me.gbxTanque.TabStop = False
         Me.gbxTanque.Text = "Tanques"
         '
-        'btnTanque_Modificar
+        'btnTanque_Consultar
         '
-        Me.btnTanque_Modificar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTanque_Modificar.Location = New System.Drawing.Point(254, 148)
-        Me.btnTanque_Modificar.Name = "btnTanque_Modificar"
-        Me.btnTanque_Modificar.Size = New System.Drawing.Size(118, 42)
-        Me.btnTanque_Modificar.TabIndex = 124
-        Me.btnTanque_Modificar.Text = "Modificar"
-        Me.btnTanque_Modificar.UseVisualStyleBackColor = True
+        Me.btnTanque_Consultar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnTanque_Consultar.Location = New System.Drawing.Point(254, 143)
+        Me.btnTanque_Consultar.Name = "btnTanque_Consultar"
+        Me.btnTanque_Consultar.Size = New System.Drawing.Size(118, 42)
+        Me.btnTanque_Consultar.TabIndex = 125
+        Me.btnTanque_Consultar.Text = "Consultar"
+        Me.btnTanque_Consultar.UseVisualStyleBackColor = True
         '
         'btnTanque_Quitar
         '
         Me.btnTanque_Quitar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTanque_Quitar.Location = New System.Drawing.Point(130, 148)
+        Me.btnTanque_Quitar.Location = New System.Drawing.Point(130, 143)
         Me.btnTanque_Quitar.Name = "btnTanque_Quitar"
         Me.btnTanque_Quitar.Size = New System.Drawing.Size(118, 42)
         Me.btnTanque_Quitar.TabIndex = 123
@@ -200,7 +188,7 @@ Partial Class frmTambo
         'btnTanque_Agregar
         '
         Me.btnTanque_Agregar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTanque_Agregar.Location = New System.Drawing.Point(6, 148)
+        Me.btnTanque_Agregar.Location = New System.Drawing.Point(6, 143)
         Me.btnTanque_Agregar.Name = "btnTanque_Agregar"
         Me.btnTanque_Agregar.Size = New System.Drawing.Size(118, 42)
         Me.btnTanque_Agregar.TabIndex = 115
@@ -245,82 +233,6 @@ Partial Class frmTambo
         Me.tbxNserie.Size = New System.Drawing.Size(145, 32)
         Me.tbxNserie.TabIndex = 122
         '
-        'gbxAlimento
-        '
-        Me.gbxAlimento.Controls.Add(Me.btnAlimento_Consultar)
-        Me.gbxAlimento.Controls.Add(Me.btnAlimento_Quitar)
-        Me.gbxAlimento.Controls.Add(Me.btnAlimento_Agregar)
-        Me.gbxAlimento.Controls.Add(Me.cbxCantidad)
-        Me.gbxAlimento.Controls.Add(Me.lblTipo)
-        Me.gbxAlimento.Controls.Add(Me.tbxCantidad)
-        Me.gbxAlimento.Controls.Add(Me.lblCantidad)
-        Me.gbxAlimento.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxAlimento.Location = New System.Drawing.Point(410, 149)
-        Me.gbxAlimento.Name = "gbxAlimento"
-        Me.gbxAlimento.Size = New System.Drawing.Size(369, 266)
-        Me.gbxAlimento.TabIndex = 115
-        Me.gbxAlimento.TabStop = False
-        Me.gbxAlimento.Text = "Alimento proporcionado"
-        '
-        'btnAlimento_Quitar
-        '
-        Me.btnAlimento_Quitar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAlimento_Quitar.Location = New System.Drawing.Point(245, 148)
-        Me.btnAlimento_Quitar.Name = "btnAlimento_Quitar"
-        Me.btnAlimento_Quitar.Size = New System.Drawing.Size(118, 42)
-        Me.btnAlimento_Quitar.TabIndex = 125
-        Me.btnAlimento_Quitar.Text = "Quitar"
-        Me.btnAlimento_Quitar.UseVisualStyleBackColor = True
-        '
-        'btnAlimento_Agregar
-        '
-        Me.btnAlimento_Agregar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAlimento_Agregar.Location = New System.Drawing.Point(6, 148)
-        Me.btnAlimento_Agregar.Name = "btnAlimento_Agregar"
-        Me.btnAlimento_Agregar.Size = New System.Drawing.Size(118, 42)
-        Me.btnAlimento_Agregar.TabIndex = 116
-        Me.btnAlimento_Agregar.Text = "Agregar"
-        Me.btnAlimento_Agregar.UseVisualStyleBackColor = True
-        '
-        'cbxCantidad
-        '
-        Me.cbxCantidad.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxCantidad.FormattingEnabled = True
-        Me.cbxCantidad.Items.AddRange(New Object() {"1", "2", "3"})
-        Me.cbxCantidad.Location = New System.Drawing.Point(182, 92)
-        Me.cbxCantidad.Name = "cbxCantidad"
-        Me.cbxCantidad.Size = New System.Drawing.Size(145, 32)
-        Me.cbxCantidad.TabIndex = 113
-        '
-        'lblTipo
-        '
-        Me.lblTipo.AutoSize = True
-        Me.lblTipo.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblTipo.Location = New System.Drawing.Point(15, 95)
-        Me.lblTipo.Name = "lblTipo"
-        Me.lblTipo.Size = New System.Drawing.Size(49, 24)
-        Me.lblTipo.TabIndex = 112
-        Me.lblTipo.Text = "Tipo"
-        '
-        'tbxCantidad
-        '
-        Me.tbxCantidad.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxCantidad.Location = New System.Drawing.Point(182, 31)
-        Me.tbxCantidad.MaxLength = 11
-        Me.tbxCantidad.Name = "tbxCantidad"
-        Me.tbxCantidad.Size = New System.Drawing.Size(145, 32)
-        Me.tbxCantidad.TabIndex = 111
-        '
-        'lblCantidad
-        '
-        Me.lblCantidad.AutoSize = True
-        Me.lblCantidad.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCantidad.Location = New System.Drawing.Point(15, 34)
-        Me.lblCantidad.Name = "lblCantidad"
-        Me.lblCantidad.Size = New System.Drawing.Size(93, 24)
-        Me.lblCantidad.TabIndex = 110
-        Me.lblCantidad.Text = "Cantidad"
-        '
         'tbxNombre
         '
         Me.tbxNombre.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -340,26 +252,6 @@ Partial Class frmTambo
         Me.lblNombre.TabIndex = 116
         Me.lblNombre.Text = "Nombre"
         '
-        'btnTanque_Consultar
-        '
-        Me.btnTanque_Consultar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTanque_Consultar.Location = New System.Drawing.Point(130, 206)
-        Me.btnTanque_Consultar.Name = "btnTanque_Consultar"
-        Me.btnTanque_Consultar.Size = New System.Drawing.Size(118, 42)
-        Me.btnTanque_Consultar.TabIndex = 125
-        Me.btnTanque_Consultar.Text = "Consultar"
-        Me.btnTanque_Consultar.UseVisualStyleBackColor = True
-        '
-        'btnAlimento_Consultar
-        '
-        Me.btnAlimento_Consultar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAlimento_Consultar.Location = New System.Drawing.Point(130, 206)
-        Me.btnAlimento_Consultar.Name = "btnAlimento_Consultar"
-        Me.btnAlimento_Consultar.Size = New System.Drawing.Size(118, 42)
-        Me.btnAlimento_Consultar.TabIndex = 126
-        Me.btnAlimento_Consultar.Text = "Consultar"
-        Me.btnAlimento_Consultar.UseVisualStyleBackColor = True
-        '
         'frmTambo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -378,8 +270,6 @@ Partial Class frmTambo
         Me.gbxGeneral.PerformLayout()
         Me.gbxTanque.ResumeLayout(False)
         Me.gbxTanque.PerformLayout()
-        Me.gbxAlimento.ResumeLayout(False)
-        Me.gbxAlimento.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -394,23 +284,14 @@ Partial Class frmTambo
     Friend WithEvents tbxGanado_max As System.Windows.Forms.TextBox
     Friend WithEvents lblganado_max As System.Windows.Forms.Label
     Friend WithEvents gbxGeneral As System.Windows.Forms.GroupBox
-    Friend WithEvents gbxAlimento As System.Windows.Forms.GroupBox
-    Friend WithEvents lblTipo As System.Windows.Forms.Label
-    Friend WithEvents tbxCantidad As System.Windows.Forms.TextBox
-    Friend WithEvents lblCantidad As System.Windows.Forms.Label
-    Friend WithEvents cbxCantidad As System.Windows.Forms.ComboBox
     Friend WithEvents tbxNombre As System.Windows.Forms.TextBox
     Friend WithEvents lblNombre As System.Windows.Forms.Label
     Friend WithEvents gbxTanque As System.Windows.Forms.GroupBox
-    Friend WithEvents btnTanque_Modificar As System.Windows.Forms.Button
     Friend WithEvents btnTanque_Quitar As System.Windows.Forms.Button
     Friend WithEvents btnTanque_Agregar As System.Windows.Forms.Button
     Friend WithEvents tbxCapacidad As System.Windows.Forms.TextBox
     Friend WithEvents lblNSerie As System.Windows.Forms.Label
     Friend WithEvents lblCapacidad As System.Windows.Forms.Label
     Friend WithEvents tbxNserie As System.Windows.Forms.TextBox
-    Friend WithEvents btnAlimento_Quitar As System.Windows.Forms.Button
-    Friend WithEvents btnAlimento_Agregar As System.Windows.Forms.Button
     Friend WithEvents btnTanque_Consultar As System.Windows.Forms.Button
-    Friend WithEvents btnAlimento_Consultar As System.Windows.Forms.Button
 End Class

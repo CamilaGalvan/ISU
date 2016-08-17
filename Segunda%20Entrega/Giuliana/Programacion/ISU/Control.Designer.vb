@@ -23,17 +23,18 @@ Partial Class frmControl
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.pnlBlue = New System.Windows.Forms.Panel()
-        Me.gbxBasico = New System.Windows.Forms.GroupBox()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.gbxGeneral = New System.Windows.Forms.GroupBox()
+        Me.chbVacuna = New System.Windows.Forms.CheckBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.dtpNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.lblFecha = New System.Windows.Forms.Label()
-        Me.cbxSexo = New System.Windows.Forms.ComboBox()
+        Me.cbxVacuna = New System.Windows.Forms.ComboBox()
         Me.lblPeso = New System.Windows.Forms.Label()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.tbxNum = New System.Windows.Forms.TextBox()
         Me.lblNumero = New System.Windows.Forms.Label()
-        Me.gbxBasico.SuspendLayout()
+        Me.lblkg = New System.Windows.Forms.Label()
+        Me.gbxGeneral.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlBlue
@@ -45,31 +46,32 @@ Partial Class frmControl
         Me.pnlBlue.TabIndex = 74
         Me.pnlBlue.Visible = False
         '
-        'gbxBasico
+        'gbxGeneral
         '
-        Me.gbxBasico.Controls.Add(Me.CheckBox1)
-        Me.gbxBasico.Controls.Add(Me.TextBox1)
-        Me.gbxBasico.Controls.Add(Me.dtpNacimiento)
-        Me.gbxBasico.Controls.Add(Me.lblFecha)
-        Me.gbxBasico.Controls.Add(Me.cbxSexo)
-        Me.gbxBasico.Controls.Add(Me.lblPeso)
-        Me.gbxBasico.Enabled = False
-        Me.gbxBasico.Location = New System.Drawing.Point(87, 188)
-        Me.gbxBasico.Name = "gbxBasico"
-        Me.gbxBasico.Size = New System.Drawing.Size(482, 237)
-        Me.gbxBasico.TabIndex = 78
-        Me.gbxBasico.TabStop = False
+        Me.gbxGeneral.Controls.Add(Me.lblkg)
+        Me.gbxGeneral.Controls.Add(Me.chbVacuna)
+        Me.gbxGeneral.Controls.Add(Me.TextBox1)
+        Me.gbxGeneral.Controls.Add(Me.dtpNacimiento)
+        Me.gbxGeneral.Controls.Add(Me.lblFecha)
+        Me.gbxGeneral.Controls.Add(Me.cbxVacuna)
+        Me.gbxGeneral.Controls.Add(Me.lblPeso)
+        Me.gbxGeneral.Enabled = False
+        Me.gbxGeneral.Location = New System.Drawing.Point(87, 188)
+        Me.gbxGeneral.Name = "gbxGeneral"
+        Me.gbxGeneral.Size = New System.Drawing.Size(482, 237)
+        Me.gbxGeneral.TabIndex = 78
+        Me.gbxGeneral.TabStop = False
         '
-        'CheckBox1
+        'chbVacuna
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox1.Location = New System.Drawing.Point(22, 146)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(97, 28)
-        Me.CheckBox1.TabIndex = 80
-        Me.CheckBox1.Text = "Vacuna"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.chbVacuna.AutoSize = True
+        Me.chbVacuna.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.chbVacuna.Location = New System.Drawing.Point(22, 146)
+        Me.chbVacuna.Name = "chbVacuna"
+        Me.chbVacuna.Size = New System.Drawing.Size(97, 28)
+        Me.chbVacuna.TabIndex = 80
+        Me.chbVacuna.Text = "Vacuna"
+        Me.chbVacuna.UseVisualStyleBackColor = True
         '
         'TextBox1
         '
@@ -100,15 +102,15 @@ Partial Class frmControl
         Me.lblFecha.TabIndex = 49
         Me.lblFecha.Text = "Fecha"
         '
-        'cbxSexo
+        'cbxVacuna
         '
-        Me.cbxSexo.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxSexo.FormattingEnabled = True
-        Me.cbxSexo.Items.AddRange(New Object() {"Macho", "Hembra"})
-        Me.cbxSexo.Location = New System.Drawing.Point(251, 146)
-        Me.cbxSexo.Name = "cbxSexo"
-        Me.cbxSexo.Size = New System.Drawing.Size(145, 32)
-        Me.cbxSexo.TabIndex = 36
+        Me.cbxVacuna.Enabled = False
+        Me.cbxVacuna.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxVacuna.FormattingEnabled = True
+        Me.cbxVacuna.Location = New System.Drawing.Point(251, 146)
+        Me.cbxVacuna.Name = "cbxVacuna"
+        Me.cbxVacuna.Size = New System.Drawing.Size(145, 32)
+        Me.cbxVacuna.TabIndex = 36
         '
         'lblPeso
         '
@@ -150,34 +152,45 @@ Partial Class frmControl
         Me.lblNumero.TabIndex = 75
         Me.lblNumero.Text = "Numero"
         '
+        'lblkg
+        '
+        Me.lblkg.AutoSize = True
+        Me.lblkg.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblkg.Location = New System.Drawing.Point(423, 97)
+        Me.lblkg.Name = "lblkg"
+        Me.lblkg.Size = New System.Drawing.Size(31, 24)
+        Me.lblkg.TabIndex = 81
+        Me.lblkg.Text = "kg"
+        '
         'frmControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ClientSize = New System.Drawing.Size(832, 536)
-        Me.Controls.Add(Me.gbxBasico)
+        Me.Controls.Add(Me.gbxGeneral)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.tbxNum)
         Me.Controls.Add(Me.lblNumero)
         Me.Controls.Add(Me.pnlBlue)
         Me.Name = "frmControl"
-        Me.Text = "Venta"
-        Me.gbxBasico.ResumeLayout(False)
-        Me.gbxBasico.PerformLayout()
+        Me.Text = "Control"
+        Me.gbxGeneral.ResumeLayout(False)
+        Me.gbxGeneral.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents pnlBlue As System.Windows.Forms.Panel
-    Friend WithEvents gbxBasico As System.Windows.Forms.GroupBox
+    Friend WithEvents gbxGeneral As System.Windows.Forms.GroupBox
     Friend WithEvents dtpNacimiento As System.Windows.Forms.DateTimePicker
     Friend WithEvents lblFecha As System.Windows.Forms.Label
-    Friend WithEvents cbxSexo As System.Windows.Forms.ComboBox
+    Friend WithEvents cbxVacuna As System.Windows.Forms.ComboBox
     Friend WithEvents lblPeso As System.Windows.Forms.Label
     Friend WithEvents btnBuscar As System.Windows.Forms.Button
     Friend WithEvents tbxNum As System.Windows.Forms.TextBox
     Friend WithEvents lblNumero As System.Windows.Forms.Label
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents chbVacuna As System.Windows.Forms.CheckBox
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents lblkg As System.Windows.Forms.Label
 End Class

@@ -37,11 +37,14 @@ Partial Class frmISU
         Me.tsPersonalEliminar = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsAnimal = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsIngresar = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsConsultar = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsModificar = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsConsultar = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsEliminar = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsAlimento = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsControl = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsAlimento = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsProporcionar = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsOtorgar = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsAlimento_Consultar = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsEnlistar = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsRaza = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsHolando = New System.Windows.Forms.ToolStripMenuItem()
@@ -67,15 +70,15 @@ Partial Class frmISU
         Me.tsSeca = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsNinguno2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsSexo = New System.Windows.Forms.ToolStripMenuItem()
-        Me.tsHembraa = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsHembra = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsMacho = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GanadoActivoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsGanadoAct = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsAntibiotico = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsOrdeñe = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConfiguracionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PrimerOrdeñeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SegundoOrdeñeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TercerOrdeñeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsConfiguración = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsPrimerOrdeñe = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsSegundoOrdeñe = New System.Windows.Forms.ToolStripMenuItem()
+        Me.tsTercerOrdeñe = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsVenta = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsSesion = New System.Windows.Forms.ToolStripMenuItem()
         Me.tsSalir = New System.Windows.Forms.ToolStripMenuItem()
@@ -107,7 +110,7 @@ Partial Class frmISU
         'mspEspanol
         '
         Me.mspEspanol.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.mspEspanol.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsTambo, Me.tsPersonal, Me.tsAnimal, Me.tsEnlistar, Me.tsOrdeñe, Me.tsVenta, Me.tsSesion, Me.tsSalir})
+        Me.mspEspanol.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsTambo, Me.tsPersonal, Me.tsAnimal, Me.tsAlimento, Me.tsEnlistar, Me.tsOrdeñe, Me.tsVenta, Me.tsSesion, Me.tsSalir})
         Me.mspEspanol.Location = New System.Drawing.Point(0, 0)
         Me.mspEspanol.Name = "mspEspanol"
         Me.mspEspanol.Padding = New System.Windows.Forms.Padding(6, 3, 0, 3)
@@ -158,30 +161,30 @@ Partial Class frmISU
         'tsPersonalIngresar
         '
         Me.tsPersonalIngresar.Name = "tsPersonalIngresar"
-        Me.tsPersonalIngresar.Size = New System.Drawing.Size(152, 22)
+        Me.tsPersonalIngresar.Size = New System.Drawing.Size(125, 22)
         Me.tsPersonalIngresar.Text = "Ingresar"
         '
         'tsPersonalModificar
         '
         Me.tsPersonalModificar.Name = "tsPersonalModificar"
-        Me.tsPersonalModificar.Size = New System.Drawing.Size(152, 22)
+        Me.tsPersonalModificar.Size = New System.Drawing.Size(125, 22)
         Me.tsPersonalModificar.Text = "Modificar"
         '
         'tsPersonalConsultar
         '
         Me.tsPersonalConsultar.Name = "tsPersonalConsultar"
-        Me.tsPersonalConsultar.Size = New System.Drawing.Size(152, 22)
+        Me.tsPersonalConsultar.Size = New System.Drawing.Size(125, 22)
         Me.tsPersonalConsultar.Text = "Consultar"
         '
         'tsPersonalEliminar
         '
         Me.tsPersonalEliminar.Name = "tsPersonalEliminar"
-        Me.tsPersonalEliminar.Size = New System.Drawing.Size(152, 22)
+        Me.tsPersonalEliminar.Size = New System.Drawing.Size(125, 22)
         Me.tsPersonalEliminar.Text = "Eliminar"
         '
         'tsAnimal
         '
-        Me.tsAnimal.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsIngresar, Me.tsModificar, Me.tsConsultar, Me.tsEliminar, Me.tsAlimento, Me.tsControl})
+        Me.tsAnimal.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsIngresar, Me.tsModificar, Me.tsConsultar, Me.tsEliminar, Me.tsControl})
         Me.tsAnimal.Enabled = False
         Me.tsAnimal.Name = "tsAnimal"
         Me.tsAnimal.Size = New System.Drawing.Size(57, 19)
@@ -190,42 +193,62 @@ Partial Class frmISU
         'tsIngresar
         '
         Me.tsIngresar.Name = "tsIngresar"
-        Me.tsIngresar.Size = New System.Drawing.Size(152, 22)
+        Me.tsIngresar.Size = New System.Drawing.Size(125, 22)
         Me.tsIngresar.Text = "Ingresar"
-        '
-        'tsConsultar
-        '
-        Me.tsConsultar.Name = "tsConsultar"
-        Me.tsConsultar.Size = New System.Drawing.Size(152, 22)
-        Me.tsConsultar.Text = "Consultar"
         '
         'tsModificar
         '
         Me.tsModificar.Name = "tsModificar"
-        Me.tsModificar.Size = New System.Drawing.Size(152, 22)
+        Me.tsModificar.Size = New System.Drawing.Size(125, 22)
         Me.tsModificar.Text = "Modificar"
+        '
+        'tsConsultar
+        '
+        Me.tsConsultar.Name = "tsConsultar"
+        Me.tsConsultar.Size = New System.Drawing.Size(125, 22)
+        Me.tsConsultar.Text = "Consultar"
         '
         'tsEliminar
         '
         Me.tsEliminar.Name = "tsEliminar"
-        Me.tsEliminar.Size = New System.Drawing.Size(152, 22)
+        Me.tsEliminar.Size = New System.Drawing.Size(125, 22)
         Me.tsEliminar.Text = "Eliminar"
-        '
-        'tsAlimento
-        '
-        Me.tsAlimento.Name = "tsAlimento"
-        Me.tsAlimento.Size = New System.Drawing.Size(152, 22)
-        Me.tsAlimento.Text = "Alimento"
         '
         'tsControl
         '
         Me.tsControl.Name = "tsControl"
-        Me.tsControl.Size = New System.Drawing.Size(152, 22)
+        Me.tsControl.Size = New System.Drawing.Size(125, 22)
         Me.tsControl.Text = "Control"
+        '
+        'tsAlimento
+        '
+        Me.tsAlimento.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsProporcionar, Me.tsOtorgar, Me.tsAlimento_Consultar})
+        Me.tsAlimento.Enabled = False
+        Me.tsAlimento.Name = "tsAlimento"
+        Me.tsAlimento.Size = New System.Drawing.Size(68, 19)
+        Me.tsAlimento.Text = "Alimento"
+        '
+        'tsProporcionar
+        '
+        Me.tsProporcionar.Name = "tsProporcionar"
+        Me.tsProporcionar.Size = New System.Drawing.Size(152, 22)
+        Me.tsProporcionar.Text = "Almacenar"
+        '
+        'tsOtorgar
+        '
+        Me.tsOtorgar.Name = "tsOtorgar"
+        Me.tsOtorgar.Size = New System.Drawing.Size(152, 22)
+        Me.tsOtorgar.Text = "Otorgar"
+        '
+        'tsAlimento_Consultar
+        '
+        Me.tsAlimento_Consultar.Name = "tsAlimento_Consultar"
+        Me.tsAlimento_Consultar.Size = New System.Drawing.Size(152, 22)
+        Me.tsAlimento_Consultar.Text = "Consultar"
         '
         'tsEnlistar
         '
-        Me.tsEnlistar.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsRaza, Me.tsDivision, Me.tsLugar, Me.tsEtapa, Me.tsSexo, Me.GanadoActivoToolStripMenuItem})
+        Me.tsEnlistar.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsRaza, Me.tsDivision, Me.tsLugar, Me.tsEtapa, Me.tsSexo, Me.tsGanadoAct, Me.tsAntibiotico})
         Me.tsEnlistar.Enabled = False
         Me.tsEnlistar.Name = "tsEnlistar"
         Me.tsEnlistar.Size = New System.Drawing.Size(57, 19)
@@ -375,66 +398,66 @@ Partial Class frmISU
         '
         'tsSexo
         '
-        Me.tsSexo.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsHembraa, Me.tsHembra, Me.tsMacho})
+        Me.tsSexo.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsHembra, Me.tsMacho})
         Me.tsSexo.Name = "tsSexo"
         Me.tsSexo.Size = New System.Drawing.Size(150, 22)
         Me.tsSexo.Text = "Sexo"
         '
-        'tsHembraa
-        '
-        Me.tsHembraa.Name = "tsHembraa"
-        Me.tsHembraa.Size = New System.Drawing.Size(185, 22)
-        Me.tsHembraa.Text = "Hembra (antibiotico)"
-        '
         'tsHembra
         '
         Me.tsHembra.Name = "tsHembra"
-        Me.tsHembra.Size = New System.Drawing.Size(185, 22)
+        Me.tsHembra.Size = New System.Drawing.Size(117, 22)
         Me.tsHembra.Text = "Hembra"
         '
         'tsMacho
         '
         Me.tsMacho.Name = "tsMacho"
-        Me.tsMacho.Size = New System.Drawing.Size(185, 22)
+        Me.tsMacho.Size = New System.Drawing.Size(117, 22)
         Me.tsMacho.Text = "Macho"
         '
-        'GanadoActivoToolStripMenuItem
+        'tsGanadoAct
         '
-        Me.GanadoActivoToolStripMenuItem.Name = "GanadoActivoToolStripMenuItem"
-        Me.GanadoActivoToolStripMenuItem.Size = New System.Drawing.Size(150, 22)
-        Me.GanadoActivoToolStripMenuItem.Text = "Ganado activo"
+        Me.tsGanadoAct.Name = "tsGanadoAct"
+        Me.tsGanadoAct.Size = New System.Drawing.Size(150, 22)
+        Me.tsGanadoAct.Text = "Ganado activo"
+        '
+        'tsAntibiotico
+        '
+        Me.tsAntibiotico.Name = "tsAntibiotico"
+        Me.tsAntibiotico.Size = New System.Drawing.Size(150, 22)
+        Me.tsAntibiotico.Text = "Antibiótico"
         '
         'tsOrdeñe
         '
-        Me.tsOrdeñe.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConfiguracionToolStripMenuItem, Me.PrimerOrdeñeToolStripMenuItem, Me.SegundoOrdeñeToolStripMenuItem, Me.TercerOrdeñeToolStripMenuItem})
+        Me.tsOrdeñe.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsConfiguración, Me.tsPrimerOrdeñe, Me.tsSegundoOrdeñe, Me.tsTercerOrdeñe})
         Me.tsOrdeñe.Enabled = False
         Me.tsOrdeñe.Name = "tsOrdeñe"
         Me.tsOrdeñe.Size = New System.Drawing.Size(58, 19)
         Me.tsOrdeñe.Text = "Ordeñe"
         '
-        'ConfiguracionToolStripMenuItem
+        'tsConfiguración
         '
-        Me.ConfiguracionToolStripMenuItem.Name = "ConfiguracionToolStripMenuItem"
-        Me.ConfiguracionToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
-        Me.ConfiguracionToolStripMenuItem.Text = "Configuracion"
+        Me.tsConfiguración.Name = "tsConfiguración"
+        Me.tsConfiguración.Size = New System.Drawing.Size(161, 22)
+        Me.tsConfiguración.Text = "Configuracion"
         '
-        'PrimerOrdeñeToolStripMenuItem
+        'tsPrimerOrdeñe
         '
-        Me.PrimerOrdeñeToolStripMenuItem.Name = "PrimerOrdeñeToolStripMenuItem"
-        Me.PrimerOrdeñeToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
-        Me.PrimerOrdeñeToolStripMenuItem.Text = "Primer ordeñe"
+        Me.tsPrimerOrdeñe.Name = "tsPrimerOrdeñe"
+        Me.tsPrimerOrdeñe.Size = New System.Drawing.Size(161, 22)
+        Me.tsPrimerOrdeñe.Text = "Primer ordeñe"
         '
-        'SegundoOrdeñeToolStripMenuItem
+        'tsSegundoOrdeñe
         '
-        Me.SegundoOrdeñeToolStripMenuItem.Name = "SegundoOrdeñeToolStripMenuItem"
-        Me.SegundoOrdeñeToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
-        Me.SegundoOrdeñeToolStripMenuItem.Text = "Segundo ordeñe"
+        Me.tsSegundoOrdeñe.Name = "tsSegundoOrdeñe"
+        Me.tsSegundoOrdeñe.Size = New System.Drawing.Size(161, 22)
+        Me.tsSegundoOrdeñe.Text = "Segundo ordeñe"
         '
-        'TercerOrdeñeToolStripMenuItem
+        'tsTercerOrdeñe
         '
-        Me.TercerOrdeñeToolStripMenuItem.Name = "TercerOrdeñeToolStripMenuItem"
-        Me.TercerOrdeñeToolStripMenuItem.Size = New System.Drawing.Size(161, 22)
-        Me.TercerOrdeñeToolStripMenuItem.Text = "Tercer ordeñe"
+        Me.tsTercerOrdeñe.Name = "tsTercerOrdeñe"
+        Me.tsTercerOrdeñe.Size = New System.Drawing.Size(161, 22)
+        Me.tsTercerOrdeñe.Text = "Tercer ordeñe"
         '
         'tsVenta
         '
@@ -609,7 +632,6 @@ Partial Class frmISU
     Friend WithEvents tsNinguno2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsSeca As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsSexo As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsHembraa As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsHembra As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsMacho As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsSesion As System.Windows.Forms.ToolStripMenuItem
@@ -630,14 +652,18 @@ Partial Class frmISU
     Friend WithEvents tsModificar As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsEliminar As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsOrdeñe As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ConfiguracionToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents PrimerOrdeñeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents SegundoOrdeñeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents TercerOrdeñeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents tsAlimento As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsConfiguración As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsPrimerOrdeñe As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsSegundoOrdeñe As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsTercerOrdeñe As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsControl As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents GanadoActivoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsGanadoAct As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents tsVenta As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents gbxLog As System.Windows.Forms.GroupBox
+    Friend WithEvents tsAntibiotico As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsAlimento As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsProporcionar As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsOtorgar As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsAlimento_Consultar As System.Windows.Forms.ToolStripMenuItem
 
 End Class

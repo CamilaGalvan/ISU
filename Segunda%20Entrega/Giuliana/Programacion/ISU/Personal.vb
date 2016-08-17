@@ -9,6 +9,10 @@
         lblNacimiento.Text = nacimiento
         lblSexo.Text = sexo
         Boton_idioma(btnOpcion)
+        Me.Text = personal + ", " + btnOpcion.Text
+        If opcion = 2 Then
+            Me.Text = Me.Text + consultar
+        End If
         btnBuscar.Text = buscar
 
         cbxSexo.Items.Clear()
@@ -28,10 +32,16 @@
         acum = Validacion_numerica(tbxCI.Text, acum)
         acum = Validacion_largo(tbxCI, acum)
         If acum = 0 Then
+            sql = "SELECT * from Personal where num=" & Val(tbxCI.Text)
+            Sentencia("select", sql)
+            'If rs.RecordCount <> 0 Then
             tbxCI.Enabled = False
             btnBuscar.Enabled = False
             btnOpcion.Enabled = True
             gbxDatos.Enabled = True
+            'Else
+            '   MsgBox("Error :" + numero + " " + animal, "ERROR")
+            'End If
         Else
             MsgBox(CI, MsgBoxStyle.OkOnly, "ERROR")
         End If

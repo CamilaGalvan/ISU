@@ -24,23 +24,23 @@ Partial Class frmOrdeñeConfig
     Private Sub InitializeComponent()
         Me.pnlBlue = New System.Windows.Forms.Panel()
         Me.gbxTercer = New System.Windows.Forms.GroupBox()
+        Me.dtpFinalt = New System.Windows.Forms.DateTimePicker()
+        Me.dtpIniciot = New System.Windows.Forms.DateTimePicker()
         Me.lblFinalt = New System.Windows.Forms.Label()
         Me.lblIniciot = New System.Windows.Forms.Label()
         Me.lblOrdeñecant = New System.Windows.Forms.Label()
         Me.gbxSegundo = New System.Windows.Forms.GroupBox()
+        Me.dtpFinals = New System.Windows.Forms.DateTimePicker()
+        Me.dtpInicios = New System.Windows.Forms.DateTimePicker()
         Me.lblFinals = New System.Windows.Forms.Label()
         Me.lblInicios = New System.Windows.Forms.Label()
         Me.cbxCantidad = New System.Windows.Forms.ComboBox()
         Me.gbxPrimer = New System.Windows.Forms.GroupBox()
+        Me.dtpFinalp = New System.Windows.Forms.DateTimePicker()
+        Me.stpIniciop = New System.Windows.Forms.DateTimePicker()
         Me.lblFinalp = New System.Windows.Forms.Label()
         Me.lblIniciop = New System.Windows.Forms.Label()
-        Me.btnOpcion = New System.Windows.Forms.Button()
-        Me.DateTimePicker3 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker2 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker4 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker5 = New System.Windows.Forms.DateTimePicker()
-        Me.DateTimePicker6 = New System.Windows.Forms.DateTimePicker()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.gbxTercer.SuspendLayout()
         Me.gbxSegundo.SuspendLayout()
         Me.gbxPrimer.SuspendLayout()
@@ -57,8 +57,8 @@ Partial Class frmOrdeñeConfig
         '
         'gbxTercer
         '
-        Me.gbxTercer.Controls.Add(Me.DateTimePicker5)
-        Me.gbxTercer.Controls.Add(Me.DateTimePicker6)
+        Me.gbxTercer.Controls.Add(Me.dtpFinalt)
+        Me.gbxTercer.Controls.Add(Me.dtpIniciot)
         Me.gbxTercer.Controls.Add(Me.lblFinalt)
         Me.gbxTercer.Controls.Add(Me.lblIniciot)
         Me.gbxTercer.Enabled = False
@@ -69,6 +69,24 @@ Partial Class frmOrdeñeConfig
         Me.gbxTercer.TabIndex = 112
         Me.gbxTercer.TabStop = False
         Me.gbxTercer.Text = "3er Ordeñe"
+        '
+        'dtpFinalt
+        '
+        Me.dtpFinalt.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpFinalt.Location = New System.Drawing.Point(187, 73)
+        Me.dtpFinalt.Name = "dtpFinalt"
+        Me.dtpFinalt.Size = New System.Drawing.Size(152, 32)
+        Me.dtpFinalt.TabIndex = 85
+        Me.dtpFinalt.Value = New Date(2016, 8, 6, 0, 0, 0, 0)
+        '
+        'dtpIniciot
+        '
+        Me.dtpIniciot.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpIniciot.Location = New System.Drawing.Point(187, 35)
+        Me.dtpIniciot.Name = "dtpIniciot"
+        Me.dtpIniciot.Size = New System.Drawing.Size(152, 32)
+        Me.dtpIniciot.TabIndex = 84
+        Me.dtpIniciot.Value = New Date(2016, 8, 6, 0, 0, 0, 0)
         '
         'lblFinalt
         '
@@ -102,8 +120,8 @@ Partial Class frmOrdeñeConfig
         '
         'gbxSegundo
         '
-        Me.gbxSegundo.Controls.Add(Me.DateTimePicker1)
-        Me.gbxSegundo.Controls.Add(Me.DateTimePicker4)
+        Me.gbxSegundo.Controls.Add(Me.dtpFinals)
+        Me.gbxSegundo.Controls.Add(Me.dtpInicios)
         Me.gbxSegundo.Controls.Add(Me.lblFinals)
         Me.gbxSegundo.Controls.Add(Me.lblInicios)
         Me.gbxSegundo.Enabled = False
@@ -114,6 +132,24 @@ Partial Class frmOrdeñeConfig
         Me.gbxSegundo.TabIndex = 111
         Me.gbxSegundo.TabStop = False
         Me.gbxSegundo.Text = "2do Ordeñe"
+        '
+        'dtpFinals
+        '
+        Me.dtpFinals.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpFinals.Location = New System.Drawing.Point(187, 73)
+        Me.dtpFinals.Name = "dtpFinals"
+        Me.dtpFinals.Size = New System.Drawing.Size(152, 32)
+        Me.dtpFinals.TabIndex = 85
+        Me.dtpFinals.Value = New Date(2016, 8, 6, 0, 0, 0, 0)
+        '
+        'dtpInicios
+        '
+        Me.dtpInicios.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpInicios.Location = New System.Drawing.Point(187, 35)
+        Me.dtpInicios.Name = "dtpInicios"
+        Me.dtpInicios.Size = New System.Drawing.Size(152, 32)
+        Me.dtpInicios.TabIndex = 84
+        Me.dtpInicios.Value = New Date(2016, 8, 6, 0, 0, 0, 0)
         '
         'lblFinals
         '
@@ -147,8 +183,8 @@ Partial Class frmOrdeñeConfig
         '
         'gbxPrimer
         '
-        Me.gbxPrimer.Controls.Add(Me.DateTimePicker3)
-        Me.gbxPrimer.Controls.Add(Me.DateTimePicker2)
+        Me.gbxPrimer.Controls.Add(Me.dtpFinalp)
+        Me.gbxPrimer.Controls.Add(Me.stpIniciop)
         Me.gbxPrimer.Controls.Add(Me.lblFinalp)
         Me.gbxPrimer.Controls.Add(Me.lblIniciop)
         Me.gbxPrimer.Enabled = False
@@ -159,6 +195,24 @@ Partial Class frmOrdeñeConfig
         Me.gbxPrimer.TabIndex = 110
         Me.gbxPrimer.TabStop = False
         Me.gbxPrimer.Text = "1er Ordeñe"
+        '
+        'dtpFinalp
+        '
+        Me.dtpFinalp.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpFinalp.Location = New System.Drawing.Point(187, 76)
+        Me.dtpFinalp.Name = "dtpFinalp"
+        Me.dtpFinalp.Size = New System.Drawing.Size(152, 32)
+        Me.dtpFinalp.TabIndex = 83
+        Me.dtpFinalp.Value = New Date(2016, 8, 6, 0, 0, 0, 0)
+        '
+        'stpIniciop
+        '
+        Me.stpIniciop.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.stpIniciop.Location = New System.Drawing.Point(187, 38)
+        Me.stpIniciop.Name = "stpIniciop"
+        Me.stpIniciop.Size = New System.Drawing.Size(152, 32)
+        Me.stpIniciop.TabIndex = 82
+        Me.stpIniciop.Value = New Date(2016, 8, 6, 0, 0, 0, 0)
         '
         'lblFinalp
         '
@@ -180,70 +234,16 @@ Partial Class frmOrdeñeConfig
         Me.lblIniciop.TabIndex = 62
         Me.lblIniciop.Text = "Hora inicio"
         '
-        'btnOpcion
+        'btnGuardar
         '
-        Me.btnOpcion.Enabled = False
-        Me.btnOpcion.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnOpcion.Location = New System.Drawing.Point(126, 268)
-        Me.btnOpcion.Name = "btnOpcion"
-        Me.btnOpcion.Size = New System.Drawing.Size(118, 42)
-        Me.btnOpcion.TabIndex = 113
-        Me.btnOpcion.Text = "Guardar"
-        Me.btnOpcion.UseVisualStyleBackColor = True
-        '
-        'DateTimePicker3
-        '
-        Me.DateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.DateTimePicker3.Location = New System.Drawing.Point(187, 76)
-        Me.DateTimePicker3.Name = "DateTimePicker3"
-        Me.DateTimePicker3.Size = New System.Drawing.Size(152, 32)
-        Me.DateTimePicker3.TabIndex = 83
-        Me.DateTimePicker3.Value = New Date(2016, 8, 6, 0, 0, 0, 0)
-        '
-        'DateTimePicker2
-        '
-        Me.DateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.DateTimePicker2.Location = New System.Drawing.Point(187, 38)
-        Me.DateTimePicker2.Name = "DateTimePicker2"
-        Me.DateTimePicker2.Size = New System.Drawing.Size(152, 32)
-        Me.DateTimePicker2.TabIndex = 82
-        Me.DateTimePicker2.Value = New Date(2016, 8, 6, 0, 0, 0, 0)
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.DateTimePicker1.Location = New System.Drawing.Point(187, 73)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(152, 32)
-        Me.DateTimePicker1.TabIndex = 85
-        Me.DateTimePicker1.Value = New Date(2016, 8, 6, 0, 0, 0, 0)
-        '
-        'DateTimePicker4
-        '
-        Me.DateTimePicker4.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.DateTimePicker4.Location = New System.Drawing.Point(187, 35)
-        Me.DateTimePicker4.Name = "DateTimePicker4"
-        Me.DateTimePicker4.Size = New System.Drawing.Size(152, 32)
-        Me.DateTimePicker4.TabIndex = 84
-        Me.DateTimePicker4.Value = New Date(2016, 8, 6, 0, 0, 0, 0)
-        '
-        'DateTimePicker5
-        '
-        Me.DateTimePicker5.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.DateTimePicker5.Location = New System.Drawing.Point(187, 73)
-        Me.DateTimePicker5.Name = "DateTimePicker5"
-        Me.DateTimePicker5.Size = New System.Drawing.Size(152, 32)
-        Me.DateTimePicker5.TabIndex = 85
-        Me.DateTimePicker5.Value = New Date(2016, 8, 6, 0, 0, 0, 0)
-        '
-        'DateTimePicker6
-        '
-        Me.DateTimePicker6.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.DateTimePicker6.Location = New System.Drawing.Point(187, 35)
-        Me.DateTimePicker6.Name = "DateTimePicker6"
-        Me.DateTimePicker6.Size = New System.Drawing.Size(152, 32)
-        Me.DateTimePicker6.TabIndex = 84
-        Me.DateTimePicker6.Value = New Date(2016, 8, 6, 0, 0, 0, 0)
+        Me.btnGuardar.Enabled = False
+        Me.btnGuardar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardar.Location = New System.Drawing.Point(126, 268)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(118, 42)
+        Me.btnGuardar.TabIndex = 113
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'frmOrdeñeConfig
         '
@@ -251,7 +251,7 @@ Partial Class frmOrdeñeConfig
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ClientSize = New System.Drawing.Size(832, 536)
-        Me.Controls.Add(Me.btnOpcion)
+        Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.gbxTercer)
         Me.Controls.Add(Me.lblOrdeñecant)
         Me.Controls.Add(Me.gbxSegundo)
@@ -282,11 +282,11 @@ Partial Class frmOrdeñeConfig
     Friend WithEvents gbxPrimer As System.Windows.Forms.GroupBox
     Friend WithEvents lblFinalp As System.Windows.Forms.Label
     Friend WithEvents lblIniciop As System.Windows.Forms.Label
-    Friend WithEvents btnOpcion As System.Windows.Forms.Button
-    Friend WithEvents DateTimePicker5 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents DateTimePicker6 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents DateTimePicker4 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents DateTimePicker3 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents DateTimePicker2 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents btnGuardar As System.Windows.Forms.Button
+    Friend WithEvents dtpFinalt As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpIniciot As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpFinals As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpInicios As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpFinalp As System.Windows.Forms.DateTimePicker
+    Friend WithEvents stpIniciop As System.Windows.Forms.DateTimePicker
 End Class

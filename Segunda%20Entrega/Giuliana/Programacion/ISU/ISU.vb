@@ -44,6 +44,7 @@
             tsTambo.Enabled = True
             tsPersonal.Enabled = True
             tsAnimal.Enabled = True
+            tsAlimento.Enabled = True
             tsSesion.Enabled = True
             tsOrdeñe.Enabled = True
             tsEnlistar.Enabled = True
@@ -53,6 +54,8 @@
             tsIngresar.Text = ingresar
             tsEnlistar.Text = enlistar
             tsEliminar.Text = eliminar
+            tsAlimento.Text = alimento
+            tsControl.Text = control
             tsTamboIngresar.Text = ingresar
             tsTamboModificar.Text = modificar
             tsTamboConsultar.Text = consultar
@@ -83,6 +86,14 @@
             tsLugar.Text = lugar
             tsEtapa.Text = etapa
             tsSexo.Text = sexo
+            tsGanadoAct.Text = ganado_act
+            tsAntibiotico.Text = antibiotico
+            tsConfiguración.Text = configuracion
+            tsPrimerOrdeñe.Text = primer + " " + ordeñe
+            tsSegundoOrdeñe.Text = primer + " " + ordeñe
+            tsTercerOrdeñe.Text = primer + " " + ordeñe
+
+
         End If
     End Sub
 
@@ -107,13 +118,12 @@
         Lblpass.Text = contraseña
         lblUser.Text = usuario
         btnInicio.Text = iniciar
-
-
         tsSalir.Text = salir
         tsSesion.Text = sesion
         tsTambo.Text = tambo
         tsPersonal.Text = personal
         tsAnimal.Text = animal
+        tsAlimento.Text = alimento
         tsSesion.Text = sesion
         tsOrdeñe.Text = ordeñe
         tsEnlistar.Text = enlistar
@@ -159,7 +169,10 @@
         frmPersonal.Show()
     End Sub
 
-
+    Private Sub tsIngresar_Click(sender As System.Object, e As System.EventArgs) Handles tsIngresar.Click
+        opcion = 0
+        frmAnimal.Show()
+    End Sub
     Private Sub tsConsultar_Click(sender As System.Object, e As System.EventArgs) Handles tsConsultar.Click
         opcion = 2
         frmAnimal.Show()
@@ -175,148 +188,151 @@
         frmAnimal.Show()
     End Sub
 
-    Private Sub tsHolando_Click(sender As System.Object, e As System.EventArgs) Handles tsHolando.Click
+    Private Sub tsControl_Click(sender As System.Object, e As System.EventArgs) Handles tsControl.Click
+        frmControl.Show()
+    End Sub
+    Private Sub tsAlimento_Click(sender As System.Object, e As System.EventArgs)
         opcion = 0
+        frmAlimento.Show()
+    End Sub
+
+    Private Sub tsHolando_Click(sender As System.Object, e As System.EventArgs) Handles tsHolando.Click
+
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsJersey_Click(sender As System.Object, e As System.EventArgs) Handles tsJersey.Click
-        opcion = 1
+
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsPrimerShow_Click(sender As System.Object, e As System.EventArgs) Handles tsPrimerShow.Click
-        opcion = 2
+
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsVaca_Click(sender As System.Object, e As System.EventArgs) Handles tsVaca.Click
-        opcion = 3
+
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsVaquillona_Click(sender As System.Object, e As System.EventArgs) Handles tsVaquillona.Click
-        opcion = 4
+
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsToro_Click(sender As System.Object, e As System.EventArgs) Handles tsToro.Click
-        opcion = 5
+
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsNovillo_Click(sender As System.Object, e As System.EventArgs) Handles tsNovillo.Click
-        opcion = 6
+
         frmEnlistar.Show()
     End Sub
 
     Private Sub TsAnestro_Click(sender As System.Object, e As System.EventArgs) Handles TsAnestro.Click
-        opcion = 7
+
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsTernero_Click(sender As System.Object, e As System.EventArgs) Handles tsTernero.Click
-        opcion = 8
+
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsTernera_Click(sender As System.Object, e As System.EventArgs) Handles tsTernera.Click
-        opcion = 9
+
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsRodeo_Click(sender As System.Object, e As System.EventArgs) Handles tsRodeo.Click
-        opcion = 10
+
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsCampo_Click(sender As System.Object, e As System.EventArgs) Handles tsCampo.Click
-        opcion = 11
+
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsTamboe_Click(sender As System.Object, e As System.EventArgs) Handles tsTamboe.Click
-        opcion = 12
+
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsNinguno_Click(sender As System.Object, e As System.EventArgs) Handles tsNinguno.Click
-        opcion = 13
+
         frmEnlistar.Show()
     End Sub
 
     Private Sub TsServicio_Click(sender As System.Object, e As System.EventArgs) Handles TsServicio.Click
-        opcion = 14
+
         frmEnlistar.Show()
     End Sub
 
     Private Sub Tsprenada_Click(sender As System.Object, e As System.EventArgs) Handles Tsprenada.Click
-        opcion = 15
+
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsLactancia_Click(sender As System.Object, e As System.EventArgs) Handles tsLactancia.Click
-        opcion = 16
+
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsSeca_Click(sender As System.Object, e As System.EventArgs) Handles tsSeca.Click
-        opcion = 17
+
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsNinguno2_Click(sender As System.Object, e As System.EventArgs) Handles tsNinguno2.Click
-        opcion = 18
+
         frmEnlistar.Show()
     End Sub
 
-    Private Sub tsHembraa_Click(sender As System.Object, e As System.EventArgs) Handles tsHembraa.Click
-        opcion = 19
+    Private Sub tsHembraa_Click(sender As System.Object, e As System.EventArgs)
+
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsHembra_Click(sender As System.Object, e As System.EventArgs) Handles tsHembra.Click
-        opcion = 20
+
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsMacho_Click(sender As System.Object, e As System.EventArgs) Handles tsMacho.Click
-        opcion = 21
+
         frmEnlistar.Show()
     End Sub
 
+    Private Sub tsGanadoAct_Click(sender As System.Object, e As System.EventArgs) Handles tsGanadoAct.Click
 
-    Private Sub AnimalToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs)
-        opcion = -1
-        frmAnimal.Show()
+        frmEnlistar.Show()
     End Sub
 
-    Private Sub EstadoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs)
-        opcion = 0
-        frmAnimal.Show()
+    Private Sub tsAntibiotico_Click(sender As System.Object, e As System.EventArgs) Handles tsAntibiotico.Click
+
+        frmEnlistar.Show()
     End Sub
 
-    Private Sub ConfiguracionToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles ConfiguracionToolStripMenuItem.Click
+    Private Sub tsConfiguracio_Click(sender As System.Object, e As System.EventArgs) Handles tsConfiguración.Click
         frmOrdeñeConfig.Show()
     End Sub
 
-    Private Sub PrimerOrdeñeToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles PrimerOrdeñeToolStripMenuItem.Click
+    Private Sub tsPrimerOrdeñe_Click(sender As System.Object, e As System.EventArgs) Handles tsPrimerOrdeñe.Click
         frmOrdeñe.Show()
         opcion = 1
     End Sub
 
-    Private Sub SegundoOrdeñeToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles SegundoOrdeñeToolStripMenuItem.Click
+    Private Sub tsSegundoOrdeñe_Click(sender As System.Object, e As System.EventArgs) Handles tsSegundoOrdeñe.Click
         frmOrdeñe.Show()
         opcion = 2
     End Sub
 
-    Private Sub TercerOrdeñeToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles TercerOrdeñeToolStripMenuItem.Click
+    Private Sub tsTercerOrdeñe_Click(sender As System.Object, e As System.EventArgs) Handles tsTercerOrdeñe.Click
         frmOrdeñe.Show()
         opcion = 3
-    End Sub
-
-    Private Sub AlimentoToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles tsAlimento.Click
-        frmAlimento.Show()
     End Sub
 
     Private Sub tsPersonalIngresar_Click(sender As System.Object, e As System.EventArgs) Handles tsPersonalIngresar.Click
@@ -324,21 +340,26 @@
         frmPersonal.Show()
     End Sub
 
-    Private Sub tsIngresar_Click(sender As System.Object, e As System.EventArgs) Handles tsIngresar.Click
-        opcion = 0
-        frmAnimal.Show()
-    End Sub
 
-    Private Sub VentaToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles tsVenta.Click
-        frmAlimento.Text = "Venta"
-        frmAlimento.gbxDatos.Text = ""
-        frmAlimento.lblTipo.Hide()
-        frmAlimento.cbxTipo.Hide()
+    Private Sub tsVenta_Click(sender As System.Object, e As System.EventArgs) Handles tsVenta.Click
+        opcion = 4
         frmAlimento.Show()
     End Sub
 
-    Private Sub ControlToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles tsControl.Click
-        frmControl.Show()
+    Private Sub tsProporcionar_Click(sender As System.Object, e As System.EventArgs) Handles tsProporcionar.Click
+        opcion = 0
+        frmAlimento.Show()
+    End Sub
+
+    Private Sub tsOtorgar_Click(sender As System.Object, e As System.EventArgs) Handles tsOtorgar.Click
+        opcion = 5
+        frmAlimento.Show()
+    End Sub
+
+    Private Sub tsAlimento_Consultar_Click(sender As System.Object, e As System.EventArgs) Handles tsAlimento_Consultar.Click
+        frmEnlistar.Show()
     End Sub
 
 End Class
+
+'53krinder

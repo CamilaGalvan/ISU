@@ -1,6 +1,10 @@
 ﻿Public Class frmAnimal
     Private Sub frmAnimal_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         Boton_idioma(btnOpcion)
+        Me.Text = animal + ", " + btnOpcion.Text
+        If opcion = 2 Then
+            Me.Text = Me.Text + consultar
+        End If
         btnBuscar.Text = buscar
         btnBuscarH.Text = buscar
         btnBuscarM.Text = buscar
@@ -47,6 +51,7 @@
         acum = Validacion_largo(tbxNum, acum)
         If acum = 0 Then
             sql = "SELECT * from Animal where num=" & Val(tbxNum.Text)
+            Sentencia("select", sql)
             'If rs.RecordCount <> 0 Then
             tbxNum.Enabled = False
             btnOpcion.Enabled = True
@@ -58,7 +63,7 @@
             '   MsgBox("Error :" + numero + " " + animal, "ERROR")
             'End If
         Else
-            MsgBox("Error :" + numero + " " + animal)
+            MsgBox("Error :" + numero + " " + animal, MsgBoxStyle.OkOnly, "ERROR")
         End If
     End Sub
 
@@ -141,7 +146,8 @@
 
     Private Sub btnOpcion_Click(sender As System.Object, e As System.EventArgs) Handles btnOpcion.Click
         Select Case opcion
-            Case 0 'ingresar
+            Case 0
+                ' sql = "INSERT into Animal(numero, sexo, nacimiento, lugar, raza, division) values (" & Val(txtCI.Text) & ",'" & txtNombre.Text & "')"
             Case 1 'modificar
             Case 2 ' consultar
             Case 3 'eliminar
