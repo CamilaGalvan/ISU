@@ -1,0 +1,23 @@
+Auxiliar puede ingresar y consultar datos sobre el mismo establecimiento, datos de los ordeñes ¿y del ganado?
+Adm. establecimiento tiene control sobre los datos de su establecimiento, teniendo posibilidad de ingresar, 
+  a diferencia del auxiliar este puede acceder a la totalidad de la  infromacion de su establecimiento.
+Gerente administrador accede a la informacion de varios establecimientos en su totalidad.
+Adm. de sistema tiene permisos de actualizar, monitoreo de redes, acceso a la base de datos, monitoreo, 
+  alta, baja, modificacion y consulta de usarios entre otros.
+  
+  
+  ¿¿¿
+  Auxiliar permisos sobre animal y sus "heredadas", campo de recria, leche, tanque y sus relaciones.
+  
+  Adm. de establecimiento sobre todas desde el programa... se verificar desde el programa que no acceda a otro tambo
+  
+  Gerente adm. A todas
+  
+  Adm. de sistema  tiene permiso sobre todas, y es el que peude agregar personal, ya que eso incluye los permisos 
+    (los demás no pueden agregar personal debido a eso).
+  ????
+  
+  
+  FALTA AGREGAR TELEFONO COMO ATRIBUTO Y COMO DATO EN EL PROGRAMA!!!
+  
+  
