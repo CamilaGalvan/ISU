@@ -1,0 +1,63 @@
+CONSULTAS
+
+sql = "Select raza from animal where num=" & val(tbxNum.text) 
+sentencia ("Select", sql)
+cbxraza.text = ¿cn?
+
+sql = "Select lugar from animal where num=" & val(tbxNum.text) 
+sentencia ("Select", sql)
+cbxlugar.text = ¿cn?
+
+sql = "Select nacimiento from animal where num=" & val(tbxNum.text) 
+sentencia ("Select", sql)
+tbxnacimiento.text = ¿cn?
+
+sql = "Select progenitor_macho from animal where num=" & val(tbxNum.text) 
+sentencia ("Select", sql)
+dtpprogenitorM.text = ¿cn?
+
+sql = "Select progenitor_hembra from animal where num=" & val(tbxNum.text) 
+sentencia ("Select", sql)
+tbxnumH.text = ¿cn?
+
+sql = "Select progenitor_hembra from animal where num=" & val(tbxNum.text) 
+sentencia ("Select", sql)
+tbxnumH.text = ¿cn?
+
+'If se ecnuentra en una then 
+sql = "Select num from hembra where num=" & val(tbxNum.text) 
+sentencia ("Select", sql)
+cbxSexo.text = hembra
+
+sql = "Select nombre from estado E, pasa P where P.num_hembra=" & val(tbxNum.text) &
+"and fecha.fin > '" & FECHA ACTUAL & "'" 
+sentencia ("Select", sql)
+cbxestado. items. clear()
+cbxestado.items.add (el primero, y luego el sigiente, etc (while o for))
+
+es cria si esta en el select sobre la tabla cria
+  sql = "Select num from cria where num=" & val(tbxNum.text) 
+  sentencia ("Select", sql)
+  cbxDivision.text = cria
+else
+  if encuentra
+    sql = "Select nombre from estado E, pasa P where P.num_hembra=" & val(tbxNum.text) &
+    "and nombre = '" & prenada & "'"
+    sentencia ("Select", sql)
+   cbxDivision.text=Vaca
+  else 
+    cbxDivision.text=Vaquillona
+  end if
+
+  sql = "Select num from macho where num=" & val(tbxNum.text) 
+  sentencia ("Select", sql)
+  cbxSexo.text = macho
+
+  sql = "Select num from macho where num=" & val(tbxNum.text) & "and castrado =" yoqueseuedatoeseste 
+  sentencia ("Select", sql)
+  if yoquese que el punto es que sta castrado
+   cbxDivision.text = novillo
+  else
+   cbxDivision.text = toro
+  end if
+
