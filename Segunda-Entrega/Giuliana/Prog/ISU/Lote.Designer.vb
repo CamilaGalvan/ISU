@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Lote
+Partial Class frmLote
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -24,7 +24,6 @@ Partial Class Lote
     Private Sub InitializeComponent()
         Me.pnlBlue = New System.Windows.Forms.Panel()
         Me.btnConsultar = New System.Windows.Forms.Button()
-        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.tbxNumLotec = New System.Windows.Forms.TextBox()
         Me.lblNumLotec = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
@@ -36,6 +35,10 @@ Partial Class Lote
         Me.lblNumLotef = New System.Windows.Forms.Label()
         Me.tbxNumAnimC = New System.Windows.Forms.TextBox()
         Me.lblAnimalnumC = New System.Windows.Forms.Label()
+        Me.gbxC = New System.Windows.Forms.GroupBox()
+        Me.rbnNumLoteC = New System.Windows.Forms.RadioButton()
+        Me.rbnNumAnimalC = New System.Windows.Forms.RadioButton()
+        Me.gbxC.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlBlue
@@ -50,27 +53,18 @@ Partial Class Lote
         'btnConsultar
         '
         Me.btnConsultar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConsultar.Location = New System.Drawing.Point(567, 95)
+        Me.btnConsultar.Location = New System.Drawing.Point(567, 101)
         Me.btnConsultar.Name = "btnConsultar"
         Me.btnConsultar.Size = New System.Drawing.Size(118, 42)
         Me.btnConsultar.TabIndex = 131
         Me.btnConsultar.Text = "Consultar"
         Me.btnConsultar.UseVisualStyleBackColor = True
         '
-        'btnGuardar
-        '
-        Me.btnGuardar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Location = New System.Drawing.Point(567, 482)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(118, 42)
-        Me.btnGuardar.TabIndex = 130
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = True
-        '
         'tbxNumLotec
         '
+        Me.tbxNumLotec.Enabled = False
         Me.tbxNumLotec.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxNumLotec.Location = New System.Drawing.Point(601, 12)
+        Me.tbxNumLotec.Location = New System.Drawing.Point(243, 13)
         Me.tbxNumLotec.MaxLength = 9
         Me.tbxNumLotec.Name = "tbxNumLotec"
         Me.tbxNumLotec.Size = New System.Drawing.Size(145, 32)
@@ -81,7 +75,7 @@ Partial Class Lote
         '
         Me.lblNumLotec.AutoSize = True
         Me.lblNumLotec.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNumLotec.Location = New System.Drawing.Point(415, 15)
+        Me.lblNumLotec.Location = New System.Drawing.Point(57, 16)
         Me.lblNumLotec.Name = "lblNumLotec"
         Me.lblNumLotec.Size = New System.Drawing.Size(151, 24)
         Me.lblNumLotec.TabIndex = 128
@@ -161,8 +155,9 @@ Partial Class Lote
         '
         'tbxNumAnimC
         '
+        Me.tbxNumAnimC.Enabled = False
         Me.tbxNumAnimC.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxNumAnimC.Location = New System.Drawing.Point(601, 50)
+        Me.tbxNumAnimC.Location = New System.Drawing.Point(243, 51)
         Me.tbxNumAnimC.MaxLength = 9
         Me.tbxNumAnimC.Name = "tbxNumAnimC"
         Me.tbxNumAnimC.Size = New System.Drawing.Size(145, 32)
@@ -173,20 +168,53 @@ Partial Class Lote
         '
         Me.lblAnimalnumC.AutoSize = True
         Me.lblAnimalnumC.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAnimalnumC.Location = New System.Drawing.Point(415, 53)
+        Me.lblAnimalnumC.Location = New System.Drawing.Point(57, 54)
         Me.lblAnimalnumC.Name = "lblAnimalnumC"
         Me.lblAnimalnumC.Size = New System.Drawing.Size(155, 24)
         Me.lblAnimalnumC.TabIndex = 139
         Me.lblAnimalnumC.Text = "Animal, Numero"
         '
-        'Lote
+        'gbxC
+        '
+        Me.gbxC.Controls.Add(Me.rbnNumAnimalC)
+        Me.gbxC.Controls.Add(Me.rbnNumLoteC)
+        Me.gbxC.Controls.Add(Me.tbxNumAnimC)
+        Me.gbxC.Controls.Add(Me.lblAnimalnumC)
+        Me.gbxC.Controls.Add(Me.tbxNumLotec)
+        Me.gbxC.Controls.Add(Me.lblNumLotec)
+        Me.gbxC.Location = New System.Drawing.Point(391, 4)
+        Me.gbxC.Name = "gbxC"
+        Me.gbxC.Size = New System.Drawing.Size(405, 91)
+        Me.gbxC.TabIndex = 141
+        Me.gbxC.TabStop = False
+        '
+        'rbnNumLoteC
+        '
+        Me.rbnNumLoteC.AutoSize = True
+        Me.rbnNumLoteC.Location = New System.Drawing.Point(22, 24)
+        Me.rbnNumLoteC.Name = "rbnNumLoteC"
+        Me.rbnNumLoteC.Size = New System.Drawing.Size(14, 13)
+        Me.rbnNumLoteC.TabIndex = 141
+        Me.rbnNumLoteC.TabStop = True
+        Me.rbnNumLoteC.UseVisualStyleBackColor = True
+        '
+        'rbnNumAnimalC
+        '
+        Me.rbnNumAnimalC.AutoSize = True
+        Me.rbnNumAnimalC.Location = New System.Drawing.Point(22, 62)
+        Me.rbnNumAnimalC.Name = "rbnNumAnimalC"
+        Me.rbnNumAnimalC.Size = New System.Drawing.Size(14, 13)
+        Me.rbnNumAnimalC.TabIndex = 142
+        Me.rbnNumAnimalC.TabStop = True
+        Me.rbnNumAnimalC.UseVisualStyleBackColor = True
+        '
+        'frmLote
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ClientSize = New System.Drawing.Size(832, 536)
-        Me.Controls.Add(Me.tbxNumAnimC)
-        Me.Controls.Add(Me.lblAnimalnumC)
+        Me.Controls.Add(Me.gbxC)
         Me.Controls.Add(Me.tbxNumLote)
         Me.Controls.Add(Me.lblNumLotef)
         Me.Controls.Add(Me.lbxConsultar)
@@ -195,19 +223,17 @@ Partial Class Lote
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.lblAnimalnuma)
         Me.Controls.Add(Me.btnConsultar)
-        Me.Controls.Add(Me.btnGuardar)
-        Me.Controls.Add(Me.tbxNumLotec)
-        Me.Controls.Add(Me.lblNumLotec)
         Me.Controls.Add(Me.pnlBlue)
-        Me.Name = "Lote"
+        Me.Name = "frmLote"
         Me.Text = "Lote"
+        Me.gbxC.ResumeLayout(False)
+        Me.gbxC.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents pnlBlue As System.Windows.Forms.Panel
     Friend WithEvents btnConsultar As System.Windows.Forms.Button
-    Friend WithEvents btnGuardar As System.Windows.Forms.Button
     Friend WithEvents tbxNumLotec As System.Windows.Forms.TextBox
     Friend WithEvents lblNumLotec As System.Windows.Forms.Label
     Friend WithEvents btnAgregar As System.Windows.Forms.Button
@@ -219,4 +245,7 @@ Partial Class Lote
     Friend WithEvents lblNumLotef As System.Windows.Forms.Label
     Friend WithEvents tbxNumAnimC As System.Windows.Forms.TextBox
     Friend WithEvents lblAnimalnumC As System.Windows.Forms.Label
+    Friend WithEvents gbxC As System.Windows.Forms.GroupBox
+    Friend WithEvents rbnNumLoteC As System.Windows.Forms.RadioButton
+    Friend WithEvents rbnNumAnimalC As System.Windows.Forms.RadioButton
 End Class

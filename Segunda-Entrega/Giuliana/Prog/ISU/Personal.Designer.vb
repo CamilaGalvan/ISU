@@ -24,8 +24,9 @@ Partial Class frmPersonal
     Private Sub InitializeComponent()
         Me.btnOpcion = New System.Windows.Forms.Button()
         Me.gbxDatos = New System.Windows.Forms.GroupBox()
-        Me.tbxLogin = New System.Windows.Forms.TextBox()
-        Me.lblLogin = New System.Windows.Forms.Label()
+        Me.btnrem = New System.Windows.Forms.Button()
+        Me.btnadd = New System.Windows.Forms.Button()
+        Me.lblTelefono = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.tbxNombre = New System.Windows.Forms.TextBox()
         Me.dtpNacimiento = New System.Windows.Forms.DateTimePicker()
@@ -39,6 +40,7 @@ Partial Class frmPersonal
         Me.tbxCI = New System.Windows.Forms.TextBox()
         Me.lblCI = New System.Windows.Forms.Label()
         Me.pnlBlue = New System.Windows.Forms.Panel()
+        Me.cbxTelefono = New System.Windows.Forms.ComboBox()
         Me.gbxDatos.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -55,8 +57,10 @@ Partial Class frmPersonal
         '
         'gbxDatos
         '
-        Me.gbxDatos.Controls.Add(Me.tbxLogin)
-        Me.gbxDatos.Controls.Add(Me.lblLogin)
+        Me.gbxDatos.Controls.Add(Me.cbxTelefono)
+        Me.gbxDatos.Controls.Add(Me.btnrem)
+        Me.gbxDatos.Controls.Add(Me.btnadd)
+        Me.gbxDatos.Controls.Add(Me.lblTelefono)
         Me.gbxDatos.Controls.Add(Me.PictureBox1)
         Me.gbxDatos.Controls.Add(Me.tbxNombre)
         Me.gbxDatos.Controls.Add(Me.dtpNacimiento)
@@ -67,30 +71,43 @@ Partial Class frmPersonal
         Me.gbxDatos.Controls.Add(Me.lblSexo)
         Me.gbxDatos.Controls.Add(Me.lblPermiso)
         Me.gbxDatos.Enabled = False
-        Me.gbxDatos.Location = New System.Drawing.Point(56, 158)
+        Me.gbxDatos.Location = New System.Drawing.Point(29, 174)
         Me.gbxDatos.Name = "gbxDatos"
-        Me.gbxDatos.Size = New System.Drawing.Size(673, 263)
+        Me.gbxDatos.Size = New System.Drawing.Size(746, 256)
         Me.gbxDatos.TabIndex = 102
         Me.gbxDatos.TabStop = False
         '
-        'tbxLogin
+        'btnrem
         '
-        Me.tbxLogin.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxLogin.Location = New System.Drawing.Point(407, 40)
-        Me.tbxLogin.MaxLength = 20
-        Me.tbxLogin.Name = "tbxLogin"
-        Me.tbxLogin.Size = New System.Drawing.Size(237, 32)
-        Me.tbxLogin.TabIndex = 110
+        Me.btnrem.Enabled = False
+        Me.btnrem.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnrem.Location = New System.Drawing.Point(686, 185)
+        Me.btnrem.Name = "btnrem"
+        Me.btnrem.Size = New System.Drawing.Size(39, 42)
+        Me.btnrem.TabIndex = 113
+        Me.btnrem.Text = "-"
+        Me.btnrem.UseVisualStyleBackColor = True
         '
-        'lblLogin
+        'btnadd
         '
-        Me.lblLogin.AutoSize = True
-        Me.lblLogin.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblLogin.Location = New System.Drawing.Point(267, 43)
-        Me.lblLogin.Name = "lblLogin"
-        Me.lblLogin.Size = New System.Drawing.Size(61, 24)
-        Me.lblLogin.TabIndex = 109
-        Me.lblLogin.Text = "Login"
+        Me.btnadd.Enabled = False
+        Me.btnadd.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnadd.Location = New System.Drawing.Point(643, 185)
+        Me.btnadd.Name = "btnadd"
+        Me.btnadd.Size = New System.Drawing.Size(39, 42)
+        Me.btnadd.TabIndex = 112
+        Me.btnadd.Text = "+"
+        Me.btnadd.UseVisualStyleBackColor = True
+        '
+        'lblTelefono
+        '
+        Me.lblTelefono.AutoSize = True
+        Me.lblTelefono.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTelefono.Location = New System.Drawing.Point(257, 194)
+        Me.lblTelefono.Name = "lblTelefono"
+        Me.lblTelefono.Size = New System.Drawing.Size(89, 24)
+        Me.lblTelefono.TabIndex = 111
+        Me.lblTelefono.Text = "Telefono"
         '
         'PictureBox1
         '
@@ -103,7 +120,7 @@ Partial Class frmPersonal
         'tbxNombre
         '
         Me.tbxNombre.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxNombre.Location = New System.Drawing.Point(407, 80)
+        Me.tbxNombre.Location = New System.Drawing.Point(397, 37)
         Me.tbxNombre.MaxLength = 20
         Me.tbxNombre.Name = "tbxNombre"
         Me.tbxNombre.Size = New System.Drawing.Size(237, 32)
@@ -113,7 +130,7 @@ Partial Class frmPersonal
         '
         Me.dtpNacimiento.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.dtpNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtpNacimiento.Location = New System.Drawing.Point(407, 158)
+        Me.dtpNacimiento.Location = New System.Drawing.Point(397, 115)
         Me.dtpNacimiento.Name = "dtpNacimiento"
         Me.dtpNacimiento.Size = New System.Drawing.Size(237, 32)
         Me.dtpNacimiento.TabIndex = 65
@@ -122,7 +139,7 @@ Partial Class frmPersonal
         '
         Me.lblNombre.AutoSize = True
         Me.lblNombre.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNombre.Location = New System.Drawing.Point(266, 83)
+        Me.lblNombre.Location = New System.Drawing.Point(256, 40)
         Me.lblNombre.Name = "lblNombre"
         Me.lblNombre.Size = New System.Drawing.Size(82, 24)
         Me.lblNombre.TabIndex = 106
@@ -133,7 +150,7 @@ Partial Class frmPersonal
         Me.cbxPuesto.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxPuesto.FormattingEnabled = True
         Me.cbxPuesto.Items.AddRange(New Object() {"Administrador", "..."})
-        Me.cbxPuesto.Location = New System.Drawing.Point(407, 196)
+        Me.cbxPuesto.Location = New System.Drawing.Point(397, 153)
         Me.cbxPuesto.Name = "cbxPuesto"
         Me.cbxPuesto.Size = New System.Drawing.Size(237, 32)
         Me.cbxPuesto.TabIndex = 64
@@ -142,7 +159,7 @@ Partial Class frmPersonal
         '
         Me.lblNacimiento.AutoSize = True
         Me.lblNacimiento.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblNacimiento.Location = New System.Drawing.Point(267, 164)
+        Me.lblNacimiento.Location = New System.Drawing.Point(257, 121)
         Me.lblNacimiento.Name = "lblNacimiento"
         Me.lblNacimiento.Size = New System.Drawing.Size(114, 24)
         Me.lblNacimiento.TabIndex = 60
@@ -153,7 +170,7 @@ Partial Class frmPersonal
         Me.cbxSexo.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxSexo.FormattingEnabled = True
         Me.cbxSexo.Items.AddRange(New Object() {"Masculino", "Femenino"})
-        Me.cbxSexo.Location = New System.Drawing.Point(407, 120)
+        Me.cbxSexo.Location = New System.Drawing.Point(397, 77)
         Me.cbxSexo.Name = "cbxSexo"
         Me.cbxSexo.Size = New System.Drawing.Size(237, 32)
         Me.cbxSexo.TabIndex = 59
@@ -162,7 +179,7 @@ Partial Class frmPersonal
         '
         Me.lblSexo.AutoSize = True
         Me.lblSexo.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblSexo.Location = New System.Drawing.Point(267, 123)
+        Me.lblSexo.Location = New System.Drawing.Point(257, 80)
         Me.lblSexo.Name = "lblSexo"
         Me.lblSexo.Size = New System.Drawing.Size(58, 24)
         Me.lblSexo.TabIndex = 58
@@ -172,7 +189,7 @@ Partial Class frmPersonal
         '
         Me.lblPermiso.AutoSize = True
         Me.lblPermiso.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblPermiso.Location = New System.Drawing.Point(267, 199)
+        Me.lblPermiso.Location = New System.Drawing.Point(257, 156)
         Me.lblPermiso.Name = "lblPermiso"
         Me.lblPermiso.Size = New System.Drawing.Size(76, 24)
         Me.lblPermiso.TabIndex = 57
@@ -217,6 +234,16 @@ Partial Class frmPersonal
         Me.pnlBlue.TabIndex = 105
         Me.pnlBlue.Visible = False
         '
+        'cbxTelefono
+        '
+        Me.cbxTelefono.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cbxTelefono.FormattingEnabled = True
+        Me.cbxTelefono.Items.AddRange(New Object() {"Administrador", "..."})
+        Me.cbxTelefono.Location = New System.Drawing.Point(397, 191)
+        Me.cbxTelefono.Name = "cbxTelefono"
+        Me.cbxTelefono.Size = New System.Drawing.Size(237, 32)
+        Me.cbxTelefono.TabIndex = 111
+        '
         'frmPersonal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -253,6 +280,8 @@ Partial Class frmPersonal
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents tbxNombre As System.Windows.Forms.TextBox
     Friend WithEvents lblNombre As System.Windows.Forms.Label
-    Friend WithEvents tbxLogin As System.Windows.Forms.TextBox
-    Friend WithEvents lblLogin As System.Windows.Forms.Label
+    Friend WithEvents lblTelefono As System.Windows.Forms.Label
+    Friend WithEvents cbxTelefono As System.Windows.Forms.ComboBox
+    Friend WithEvents btnrem As System.Windows.Forms.Button
+    Friend WithEvents btnadd As System.Windows.Forms.Button
 End Class

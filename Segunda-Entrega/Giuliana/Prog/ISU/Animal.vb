@@ -1,4 +1,6 @@
 ﻿Public Class frmAnimal
+    Dim Modifi(8) As String
+
     Private Sub frmAnimal_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         Boton_idioma(btnOpcion)
         Me.Text = animal + ", " + btnOpcion.Text
@@ -26,7 +28,6 @@
         lblDivision.Text = division
         cbxSexoH.Text = hembra
         cbxSexoM.Text = macho
-
         cbxSexo.Items.Clear()
         cbxSexo.Items.Add(macho)
         cbxSexo.Items.Add(hembra)
@@ -39,10 +40,22 @@
         cbxEtapa.Items.Add(ninguno)
         cbxEtapa.Items.Add(servicio)
         cbxEtapa.Items.Add(anestro)
-
     End Sub
-    Dim Modifi(8) As String
-   
+    Public Sub execute_sql()
+        Try
+            CN.Execute(sql)
+        Catch ex As Exception
+            MsgBox("Error Execute")
+            Exit Sub
+        End Try
+    End Sub
+    Public Sub Open_sql()
+        Try
+            rs.Open(sql, CN)
+        Catch ex As Exception
+            MsgBox("Error open", MsgBoxStyle.OkOnly, "ERROR")
+        End Try
+    End Sub
     Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
         Dim acum As Integer
         acum = 0
@@ -50,8 +63,7 @@
         acum = Validacion_largo(tbxNum, acum)
         If acum = 0 Then
             sql = "SELECT * from Animal where num=" & Val(tbxNum.Text)
-            Try
-                rs.Open(sql, CN)
+            Open_sql()
 
                 If rs.RecordCount <> 0 Then
                     tbxNum.Enabled = False
@@ -80,14 +92,9 @@
                         Case eliminar
                             Consulta_Animal()
                     End Select
-
                 Else
                     MsgBox("Error :" + numero + " " + animal, "ERROR")
                 End If
-
-            Catch ex As Exception
-                MsgBox("Error ", MsgBoxStyle.OkOnly, "ERROR")
-            End Try
         Else
             MsgBox("Error :" + numero + " " + animal, MsgBoxStyle.OkOnly, "ERROR")
         End If
@@ -199,144 +206,168 @@
 
         End If
     End Sub
-
     Private Sub btnEtapa_Mod_Click(sender As System.Object, e As System.EventArgs) Handles btnEtapa_Mod.Click
-        'insert into etapa e, tiene(creo) t where num_animal=num.text and e.id= t.td
+        sql = "update estado set fecha_inicio='" & dtpInicio.Text & "'  where num=" & tbxNum.Text
+        execute_sql()
+        sql = "update estado set fecha_fin='" & dtpFin.Text & "'  where num=" & tbxNum.Text
+        execute_sql()
     End Sub
 
     Private Sub btnEtapa_Click(sender As System.Object, e As System.EventArgs) Handles btnEtapa_add.Click
-        'insert values into etapa num.text
-        ' guardar el etapa id nuevo
-        'insert into tiene num, id
+        sql = "insert into estado e, pasa p where num_animal='" & tbxNum.Text & "' and e.num= t.num"
+        Try
+            CN.Execute(sql)
+        Catch ex As Exception
+            MsgBox("Error al eliminar telefonos")
+            Exit Sub
+        End Try
     End Sub
 
     Private Sub btnOpcion_Click(sender As System.Object, e As System.EventArgs) Handles btnOpcion.Click
         Select Case btnOpcion.Text
             Case ingresar
-                sql = "INSERT into Animal(numero, nacimiento, lugar, raza, progenitor_macho, progenitor_hembra, activo) values (" & Val(tbxNum.Text) & ",'" & dtpNacimiento.Text & "', '" & cbxLugar.Text & "', '" & cbxRaza.Text & "', " & Val(tbxNumM.Text) & ", " & Val(tbxNumH.Text) & ", 'Activo')"
-                Try
-                    rs.Open(sql, CN)
-                Catch ex As Exception
-                    MsgBox("Error ", MsgBoxStyle.OkOnly, "ERROR")
-                End Try
-                If cbxSexo.Text = macho Then
-                    If cbxDivision.Text = novillo Then
-                        sql = "INSERT into Mancho(numero, castrado) values (" & Val(tbxNum.Text) & ", 'castrado')"
-                    Else
-                        sql = "INSERT into Mancho(numero, castrado) values (" & Val(tbxNum.Text) & ", 'no_castrado')"
-                    End If
+                sql = "INSERT into Animal(numero, nacimiento, lugar, raza, progenitor_macho, progenitor_hembra, activo) values (" & Val(tbxNum.Text) & ",'" & dtpNacimiento.Text & _
+                    "', '" & cbxLugar.Text & "', '" & cbxRaza.Text & "', " & Val(tbxNumM.Text) & ", " & Val(tbxNumH.Text) & ", 'Activo')"
+                Open_sql()
+                If cbxDivision.Text = ternera Or cbxDivision.Text = ternero Then
+                    sql = "INSERT into cria(numero) values (" & Val(tbxNum.Text) & ")"
                 Else
-                    sql = "INSERT into Hembra(numero) values (" & Val(tbxNum.Text) & ")"
-                End If
-                Try
-                    rs.Open(sql, CN)
-                Catch ex As Exception
-                    MsgBox("Error ", MsgBoxStyle.OkOnly, "ERROR")
-                End Try
-                If cbxDivision.Text = toro Then
-                    sql = "INSERT into Mancho(numero) values (" & Val(tbxNum.Text) & ")"
-                Else
-                    sql = "INSERT into Hembra(numero) values (" & Val(tbxNum.Text) & ")"
-                End If
-                Try
-                    rs.Open(sql, CN)
-                Catch ex As Exception
-                    MsgBox("Error ", MsgBoxStyle.OkOnly, "ERROR")
-                End Try
-            Case modificar
-                Dim Modifi_Now(8) As String
-                Modifi_Now(0) = cbxSexo.Text
-                Modifi_Now(1) = dtpNacimiento.Text
-                Modifi_Now(2) = cbxLugar.Text
-                Modifi_Now(3) = cbxRaza.Text
-                Modifi_Now(4) = cbxDivision.Text
-                Modifi_Now(5) = tbxNumM.Text
-                Modifi_Now(6) = tbxNumH.Text
-                Modifi_Now(7) = dtprecriaida.Text
-                Modifi_Now(8) = dtprecriavuelta.Text
-                Dim i As Integer = 0
-                Dim B As Boolean 'supongo son iguales
-                While i <= 8
-                    B = True
-                    While B = True
-                        If Modifi(i) <> Modifi_Now(i) Then
-                            B = False
+                    If cbxSexo.Text = macho Then
+                        If cbxDivision.Text = novillo Then
+                            sql = "INSERT into Mancho(numero, castrado) values (" & Val(tbxNum.Text) & ", 1)"
+                        ElseIf cbxDivision.Text = toro Then
+                            sql = "INSERT into Mancho(numero, castrado) values (" & Val(tbxNum.Text) & ", 0)"
                         End If
+                    Else
+                        sql = "INSERT into Hembra(numero) values (" & Val(tbxNum.Text) & ")"
+                    End If
+                End If
+                Open_sql()
+            Case modificar
+                    Dim Modifi_Now(8) As String
+                    Modifi_Now(0) = cbxSexo.Text
+                    Modifi_Now(1) = dtpNacimiento.Text
+                    Modifi_Now(2) = cbxLugar.Text
+                    Modifi_Now(3) = cbxRaza.Text
+                    Modifi_Now(4) = cbxDivision.Text
+                    Modifi_Now(5) = tbxNumM.Text
+                    Modifi_Now(6) = tbxNumH.Text
+                    Modifi_Now(7) = dtprecriaida.Text
+                    Modifi_Now(8) = dtprecriavuelta.Text
+                    Dim i As Integer = 0
+                    While i <= 8
+                        If Modifi(i) <> Modifi_Now(i) Then
+                            Select Case i
+                                Case 0
+                                If Modifi(i) = hembra Then
+                                    sql = "delete from hembra where num=" & Val(tbxNum.Text)
+                                    execute_sql()
+                                    If cbxDivision.Text = novillo Then
+                                        sql = "insert into macho(numero, castrado) values (" & tbxNum.Text & ", 1)"
+                                    ElseIf cbxDivision.Text = toro Then
+                                        sql = "insert into macho(numero, castrado) values (" & tbxNum.Text & ", 0)"
+                                    Else
+                                        sql = "insert into cria(numero) values (" & tbxNum.Text & ")"
+                                    End If
+                                    execute_sql()
+                                Else
+                                    sql = " delete from macho where num=" & Val(tbxNum.Text)
+                                    execute_sql()
+                                    If cbxDivision.Text = vaquillona Then
+                                        sql = "insert into hembra(numero values (" & tbxNum.Text & ")"
+                                    ElseIf cbxDivision.Text = vaca Then
+                                        sql = "insert into hembra(numero) values (" & tbxNum.Text & ")"
+                                        execute_sql()
+                                        cbxEtapa.Text = preñada
+                                        sql = "insert into pasa(numero_animal, fecha_inicial, fecha_final) values (" & tbxNum.Text & ", '" & Today & "','" & Today & "')"
+                                    Else
+                                        sql = "insert into cria(numero) values (" & tbxNum.Text & ")"
+                                    End If
+                                    execute_sql()
+                                End If
+                            Case 1
+                                sql = "update animal set nacimiento='" & dtpNacimiento.Text & "'  where num=" & tbxNum.Text
+                            Case 2
+                                sql = "update animal set lugar='" & cbxLugar.Text & "'  where num=" & tbxNum.Text
+                            Case 3
+                                sql = "update animal set raza='" & cbxRaza.Text & "'  where num=" & tbxNum.Text
+                            Case 4
+                                If cbxDivision.Text = novillo Then
+                                    sql = "insert into macho(numero, castrado) values (" & tbxNum.Text & ", 1)"
+                                ElseIf cbxDivision.Text = toro Then
+                                    sql = "insert into macho(numero, castrado) values (" & tbxNum.Text & ", 0)"
+                                ElseIf cbxDivision.Text = vaquillona Then
+                                    sql = "insert into hembra(numero values (" & tbxNum.Text & ")"
+                                ElseIf cbxDivision.Text = vaca Then
+                                    sql = "insert into hembra(numero) values (" & tbxNum.Text & ")"
+                                    execute_sql()
+                                    cbxEtapa.Text = preñada
+                                    sql = "insert into pasa(numero_animal, fecha_inicial, fecha_final) values (" & tbxNum.Text & ", '" & Today & "','" & Today & "')"
+                                Else
+                                    sql = "insert into cria(numero) values (" & tbxNum.Text & ")"
+                                End If
+                                execute_sql()
+                            Case 5
+                                sql = "update animal set progenitor_macho='" & tbxNumM.Text & "'  where num=" & tbxNum.Text
+                            Case 6
+                                sql = "update animal set progenitor_hembra='" & tbxNumH.Text & "'  where num=" & tbxNum.Text
+                            Case 7
+                                sql = "update va set fecha_ida='" & dtprecriaida.Text & "'  where num=" & tbxNum.Text
+                            Case 8
+                                If cbxSexo.Text = macho Then
+                                    sql = "update retorna set fecha_vuelta='" & dtprecriavuelta.Text & "'  where num=" & tbxNum.Text
+                                Else
+                                    sql = "update vuelve set fecha_vuelta='" & dtprecriavuelta.Text & "'  where num=" & tbxNum.Text
+                                End If
+                        End Select
+                            execute_sql()
+                        End If
+                        i = i + 1
                     End While
-                    'VER COMO HACER SI UN CASE O QUE PARA 
-                    ' update tabla set atributo = ajsdhas where clave=ahsdgaks
-                    ' o delete from tabla where clave=akjsdhkashd
-                End While
 
             Case eliminar
-
+                sql = "update animal set activo=0 where num=" & tbxNum.Text
         End Select
     End Sub
 
     Private Sub Consulta_Animal()
         sql = "Select raza from animal where num=" & Val(tbxNum.Text)
-        Try
-            rs.Open(sql, CN)
-        Catch ex As Exception
-            MsgBox("Error ", MsgBoxStyle.OkOnly, "ERROR")
-        End Try
+        Open_sql()
         cbxRaza.Text = rs(0).Value
 
         sql = "Select lugar from animal where num=" & Val(tbxNum.Text)
-        Try
-            rs.Open(sql, CN)
-        Catch ex As Exception
-            MsgBox("Error ", MsgBoxStyle.OkOnly, "ERROR")
-        End Try
+        Open_sql()
         cbxLugar.Text = rs(0).Value
 
         sql = "Select nacimiento from animal where num=" & Val(tbxNum.Text)
-        Try
-            rs.Open(sql, CN)
-        Catch ex As Exception
-            MsgBox("Error ", MsgBoxStyle.OkOnly, "ERROR")
-        End Try
+        Open_sql()
         dtpNacimiento.Text = rs(0).Value
 
         sql = "Select progenitor_macho from animal where num=" & Val(tbxNum.Text)
-        Try
-            rs.Open(sql, CN)
-        Catch ex As Exception
-            MsgBox("Error ", MsgBoxStyle.OkOnly, "ERROR")
-        End Try
+        Open_sql()
         tbxNumM.Text = rs(0).Value
 
         sql = "Select progenitor_hembra from animal where num=" & Val(tbxNum.Text)
-        Try
-            rs.Open(sql, CN)
-        Catch ex As Exception
-            MsgBox("Error ", MsgBoxStyle.OkOnly, "ERROR")
-        End Try
+        Open_sql()
         tbxNumH.Text = rs(0).Value
 
         sql = "Select num from cria where num=" & Val(tbxNum.Text)
-        Try
-            rs.Open(sql, CN)
-        Catch ex As Exception
-            MsgBox("Error ", MsgBoxStyle.OkOnly, "ERROR")
-        End Try
+        Open_sql()
         If rs.RecordCount <> 0 Then
-            'cbxDivision.Text = cria
+            sql = "Select sexo from cria where num=" & Val(tbxNum.Text)
+            Open_sql()
+            If rs(0).Value = hembra Then
+                cbxDivision.Text = ternera
+            Else
+                cbxDivision.Text = ternero
+            End If
         Else
             sql = "Select num from hembra where num=" & Val(tbxNum.Text)
-            Try
-                rs.Open(sql, CN)
-            Catch ex As Exception
-                MsgBox("Error ", MsgBoxStyle.OkOnly, "ERROR")
-            End Try
+            Open_sql()
             If rs.RecordCount <> 0 Then
                 cbxSexo.Text = hembra
                 sql = "Select nombre from estado E, pasa P where P.num_hembra=" & Val(tbxNum.Text) & "and fecha.fin > '" & Today & "'"
-                Try
-                    rs.Open(sql, CN)
-                Catch ex As Exception
-                    MsgBox("Error ", MsgBoxStyle.OkOnly, "ERROR")
-                End Try
+                Open_sql()
                 cbxEtapa.Items.Clear()
                 If rs.RecordCount <> 0 Then
                     While Not rs.EOF()
@@ -345,11 +376,7 @@
                     End While
                 End If
                 sql = "Select nombre from estado E, pasa P where P.num_hembra=" & Val(tbxNum.Text) & "and nombre = '" & preñada & "'"
-                Try
-                    rs.Open(sql, CN)
-                Catch ex As Exception
-                    MsgBox("Error ", MsgBoxStyle.OkOnly, "ERROR")
-                End Try
+                Open_sql()
                 If rs.RecordCount <> 0 Then
                     cbxDivision.Text = vaca
                 Else
@@ -357,19 +384,11 @@
                 End If
             Else
                 sql = "Select num from macho where num=" & Val(tbxNum.Text)
-                Try
-                    rs.Open(sql, CN)
-                Catch ex As Exception
-                    MsgBox("Error ", MsgBoxStyle.OkOnly, "ERROR")
-                End Try
+                Open_sql()
                 If rs.RecordCount <> 0 Then
                     cbxSexo.Text = macho
-                    sql = "Select num from macho where num=" & Val(tbxNum.Text) & "and castrado =" 'POENR COSO PUM
-                    Try
-                        rs.Open(sql, CN)
-                    Catch ex As Exception
-                        MsgBox("Error ", MsgBoxStyle.OkOnly, "ERROR")
-                    End Try
+                    sql = "Select num from macho where num=" & Val(tbxNum.Text) & "and castrado = 1"
+                    Open_sql()
                     If rs.RecordCount <> 0 Then
                         cbxDivision.Text = novillo
                     Else

@@ -24,6 +24,7 @@ Partial Class frmControl
     Private Sub InitializeComponent()
         Me.pnlBlue = New System.Windows.Forms.Panel()
         Me.gbxGeneral = New System.Windows.Forms.GroupBox()
+        Me.lblkg = New System.Windows.Forms.Label()
         Me.chbVacuna = New System.Windows.Forms.CheckBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.dtpNacimiento = New System.Windows.Forms.DateTimePicker()
@@ -33,7 +34,7 @@ Partial Class frmControl
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.tbxNum = New System.Windows.Forms.TextBox()
         Me.lblNumero = New System.Windows.Forms.Label()
-        Me.lblkg = New System.Windows.Forms.Label()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.gbxGeneral.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -48,6 +49,7 @@ Partial Class frmControl
         '
         'gbxGeneral
         '
+        Me.gbxGeneral.Controls.Add(Me.btnGuardar)
         Me.gbxGeneral.Controls.Add(Me.lblkg)
         Me.gbxGeneral.Controls.Add(Me.chbVacuna)
         Me.gbxGeneral.Controls.Add(Me.TextBox1)
@@ -58,9 +60,19 @@ Partial Class frmControl
         Me.gbxGeneral.Enabled = False
         Me.gbxGeneral.Location = New System.Drawing.Point(87, 188)
         Me.gbxGeneral.Name = "gbxGeneral"
-        Me.gbxGeneral.Size = New System.Drawing.Size(482, 237)
+        Me.gbxGeneral.Size = New System.Drawing.Size(657, 212)
         Me.gbxGeneral.TabIndex = 78
         Me.gbxGeneral.TabStop = False
+        '
+        'lblkg
+        '
+        Me.lblkg.AutoSize = True
+        Me.lblkg.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblkg.Location = New System.Drawing.Point(423, 97)
+        Me.lblkg.Name = "lblkg"
+        Me.lblkg.Size = New System.Drawing.Size(31, 24)
+        Me.lblkg.TabIndex = 81
+        Me.lblkg.Text = "kg"
         '
         'chbVacuna
         '
@@ -152,15 +164,15 @@ Partial Class frmControl
         Me.lblNumero.TabIndex = 75
         Me.lblNumero.Text = "Numero"
         '
-        'lblkg
+        'btnGuardar
         '
-        Me.lblkg.AutoSize = True
-        Me.lblkg.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblkg.Location = New System.Drawing.Point(423, 97)
-        Me.lblkg.Name = "lblkg"
-        Me.lblkg.Size = New System.Drawing.Size(31, 24)
-        Me.lblkg.TabIndex = 81
-        Me.lblkg.Text = "kg"
+        Me.btnGuardar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardar.Location = New System.Drawing.Point(507, 88)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(118, 42)
+        Me.btnGuardar.TabIndex = 131
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'frmControl
         '
@@ -193,4 +205,5 @@ Partial Class frmControl
     Friend WithEvents chbVacuna As System.Windows.Forms.CheckBox
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents lblkg As System.Windows.Forms.Label
+    Friend WithEvents btnGuardar As System.Windows.Forms.Button
 End Class

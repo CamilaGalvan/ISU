@@ -26,14 +26,20 @@ Partial Class frmAlimento
         Me.gbxDatos = New System.Windows.Forms.GroupBox()
         Me.dtpHora = New System.Windows.Forms.DateTimePicker()
         Me.lblHora = New System.Windows.Forms.Label()
-        Me.ftpFecha = New System.Windows.Forms.DateTimePicker()
+        Me.dtpFecha = New System.Windows.Forms.DateTimePicker()
         Me.cbxTipo = New System.Windows.Forms.ComboBox()
         Me.lblTipo = New System.Windows.Forms.Label()
         Me.tbxCantidad = New System.Windows.Forms.TextBox()
         Me.lblFecha = New System.Windows.Forms.Label()
         Me.lblCantidad = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.Button()
+        Me.gbxLote = New System.Windows.Forms.GroupBox()
+        Me.btnConsultar = New System.Windows.Forms.Button()
+        Me.btnAgregar = New System.Windows.Forms.Button()
+        Me.tbxNumLote = New System.Windows.Forms.TextBox()
+        Me.lblNumLote = New System.Windows.Forms.Label()
         Me.gbxDatos.SuspendLayout()
+        Me.gbxLote.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnlBlue
@@ -49,16 +55,16 @@ Partial Class frmAlimento
         '
         Me.gbxDatos.Controls.Add(Me.dtpHora)
         Me.gbxDatos.Controls.Add(Me.lblHora)
-        Me.gbxDatos.Controls.Add(Me.ftpFecha)
+        Me.gbxDatos.Controls.Add(Me.dtpFecha)
         Me.gbxDatos.Controls.Add(Me.cbxTipo)
         Me.gbxDatos.Controls.Add(Me.lblTipo)
         Me.gbxDatos.Controls.Add(Me.tbxCantidad)
         Me.gbxDatos.Controls.Add(Me.lblFecha)
         Me.gbxDatos.Controls.Add(Me.lblCantidad)
         Me.gbxDatos.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxDatos.Location = New System.Drawing.Point(73, 64)
+        Me.gbxDatos.Location = New System.Drawing.Point(19, 90)
         Me.gbxDatos.Name = "gbxDatos"
-        Me.gbxDatos.Size = New System.Drawing.Size(442, 400)
+        Me.gbxDatos.Size = New System.Drawing.Size(442, 310)
         Me.gbxDatos.TabIndex = 116
         Me.gbxDatos.TabStop = False
         Me.gbxDatos.Text = "Alimento proporcionado"
@@ -81,13 +87,13 @@ Partial Class frmAlimento
         Me.lblHora.TabIndex = 115
         Me.lblHora.Text = "Hora"
         '
-        'ftpFecha
+        'dtpFecha
         '
-        Me.ftpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.ftpFecha.Location = New System.Drawing.Point(29, 250)
-        Me.ftpFecha.Name = "ftpFecha"
-        Me.ftpFecha.Size = New System.Drawing.Size(145, 32)
-        Me.ftpFecha.TabIndex = 114
+        Me.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtpFecha.Location = New System.Drawing.Point(29, 250)
+        Me.dtpFecha.Name = "dtpFecha"
+        Me.dtpFecha.Size = New System.Drawing.Size(145, 32)
+        Me.dtpFecha.TabIndex = 114
         '
         'cbxTipo
         '
@@ -141,12 +147,64 @@ Partial Class frmAlimento
         'btnGuardar
         '
         Me.btnGuardar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Location = New System.Drawing.Point(596, 229)
+        Me.btnGuardar.Location = New System.Drawing.Point(580, 337)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(118, 42)
         Me.btnGuardar.TabIndex = 117
         Me.btnGuardar.Text = "Guardar"
         Me.btnGuardar.UseVisualStyleBackColor = True
+        '
+        'gbxLote
+        '
+        Me.gbxLote.Controls.Add(Me.btnConsultar)
+        Me.gbxLote.Controls.Add(Me.btnAgregar)
+        Me.gbxLote.Controls.Add(Me.tbxNumLote)
+        Me.gbxLote.Controls.Add(Me.lblNumLote)
+        Me.gbxLote.Location = New System.Drawing.Point(467, 126)
+        Me.gbxLote.Name = "gbxLote"
+        Me.gbxLote.Size = New System.Drawing.Size(330, 156)
+        Me.gbxLote.TabIndex = 118
+        Me.gbxLote.TabStop = False
+        '
+        'btnConsultar
+        '
+        Me.btnConsultar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnConsultar.Location = New System.Drawing.Point(192, 85)
+        Me.btnConsultar.Name = "btnConsultar"
+        Me.btnConsultar.Size = New System.Drawing.Size(118, 42)
+        Me.btnConsultar.TabIndex = 127
+        Me.btnConsultar.Text = "Consultar"
+        Me.btnConsultar.UseVisualStyleBackColor = True
+        '
+        'btnAgregar
+        '
+        Me.btnAgregar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnAgregar.Location = New System.Drawing.Point(192, 37)
+        Me.btnAgregar.Name = "btnAgregar"
+        Me.btnAgregar.Size = New System.Drawing.Size(118, 42)
+        Me.btnAgregar.TabIndex = 126
+        Me.btnAgregar.Text = "Agregar"
+        Me.btnAgregar.UseVisualStyleBackColor = True
+        '
+        'tbxNumLote
+        '
+        Me.tbxNumLote.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxNumLote.Location = New System.Drawing.Point(25, 85)
+        Me.tbxNumLote.MaxLength = 9
+        Me.tbxNumLote.Name = "tbxNumLote"
+        Me.tbxNumLote.Size = New System.Drawing.Size(145, 32)
+        Me.tbxNumLote.TabIndex = 114
+        Me.tbxNumLote.Text = "000000000"
+        '
+        'lblNumLote
+        '
+        Me.lblNumLote.AutoSize = True
+        Me.lblNumLote.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblNumLote.Location = New System.Drawing.Point(21, 46)
+        Me.lblNumLote.Name = "lblNumLote"
+        Me.lblNumLote.Size = New System.Drawing.Size(151, 24)
+        Me.lblNumLote.TabIndex = 113
+        Me.lblNumLote.Text = "Numero de lote"
         '
         'frmAlimento
         '
@@ -154,6 +212,7 @@ Partial Class frmAlimento
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ClientSize = New System.Drawing.Size(832, 536)
+        Me.Controls.Add(Me.gbxLote)
         Me.Controls.Add(Me.btnGuardar)
         Me.Controls.Add(Me.gbxDatos)
         Me.Controls.Add(Me.pnlBlue)
@@ -161,6 +220,8 @@ Partial Class frmAlimento
         Me.Text = "Alimento"
         Me.gbxDatos.ResumeLayout(False)
         Me.gbxDatos.PerformLayout()
+        Me.gbxLote.ResumeLayout(False)
+        Me.gbxLote.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -171,8 +232,13 @@ Partial Class frmAlimento
     Friend WithEvents tbxCantidad As System.Windows.Forms.TextBox
     Friend WithEvents lblCantidad As System.Windows.Forms.Label
     Friend WithEvents lblFecha As System.Windows.Forms.Label
-    Friend WithEvents ftpFecha As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpFecha As System.Windows.Forms.DateTimePicker
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
     Friend WithEvents dtpHora As System.Windows.Forms.DateTimePicker
     Friend WithEvents lblHora As System.Windows.Forms.Label
+    Friend WithEvents gbxLote As System.Windows.Forms.GroupBox
+    Friend WithEvents btnConsultar As System.Windows.Forms.Button
+    Friend WithEvents btnAgregar As System.Windows.Forms.Button
+    Friend WithEvents tbxNumLote As System.Windows.Forms.TextBox
+    Friend WithEvents lblNumLote As System.Windows.Forms.Label
 End Class

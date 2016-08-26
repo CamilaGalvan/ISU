@@ -37,7 +37,7 @@ Partial Class frmOrdeñeConfig
         Me.cbxCantidad = New System.Windows.Forms.ComboBox()
         Me.gbxPrimer = New System.Windows.Forms.GroupBox()
         Me.dtpFinalp = New System.Windows.Forms.DateTimePicker()
-        Me.stpIniciop = New System.Windows.Forms.DateTimePicker()
+        Me.dtpIniciop = New System.Windows.Forms.DateTimePicker()
         Me.lblFinalp = New System.Windows.Forms.Label()
         Me.lblIniciop = New System.Windows.Forms.Label()
         Me.btnGuardar = New System.Windows.Forms.Button()
@@ -184,7 +184,7 @@ Partial Class frmOrdeñeConfig
         'gbxPrimer
         '
         Me.gbxPrimer.Controls.Add(Me.dtpFinalp)
-        Me.gbxPrimer.Controls.Add(Me.stpIniciop)
+        Me.gbxPrimer.Controls.Add(Me.dtpIniciop)
         Me.gbxPrimer.Controls.Add(Me.lblFinalp)
         Me.gbxPrimer.Controls.Add(Me.lblIniciop)
         Me.gbxPrimer.Enabled = False
@@ -205,14 +205,14 @@ Partial Class frmOrdeñeConfig
         Me.dtpFinalp.TabIndex = 83
         Me.dtpFinalp.Value = New Date(2016, 8, 6, 0, 0, 0, 0)
         '
-        'stpIniciop
+        'dtpIniciop
         '
-        Me.stpIniciop.Format = System.Windows.Forms.DateTimePickerFormat.Time
-        Me.stpIniciop.Location = New System.Drawing.Point(187, 38)
-        Me.stpIniciop.Name = "stpIniciop"
-        Me.stpIniciop.Size = New System.Drawing.Size(152, 32)
-        Me.stpIniciop.TabIndex = 82
-        Me.stpIniciop.Value = New Date(2016, 8, 6, 0, 0, 0, 0)
+        Me.dtpIniciop.Format = System.Windows.Forms.DateTimePickerFormat.Time
+        Me.dtpIniciop.Location = New System.Drawing.Point(187, 38)
+        Me.dtpIniciop.Name = "dtpIniciop"
+        Me.dtpIniciop.Size = New System.Drawing.Size(152, 32)
+        Me.dtpIniciop.TabIndex = 82
+        Me.dtpIniciop.Value = New Date(2016, 8, 6, 0, 0, 0, 0)
         '
         'lblFinalp
         '
@@ -288,5 +288,5 @@ Partial Class frmOrdeñeConfig
     Friend WithEvents dtpFinals As System.Windows.Forms.DateTimePicker
     Friend WithEvents dtpInicios As System.Windows.Forms.DateTimePicker
     Friend WithEvents dtpFinalp As System.Windows.Forms.DateTimePicker
-    Friend WithEvents stpIniciop As System.Windows.Forms.DateTimePicker
+    Friend WithEvents dtpIniciop As System.Windows.Forms.DateTimePicker
 End Class

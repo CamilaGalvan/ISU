@@ -1,13 +1,14 @@
 ﻿Public Class frmOrdeñeConfig
-
+    'No sé hacer consultas para esta ventana porque en base de datos no exsite la tabla y/o atributos y no nos dieron solucion alguna
+    'Supone sacarse de una consulta...
     Private Sub frmOrdeñeConfig_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         Me.Text = ordeñe + ", " + configuracion
-        lblFinalp.Text = hora
-        lblIniciop.Text = hora
-        lblFinals.Text = hora
-        lblInicios.Text = hora
-        lblFinalt.Text = hora
-        lblIniciot.Text = hora
+        lblFinalp.Text = hora + " " + fin
+        lblIniciop.Text = hora + " " + inicio
+        lblFinals.Text = hora + " " + fin
+        lblInicios.Text = hora + " " + inicio
+        lblFinalt.Text = hora + " " + fin
+        lblIniciot.Text = hora + " " + inicio
         gbxPrimer.Text = primer
         gbxSegundo.Text = segundo
         gbxTercer.Text = tercero
@@ -28,6 +29,14 @@
             gbxPrimer.Enabled = True
             gbxSegundo.Enabled = True
             gbxTercer.Enabled = True
+        End If
+        btnGuardar.Enabled = True
+    End Sub
+
+    Private Sub btnGuardar_Click(sender As System.Object, e As System.EventArgs) Handles btnGuardar.Click
+        Dim acum As Integer
+        If dtpIniciop.Value > dtpFinalp.Value Or dtpInicios.Value > dtpFinals.Value Or dtpIniciot.Value > dtpFinalt.Value Then
+            acum = acum + 1
         End If
     End Sub
 End Class
