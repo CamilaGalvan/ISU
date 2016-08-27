@@ -27,7 +27,7 @@ Partial Class frmLote
         Me.tbxNumLotec = New System.Windows.Forms.TextBox()
         Me.lblNumLotec = New System.Windows.Forms.Label()
         Me.btnAgregar = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.tbxNumA = New System.Windows.Forms.TextBox()
         Me.lblAnimalnuma = New System.Windows.Forms.Label()
         Me.lbxAgregar = New System.Windows.Forms.ListBox()
         Me.lbxConsultar = New System.Windows.Forms.ListBox()
@@ -36,8 +36,8 @@ Partial Class frmLote
         Me.tbxNumAnimC = New System.Windows.Forms.TextBox()
         Me.lblAnimalnumC = New System.Windows.Forms.Label()
         Me.gbxC = New System.Windows.Forms.GroupBox()
-        Me.rbnNumLoteC = New System.Windows.Forms.RadioButton()
         Me.rbnNumAnimalC = New System.Windows.Forms.RadioButton()
+        Me.rbnNumLoteC = New System.Windows.Forms.RadioButton()
         Me.gbxC.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -91,15 +91,15 @@ Partial Class frmLote
         Me.btnAgregar.Text = "Agregar"
         Me.btnAgregar.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'tbxNumA
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(206, 36)
-        Me.TextBox1.MaxLength = 9
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(145, 32)
-        Me.TextBox1.TabIndex = 133
-        Me.TextBox1.Text = "000000000"
+        Me.tbxNumA.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxNumA.Location = New System.Drawing.Point(206, 36)
+        Me.tbxNumA.MaxLength = 9
+        Me.tbxNumA.Name = "tbxNumA"
+        Me.tbxNumA.Size = New System.Drawing.Size(145, 32)
+        Me.tbxNumA.TabIndex = 133
+        Me.tbxNumA.Text = "000000000"
         '
         'lblAnimalnuma
         '
@@ -188,16 +188,6 @@ Partial Class frmLote
         Me.gbxC.TabIndex = 141
         Me.gbxC.TabStop = False
         '
-        'rbnNumLoteC
-        '
-        Me.rbnNumLoteC.AutoSize = True
-        Me.rbnNumLoteC.Location = New System.Drawing.Point(22, 24)
-        Me.rbnNumLoteC.Name = "rbnNumLoteC"
-        Me.rbnNumLoteC.Size = New System.Drawing.Size(14, 13)
-        Me.rbnNumLoteC.TabIndex = 141
-        Me.rbnNumLoteC.TabStop = True
-        Me.rbnNumLoteC.UseVisualStyleBackColor = True
-        '
         'rbnNumAnimalC
         '
         Me.rbnNumAnimalC.AutoSize = True
@@ -207,6 +197,16 @@ Partial Class frmLote
         Me.rbnNumAnimalC.TabIndex = 142
         Me.rbnNumAnimalC.TabStop = True
         Me.rbnNumAnimalC.UseVisualStyleBackColor = True
+        '
+        'rbnNumLoteC
+        '
+        Me.rbnNumLoteC.AutoSize = True
+        Me.rbnNumLoteC.Location = New System.Drawing.Point(22, 24)
+        Me.rbnNumLoteC.Name = "rbnNumLoteC"
+        Me.rbnNumLoteC.Size = New System.Drawing.Size(14, 13)
+        Me.rbnNumLoteC.TabIndex = 141
+        Me.rbnNumLoteC.TabStop = True
+        Me.rbnNumLoteC.UseVisualStyleBackColor = True
         '
         'frmLote
         '
@@ -220,7 +220,7 @@ Partial Class frmLote
         Me.Controls.Add(Me.lbxConsultar)
         Me.Controls.Add(Me.lbxAgregar)
         Me.Controls.Add(Me.btnAgregar)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.tbxNumA)
         Me.Controls.Add(Me.lblAnimalnuma)
         Me.Controls.Add(Me.btnConsultar)
         Me.Controls.Add(Me.pnlBlue)
@@ -237,7 +237,7 @@ Partial Class frmLote
     Friend WithEvents tbxNumLotec As System.Windows.Forms.TextBox
     Friend WithEvents lblNumLotec As System.Windows.Forms.Label
     Friend WithEvents btnAgregar As System.Windows.Forms.Button
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents tbxNumA As System.Windows.Forms.TextBox
     Friend WithEvents lblAnimalnuma As System.Windows.Forms.Label
     Friend WithEvents lbxAgregar As System.Windows.Forms.ListBox
     Friend WithEvents lbxConsultar As System.Windows.Forms.ListBox

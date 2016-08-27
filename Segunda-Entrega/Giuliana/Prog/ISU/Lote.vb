@@ -19,11 +19,16 @@
 
     Private Sub btnAgregar_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregar.Click
         Dim aux As Integer
-        lbxAgregar.Items.Add(tbxNumLote.Text)
-        sql = "Select max(num_lote) from cproduce"
-        Open_sql()
-        aux = Val(rs(0).Value) + 1
-        tbxNumLote.Text = aux
+        sql = "SELECT * from hembra he, tambo t, hay h where num=" & Val(tbxNumA.Text) & " and t.serie=h.serie and he.num=h.num and t.serie= " & Val(TSERIE)
+        If rs.RecordCount <> 0 Then
+            lbxAgregar.Items.Add(tbxNumLote.Text)
+            sql = "Select max(num_lote) from produce"
+            Open_sql()
+            aux = Val(rs(0).Value) + 1
+            tbxNumLote.Text = aux
+        Else
+            MsgBox("Error :" + numero + "/" + animal, MsgBoxStyle.OkOnly, "ERROR")
+        End If
     End Sub
 
     Private Sub tbxNumAnimC_TextChanged(sender As System.Object, e As System.EventArgs) Handles tbxNumAnimC.TextChanged

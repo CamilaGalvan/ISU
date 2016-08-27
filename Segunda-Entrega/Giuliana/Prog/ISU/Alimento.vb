@@ -20,6 +20,16 @@
         If opcion < 4 Then
             gbxDatos.Text = tipo + "/" + alimento
             lblTipo.Text = tipo
+            cbxTipo.Items.Clear()
+            sql = "select a.tipo from alimento a, proporciona p, tambo t where a.num=p.num and p.serie=t.serie and t.serie=" & Val(TSERIE)
+            Open_sql()
+            If rs.RecordCount <> 0 Then
+                While Not rs.EOF()
+                    cbxTipo.Items.Add(rs(0).Value)
+                    rs.MoveNext()
+                End While
+            End If
+            rs.Close()
         End If
         btnGuardar.Text = guardar
         lblFecha.Text = fecha
@@ -45,42 +55,41 @@
 
     Private Sub btnGuardar_Click(sender As System.Object, e As System.EventArgs) Handles btnGuardar.Click
         Dim acum As Integer
-        Dim serie, num As String
+        Dim num As String
         acum = 0
         acum = Validacion_numerica(tbxCantidad.Text, acum)
-        sql = "Select serie from tambo where nombre='" & frmISU.cbxTambo.Text & "'"
-        Open_sql()
-        serie = rs(0).Value
         sql = "Select num from alimento where tipo='" & cbxTipo.Text & "'"
         Open_sql()
         num = rs(0).Value
-        If acum = 0 Then
+        If acum = 0 And rs.RecordCount <> 0 Then
+            rs.Close()
             Select Case opcion
                 Case 0
-                    sql = "Insert into proporciona (serie_tambo,num_alimento, cantidad, fecha, hora) values (" & Val(serie) & ", " & Val(num) & ", '" & tbxCantidad.Text & _
+                    sql = "Insert into proporciona (serie_tambo,num_alimento, cantidad, fecha, hora) values (" & Val(TSERIE) & ", " & Val(num) & ", '" & tbxCantidad.Text & _
                         "', '" & dtpFecha.Text & "', '" & dtpHora.Text & "')"
                 Case 1
-                    Dim rs1 As New ADODB.Recordset
                     Dim acum2 As Integer
                     acum2 = 0
                     acum2 = Validacion_numerica(tbxNumLote.Text, acum2)
                     If acum2 = 0 Then
                         sql = "Select num_hembra from produce where num_lote=" & tbxNumLote.Text
                         Try
-                            rs1.Open(sql, CN)
+                            rs.Open(sql, CN)
                         Catch ex As Exception
                             MsgBox("Error open", MsgBoxStyle.OkOnly, "ERROR")
                         End Try
                         If rs.RecordCount <> 0 Then
-                            While Not rs1.EOF()
-                                sql = "Insert into se_da(num_alimento, num_animal, cantidad, fecha, hora) values (" & num & ", " & rs1(0).Value & ", " & Val(tbxCantidad.Text) & _
+                            While Not rs.EOF()
+                                sql = "Insert into se_da(num_alimento, num_animal, cantidad, fecha, hora) values (" & num & ", " & rs(0).Value & ", " & Val(tbxCantidad.Text) & _
                                  ", " & dtpFecha.Text & ", " & dtpHora.Text & ")"
+                                execute_sql()
                             End While
                         End If
+                        rs.Close()
                     Else
                         MsgBox("Error : " + num_lote, MsgBoxStyle.OkOnly, "ERROR")
                     End If
-                    
+
 
                 Case 2
                     sql = "INSERT into alimento(tipo) values ('" & cbxTipo.Text & "')"
@@ -89,7 +98,8 @@
                     Open_sql()
                     Dim max As Integer
                     max = Val(rs(0).Value) + 1
-                    sql = "INSERT into retira(serie_tanque, serie_coop, fecha, cantidad) values (" & Val(serie) & ", " & max & ", '" & dtpFecha.Text & "', " & tbxCantidad.Text & ")"
+                    rs.Close()
+                    sql = "INSERT into retira(serie_tanque, serie_coop, fecha, cantidad) values (" & Val(TSERIE) & ", " & max & ", '" & dtpFecha.Text & "', " & tbxCantidad.Text & ")"
             End Select
             execute_sql()
         Else

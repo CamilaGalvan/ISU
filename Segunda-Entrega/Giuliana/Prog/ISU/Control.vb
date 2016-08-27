@@ -32,9 +32,9 @@
         acum = Validacion_numerica(tbxNum.Text(), acum)
         acum = Validacion_largo(tbxNum, acum)
         If acum = 0 Then
-            sql = "SELECT * from Animal where num=" & Val(tbxNum.Text)
-            Open_sql()
+            sql = "Select he.num from hembra he, tambo t, hay h where hnum=" & Val(tbxNum.Text) & " and t.serie=h.serie and he.num=h.num and t.serie= " & Val(TSERIE)
             If rs.RecordCount <> 0 Then
+                rs.Close()
                 tbxNum.Enabled = False
                 gbxGeneral.Enabled = True
             End If
@@ -48,6 +48,10 @@
     End Sub
 
     Private Sub btnGuardar_Click(sender As System.Object, e As System.EventArgs) Handles btnGuardar.Click
-        'NECESITO ENTIDAD NUEVA SEEEEEEBAAAAAAA
+        sql = "select ci from persona where login='" & frmISU.tbxUser.Text & "'"
+        Open_sql()
+        If rs.RecordCount <> 0 Then
+            sql = "Insert into control(vacuna, peso, fecha, ci, num) values('" & cbxVacuna.Text & "', " & Val(tbxPeso.Text) & ", '" & dtpNacimiento.Text & "', " & Val(rs(0).Value) & ", " & tbxNum.Text & ")"
+        End If
     End Sub
 End Class

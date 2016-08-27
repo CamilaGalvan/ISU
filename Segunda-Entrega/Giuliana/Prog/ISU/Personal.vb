@@ -48,12 +48,8 @@
         acum = Validacion_numerica(tbxCI.Text, acum)
         acum = Validacion_largo(tbxCI, acum)
         If acum = 0 Then
-            sql = "SELECT * from Personal where ci=" & Val(tbxCI.Text)
-            Try
-                rs.Open(sql, CN)
-            Catch ex As Exception
-                MsgBox("Error ", MsgBoxStyle.OkOnly, "ERROR")
-            End Try
+            sql = "SELECT p.ci from Personal p, hay h where ci=" & Val(tbxCI.Text) & " and p.ci=h.ci and h.serie=" & Val(TSERIE)
+            Open_sql()
             If rs.RecordCount <> 0 Then
                 tbxCI.Enabled = False
                 btnBuscar.Enabled = False
@@ -114,6 +110,7 @@
                 sql = "insert into persona(ci, nombre, sexo, nacimiento, puesto) values (" & Val(tbxCI.Text) & ", '" & tbxNombre.Text & "', '" & cbxSexo.Text & "', '" _
                     & dtpNacimiento.Text & "', '" & cbxPuesto.Text & "')"
                 execute_sql()
+                sql = "insert into tiene(ci, serie) values (" & Val(tbxCI.Text) & ", " & Val(TSERIE) & ")"
             Case modificar
                 Dim Modifi_Now(8) As String
                 Modifi_Now(0) = tbxNombre.Text
@@ -138,7 +135,6 @@
                     i = i + 1
                 End While
             Case eliminar
-                'SI EXISTE EL ATRIBUTO ACTIVO
                 sql = "update persona set activo=0 where ci=" & Val(tbxCI.Text)
         End Select
     End Sub

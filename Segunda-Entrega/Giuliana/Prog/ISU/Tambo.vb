@@ -14,7 +14,11 @@
         btnTanque_Agregar.Text = agregar
         btnTanque_Quitar.Text = eliminar
         btnTanque_Consultar.Text = consultar
-
+        tbxSerie.Text = TSERIE
+        tbxSerie.Enabled = False
+        If opcion = ingresar Then
+            tbxSerie.Enabled = False
+        End If
     End Sub
 
     Public Sub execute_sql()
@@ -86,7 +90,10 @@
 
             Select Case btnOpcion.Text
                 Case ingresar
-
+                    sql = "Select max(serie) from tambo"
+                    Open_sql()
+                    tbxSerie.Text = Val(Val(rs(0).Value) + 1)
+                    rs.Close()
                 Case modificar
                     Consultar_Tambo()
                     Modifi(0) = tbxNombre.Text
@@ -117,7 +124,7 @@
     End Sub
 
     Private Sub btnTanque_Consultar_Click(sender As System.Object, e As System.EventArgs) Handles btnTanque_Consultar.Click
-        sql = "select t.serie, t.capacidad from tanque t, almacena a, produce p, hay h, tambo o where t.serie=a.serie and a.tipo=p.tipo and p.num=h.num and o.nombre ='" & frmISU.cbxTambo.Text & "'"
+        sql = "select t.serie, t.capacidad from tanque t, almacena a, produce p, hay h, tambo o where t.serie=a.serie and a.tipo=p.tipo and p.num=h.num and o.serie =" & Val(TSERIE)
         Open_sql()
         frmEnlistar.Show()
     End Sub
@@ -129,11 +136,18 @@
         acum = Validacion_numerica(tbxNserie.Text, acum)
         If acum = 0 Then
             sql = "insert into tanque(num_serie, capacidad) values (" & Val(tbxNserie.Text) & ", " & Val(tbxCapacidad.Text) & ")"
+            execute_sql()
         End If
     End Sub
 
     Private Sub btnTanque_Quitar_Click(sender As System.Object, e As System.EventArgs) Handles btnTanque_Quitar.Click
-        sql = "Delete From tanque Where Num_serie = " & tbxNserie.Text
+        Dim acum As Integer
+        acum = 0
+        acum = Validacion_numerica(tbxNserie.Text, acum)
+        If acum = 0 Then
+            sql = "Delete From tanque Where Num_serie = " & tbxNserie.Text
+            execute_sql()
+        End If
     End Sub
 
 End Class

@@ -1,14 +1,11 @@
 ﻿Module Publico
-        Public idioma, opcion, conexion As Integer
-        Public adm_establecimiento, adm_sistema, agregar, alimento, anestro, auxiliar, animal, antibiotico, buscar, campo, cantidad, capacidad, CI, configuracion, consultar, contraseña, control, division, eliminar, enlistar, etapa, _
-            fecha, fecha_ida, fecha_vuelta, fechaF, fechaI, ganado_act, ganado_max, gerente, guardar, hectareas, hembra, hora, ingresar, iniciar, lactancia, litros, lugar, macho, modificar, nacimiento, ninguno, nombre, novillo, numero, _
-            ordeñe, peso, puesto, personal, preñada, primer, raza, rodeo, salir, seca, segundo, serie, servicio, sesion, sexo, tambo, ternera, toro, usuario, tanque, tercero, ternero, tipo, vaca, vacuna, vaquillona, venta, sql As String
-    Public BGN As String
-    Public turno, grasa, proteina, urea, rec_bacteriano, rec_celulas, num_lote, inicio, fin, consumoe, consumoi, otorgar, almacenar, telefono As String
-
-        Public CN As New ADODB.Connection
-        Public rs As New ADODB.Recordset
-
+    Public idioma, opcion, conexion As Integer
+    Public adm_establecimiento, adm_sistema, agregar, alimento, anestro, auxiliar, animal, antibiotico, buscar, campo, cantidad, capacidad, CI, configuracion, consultar, contraseña, control, division, eliminar, enlistar, etapa, _
+        fecha, fecha_ida, fecha_vuelta, fechaF, fechaI, ganado_act, ganado_max, gerente, guardar, hectareas, hembra, hora, ingresar, iniciar, lactancia, litros, lugar, macho, modificar, nacimiento, ninguno, nombre, novillo, numero, _
+        ordeñe, peso, puesto, personal, preñada, primer, raza, rodeo, salir, seca, segundo, serie, servicio, sesion, sexo, tambo, ternera, toro, usuario, tanque, tercero, ternero, tipo, vaca, vacuna, vaquillona, venta, sql, _
+        turno, grasa, proteina, urea, rec_bacteriano, rec_celulas, num_lote, inicio, fin, consumoe, consumoi, otorgar, almacenar, telefono, TSERIE As String
+    Public CN As New ADODB.Connection
+    Public rs As New ADODB.Recordset
 
         Public Sub Boton_idioma(btnOpcion As Button)
             Select Case opcion

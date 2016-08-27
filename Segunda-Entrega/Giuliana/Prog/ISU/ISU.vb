@@ -12,13 +12,8 @@
         If CN.State <> 1 Then
             MsgBox(conexion)
         Else
-            sql = "select puesto from persona where usuario ='" & Usuario & "'"
-            Try
-                rs.Open(sql, CN)
-            Catch ex As Exception
-                MsgBox("Error : open")
-                Exit Sub
-            End Try
+            sql = "select cargo from persona where login ='" & tbxUser.Text & "'"
+            Open_sql()
 
             If rs.RecordCount() = 0 Then
                 MsgBox("Error :" + Usuario)
@@ -75,10 +70,12 @@
                 Select Case rs(0).Value
                     Case auxiliar
                         tsAnimal.Enabled = True
+                        tsEliminar.Enabled = False
                         tsAlimento.Enabled = True
                         tsSesion.Enabled = True
                         tsOrdeñe.Enabled = True
                         tsEnlistar.Enabled = True
+                        cbxTambo.Enabled = False
                     Case adm_establecimiento
                         tsTambo.Enabled = True
                         tsPersonal.Enabled = True
@@ -90,6 +87,7 @@
                         tsOrdeñe.Enabled = True
                         tsEnlistar.Enabled = True
                         tsVenta.Enabled = True
+                        cbxTambo.Enabled = False
                     Case gerente
                         tsTambo.Enabled = True
                         tsPersonal.Enabled = True
@@ -111,9 +109,35 @@
                         tsEnlistar.Enabled = True
                         tsVenta.Enabled = True
                 End Select
+                rs.Close()
+                sql = "select t.nombre from tambo t, personal p, tiene te where t.serie=te.serie and p.ci=te.ci and p.login='" & tbxUser.Text & "'"
+
             End If
-            rs.Close()
+            Open_sql()
+            If rs.RecordCount <> 0 Then
+                cbxTambo.Text = rs(0).Value
+                rs.Close()
+                sql = "Select t.serie from tambo t, tiene e, persona p where hestablecimiento='" & cbxTambo.Text & "' and e.serie=t.serie and p.ci=e.ci and p.login='" & tbxUser.Text & "'"
+                Open_sql()
+                TSERIE = rs(0).Value
+                rs.Close()
+                sql = "select hestablecimiento from tambo"
+                Open_sql()
+                While Not rs.EOF()
+                    cbxTambo.Items.Add(rs(0).Value)
+                    rs.MoveNext()
+                End While
+                rs.Close()
+            End If
         End If
+    End Sub
+
+    Public Sub Open_sql()
+        Try
+            rs.Open(sql, CN)
+        Catch ex As Exception
+            MsgBox("Error open", MsgBoxStyle.OkOnly, "ERROR")
+        End Try
     End Sub
 
     Private Sub btnInicio_Click(sender As System.Object, e As System.EventArgs) Handles btnInicio.Click
@@ -231,125 +255,129 @@
     End Sub
 
     Private Sub tsHolando_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsHolando.Click
-        sql = "select * from animal where raza= Holando"
+        sql = "select a.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra from animal, hay h where raza= Holando and h.num=a.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsJersey_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsJersey.Click
-        sql = "select * from animal where raza= Jersey"
+        sql = "select a.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra from animal, hay h where raza= Jersey and h.num=a.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsPrimerShow_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsPrimerShow.Click
-        sql = "select * from animal where raza= Primer Show"
+        sql = "select a.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from animal where raza= Primer Show and h.num=a.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsVaca_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsVaca.Click
-        sql = "select h.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra h, estado e, pasa p, animal a where" + _
-        "h.num = p.animal_num And e.nombre = '" & preñada & "' and e.num=estado.num and a.num=h.num"
+        sql = "select h.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra h, estado e, pasa p, hay y, animal a where" + _
+        "h.num = p.animal_num And e.nombre = '" & preñada & "' and e.num=estado.num and a.num=h.num and h.num=y.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsVaquillona_Click(sender As System.Object, e As System.EventArgs) Handles tsVaquillona.Click
-        'NO SE COMO HACER
+        sql = "select h.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra h, estado e, pasa p, hay y, animal a where" + _
+        "h.num = p.animal_num And e.nombre = '" & preñada & "' and e.num=estado.num and a.num=h.num and h.num=y.num and h.serie=" & Val(TSERIE)
+        opcion = 10
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsToro_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsToro.Click
-        sql = "select  m.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra  from macho m, animal a where castrado=0 and a.num=m.num"
+        sql = "select  m.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from macho m, animal a, hay h where castrado=0 and a.num=m.num and h.num=a.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsNovillo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsNovillo.Click
-        sql = "select  m.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra  from macho m, animal a where castrado=1 and a.num=m.num"
+        sql = "select  m.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra  from macho m, animal, hay h a where castrado=1 and a.num=m.num and h.num=a.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub TsAnestro_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TsAnestro.Click
-        sql = "select h.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra h, estado e, pasa p, animal a where" + _
-        "h.num = p.animal_num And e.nombre = '" & anestro & "' and p.estado_num=e.num and a.num=h.num"
+        sql = "select h.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra h, estado e, pasa p, hay y, animal a where" + _
+        "h.num = p.animal_num And e.nombre = '" & anestro & "' and p.estado_num=e.num and a.num=h.num and h.num=y.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsTernero_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsTernero.Click
-        sql = "select  c.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from animal a, cria c where c.num=a.num and sexo='" & macho & "'"
+        sql = "select  c.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from animal a, cria c, hay y where c.num=a.num and sexo='" & macho _
+            & "' and h.num=y.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsTernera_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsTernera.Click
-        sql = "select  c.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from animal a, cria c where c.num=a.num and sexo='" & hembra & "'"
+        sql = "select  c.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from animal a, cria c, hay y where c.num=a.num and sexo='" & hembra _
+            & " and h.num=y.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsRodeo_Click(sender As System.Object, e As System.EventArgs) Handles tsRodeo.Click
-        sql = "select * from animal where lugar = '" & rodeo & "'"
+        sql = "select a.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from animal a, hay y where lugar = '" & rodeo & "' and h.num=y.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsCampo_Click(sender As System.Object, e As System.EventArgs) Handles tsCampo.Click
-        sql = "select * from animal where lugar = '" & campo & "'"
+        sql = "select a.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from animal a, hay y where lugar = '" & campo & "' and h.num=y.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsTamboe_Click(sender As System.Object, e As System.EventArgs) Handles tsTamboe.Click
-        sql = "select * from animal where lugar = '" & tambo & "'"
+        sql = "select a.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from animal a, hay y where lugar = '" & tambo & "' and h.num=y.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsNinguno_Click(sender As System.Object, e As System.EventArgs) Handles tsNinguno.Click
-        sql = "select * from animal where lugar = '" & ninguno & "'"
+        sql = "select a.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from animal a, hay y where lugar = '" & ninguno & "' and h.num=y.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub TsServicio_Click(sender As System.Object, e As System.EventArgs) Handles TsServicio.Click
-        sql = "select h.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra h, estado e, pasa p, animal a where" + _
-        "h.num = p.animal_num And e.nombre = '" & servicio & "' and p.estado_num=e.num and a.num=h.num"
+        sql = "select h.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra h, estado e, pasa p, animal, hay y a where" + _
+        "h.num = p.animal_num And e.nombre = '" & servicio & "' and p.estado_num=e.num and a.num=h.num and h.num=y.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub Tsprenada_Click(sender As System.Object, e As System.EventArgs) Handles Tsprenada.Click
-        sql = "select h.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra h, estado e, pasa p, animal a where" + _
-        "h.num = p.animal_num And e.nombre = '" & preñada & "' and p.estado_num=e.num and a.num=h.num"
+        sql = "select h.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra h, estado e, pasa p, hay y, animal a where" + _
+        "h.num = p.animal_num And e.nombre = '" & preñada & "' and p.estado_num=e.num and a.num=h.num and h.num=y.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsLactancia_Click(sender As System.Object, e As System.EventArgs) Handles tsLactancia.Click
-        sql = "select h.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra h, estado e, pasa p, animal a where" + _
-        "h.num = p.animal_num And e.nombre = '" & lactancia & "' and p.estado_num=e.num and a.num=h.num"
+        sql = "select h.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra h, estado e, pasa p, hay y, animal a where" + _
+        "h.num = p.animal_num And e.nombre = '" & lactancia & "' and p.estado_num=e.num and a.num=h.num and h.num=y.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsSeca_Click(sender As System.Object, e As System.EventArgs) Handles tsSeca.Click
-        sql = "select h.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra h, estado e, pasa p, animal a where" + _
-        "h.num = p.animal_num And e.nombre = '" & seca & "' and p.estado_num=e.num and a.num=h.num"
+        sql = "select h.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra h, estado e, pasa p, hay y, animal a where" + _
+        "h.num = p.animal_num And e.nombre = '" & seca & "' and p.estado_num=e.num and a.num=h.num and h.num=y.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsNinguno2_Click(sender As System.Object, e As System.EventArgs) Handles tsNinguno2.Click
-        sql = "select h.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra h, estado e, pasa p, animal a where" + _
-        "h.num = p.animal_num And e.nombre = '" & ninguno & "' and p.estado_num=e.num and a.num=h.num"
+        sql = "select h.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra h, estado e, pasa p, hay y, animal a where" + _
+        "h.num = p.animal_num And e.nombre = '" & ninguno & "' and p.estado_num=e.num and a.num=h.num and h.num=y.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsHembra_Click(sender As System.Object, e As System.EventArgs) Handles tsHembra.Click
-        sql = "select h.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra h, animal a where h.num = a.num"
+        sql = "select h.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra h, hay y, animal a where h.num = a.num and h.num=y.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsMacho_Click(sender As System.Object, e As System.EventArgs) Handles tsMacho.Click
-        sql = "select m.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from macho m, animal a where m.num = a.num"
+        sql = "select m.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from macho m, hay y, animal a where m.num = a.num and h.num=y.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsGanadoAct_Click(sender As System.Object, e As System.EventArgs) Handles tsGanadoAct.Click
-        sql = "Select * from animal where activo = 1"
+        sql = "Select  a.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from animal a, hay y where activo = 1 and h.num=y.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
     Private Sub tsAntibiotico_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles tsAntibiotico.Click
-        sql = "select h.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra h, animal a where" + _
-        "h.num = a.num And e.nombre = '" & antibiotico & "' and e.num=estado.num and a.num=h.num"
+        sql = "select h.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra h, animal a, hay y where" + _
+        "h.num = a.num And e.nombre = '" & antibiotico & "' and e.num=estado.num and a.num=h.num and h.num=y.num and h.serie=" & Val(TSERIE)
         frmEnlistar.Show()
     End Sub
 
@@ -377,7 +405,6 @@
         opcion = 0
         frmPersonal.Show()
     End Sub
-
 
     Private Sub tsVenta_Click(sender As System.Object, e As System.EventArgs) Handles tsVenta.Click
         opcion = 4

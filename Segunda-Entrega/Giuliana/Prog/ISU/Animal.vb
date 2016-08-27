@@ -62,39 +62,40 @@
         acum = Validacion_numerica(tbxNum.Text(), acum)
         acum = Validacion_largo(tbxNum, acum)
         If acum = 0 Then
-            sql = "SELECT * from Animal where num=" & Val(tbxNum.Text)
+            sql = "SELECT * from Animal, tambo t, hay h where num=" & Val(tbxNum.Text) & " and t.serie=h.serie and a.num=h.num and t.serie " & Val(TSERIE)
             Open_sql()
 
-                If rs.RecordCount <> 0 Then
-                    tbxNum.Enabled = False
-                    btnOpcion.Enabled = True
-                    gbxBasico.Enabled = True
-                    gbxH.Enabled = True
-                    gbxM.Enabled = True
-                    gbxEtapa.Enabled = True
+            If rs.RecordCount <> 0 Then
+                rs.Close()
+                tbxNum.Enabled = False
+                btnOpcion.Enabled = True
+                gbxBasico.Enabled = True
+                gbxH.Enabled = True
+                gbxM.Enabled = True
+                gbxEtapa.Enabled = True
 
-                    Select Case btnOpcion.Text
-                        Case ingresar
+                Select Case btnOpcion.Text
+                    Case ingresar
 
-                        Case modificar
-                            Consulta_Animal()
-                            Modifi(0) = cbxSexo.Text
-                            Modifi(1) = dtpNacimiento.Text
-                            Modifi(2) = cbxLugar.Text
-                            Modifi(3) = cbxRaza.Text
-                            Modifi(4) = cbxDivision.Text
-                            Modifi(5) = tbxNumM.Text
-                            Modifi(6) = tbxNumH.Text
-                            Modifi(7) = dtprecriaida.Text
-                            Modifi(8) = dtprecriavuelta.Text
-                        Case consultar
-                            Consulta_Animal()
-                        Case eliminar
-                            Consulta_Animal()
-                    End Select
-                Else
-                    MsgBox("Error :" + numero + " " + animal, "ERROR")
-                End If
+                    Case modificar
+                        Consulta_Animal()
+                        Modifi(0) = cbxSexo.Text
+                        Modifi(1) = dtpNacimiento.Text
+                        Modifi(2) = cbxLugar.Text
+                        Modifi(3) = cbxRaza.Text
+                        Modifi(4) = cbxDivision.Text
+                        Modifi(5) = tbxNumM.Text
+                        Modifi(6) = tbxNumH.Text
+                        Modifi(7) = dtprecriaida.Text
+                        Modifi(8) = dtprecriavuelta.Text
+                    Case consultar
+                        Consulta_Animal()
+                    Case eliminar
+                        Consulta_Animal()
+                End Select
+            Else
+                MsgBox("Error :" + numero + " " + animal, "ERROR")
+            End If
         Else
             MsgBox("Error :" + numero + " " + animal, MsgBoxStyle.OkOnly, "ERROR")
         End If
@@ -153,21 +154,15 @@
         acum = Validacion_numerica(tbxNumM.Text(), acum)
         acum = Validacion_largo(tbxNumM, acum)
         If acum = 0 Then
-            sql = "Select num from macho where num=" & Val(tbxNum.Text)
-            Try
-                rs.Open(sql, CN)
-            Catch ex As Exception
-                MsgBox("Error ", MsgBoxStyle.OkOnly, "ERROR")
-            End Try
+            sql = "Select m.num from macho m, tambo t, hay h where hnum=" & Val(tbxNum.Text) & " and t.serie=h.serie and m.num=h.num and t.serie= " & Val(TSERIE)
+            Open_sql()
             If rs.RecordCount <> 0 Then
+                rs.Close()
                 cbxSexoM.Text = macho
                 sql = "SELECT raza from Animal where num=" & Val(tbxNumM.Text)
-                Try
-                    rs.Open(sql, CN)
-                Catch ex As Exception
-                    MsgBox("Error ", MsgBoxStyle.OkOnly, "ERROR")
-                End Try
+                Open_sql()
                 cbxRazaH.Text = rs.value(0)
+                rs.Close()
             Else
                 MsgBox("Error :" + numero + " " + animal, "ERROR")
             End If
@@ -183,21 +178,15 @@
         acum = Validacion_largo(tbxNum, acum)
         If acum = 0 Then
 
-            sql = "Select num from hembra where num=" & Val(tbxNum.Text)
-            Try
-                rs.Open(sql, CN)
-            Catch ex As Exception
-                MsgBox("Error ", MsgBoxStyle.OkOnly, "ERROR")
-            End Try
+            sql = "Select he.num from hembra he, tambo t, hay h where hnum=" & Val(tbxNum.Text) & " and t.serie=h.serie and he.num=h.num and t.serie= " & Val(TSERIE)
+            Open_sql()
             If rs.RecordCount <> 0 Then
+                rs.Close()
                 cbxSexoH.Text = hembra
-                sql = "SELECT raza from Animal where num=" & Val(tbxNumM.Text)
-                Try
-                    rs.Open(sql, CN)
-                Catch ex As Exception
-                    MsgBox("Error ", MsgBoxStyle.OkOnly, "ERROR")
-                End Try
+                sql = "SELECT raza from Animal a, tambo t, hay h where num=" & Val(tbxNumM.Text)
+                Open_sql()
                 cbxRazaH.Text = rs.value(0)
+                rs.Close()
             Else
                 MsgBox("Error :" + numero + " " + animal, MsgBoxStyle.OkOnly, "ERROR")
             End If
@@ -228,7 +217,7 @@
             Case ingresar
                 sql = "INSERT into Animal(numero, nacimiento, lugar, raza, progenitor_macho, progenitor_hembra, activo) values (" & Val(tbxNum.Text) & ",'" & dtpNacimiento.Text & _
                     "', '" & cbxLugar.Text & "', '" & cbxRaza.Text & "', " & Val(tbxNumM.Text) & ", " & Val(tbxNumH.Text) & ", 'Activo')"
-                Open_sql()
+                execute_sql()
                 If cbxDivision.Text = ternera Or cbxDivision.Text = ternero Then
                     sql = "INSERT into cria(numero) values (" & Val(tbxNum.Text) & ")"
                 Else
@@ -242,7 +231,10 @@
                         sql = "INSERT into Hembra(numero) values (" & Val(tbxNum.Text) & ")"
                     End If
                 End If
-                Open_sql()
+                execute_sql()
+                sql = "insert into hay(num_animal, serie) values (" & Val(tbxNum.Text) & ", " & Val(TSERIE) & ""
+                execute_sql()
+
             Case modificar
                     Dim Modifi_Now(8) As String
                     Modifi_Now(0) = cbxSexo.Text
@@ -334,26 +326,27 @@
         sql = "Select raza from animal where num=" & Val(tbxNum.Text)
         Open_sql()
         cbxRaza.Text = rs(0).Value
-
+        rs.Close()
         sql = "Select lugar from animal where num=" & Val(tbxNum.Text)
         Open_sql()
         cbxLugar.Text = rs(0).Value
-
+        rs.Close()
         sql = "Select nacimiento from animal where num=" & Val(tbxNum.Text)
         Open_sql()
         dtpNacimiento.Text = rs(0).Value
-
+        rs.Close()
         sql = "Select progenitor_macho from animal where num=" & Val(tbxNum.Text)
         Open_sql()
         tbxNumM.Text = rs(0).Value
-
+        rs.Close()
         sql = "Select progenitor_hembra from animal where num=" & Val(tbxNum.Text)
         Open_sql()
         tbxNumH.Text = rs(0).Value
-
+        rs.Close()
         sql = "Select num from cria where num=" & Val(tbxNum.Text)
         Open_sql()
         If rs.RecordCount <> 0 Then
+            rs.Close()
             sql = "Select sexo from cria where num=" & Val(tbxNum.Text)
             Open_sql()
             If rs(0).Value = hembra Then
@@ -361,10 +354,12 @@
             Else
                 cbxDivision.Text = ternero
             End If
+            rs.Close()
         Else
             sql = "Select num from hembra where num=" & Val(tbxNum.Text)
             Open_sql()
             If rs.RecordCount <> 0 Then
+                rs.Close()
                 cbxSexo.Text = hembra
                 sql = "Select nombre from estado E, pasa P where P.num_hembra=" & Val(tbxNum.Text) & "and fecha.fin > '" & Today & "'"
                 Open_sql()
@@ -375,6 +370,7 @@
                         rs.MoveNext()
                     End While
                 End If
+                rs.Close()
                 sql = "Select nombre from estado E, pasa P where P.num_hembra=" & Val(tbxNum.Text) & "and nombre = '" & preñada & "'"
                 Open_sql()
                 If rs.RecordCount <> 0 Then
@@ -382,10 +378,12 @@
                 Else
                     cbxDivision.Text = vaquillona
                 End If
+                rs.Close()
             Else
                 sql = "Select num from macho where num=" & Val(tbxNum.Text)
                 Open_sql()
                 If rs.RecordCount <> 0 Then
+                    rs.Close()
                     cbxSexo.Text = macho
                     sql = "Select num from macho where num=" & Val(tbxNum.Text) & "and castrado = 1"
                     Open_sql()
@@ -394,6 +392,7 @@
                     Else
                         cbxDivision.Text = toro
                     End If
+                    rs.Close()
                 End If
             End If
         End If

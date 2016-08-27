@@ -24,9 +24,10 @@ Partial Class frmControl
     Private Sub InitializeComponent()
         Me.pnlBlue = New System.Windows.Forms.Panel()
         Me.gbxGeneral = New System.Windows.Forms.GroupBox()
+        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.lblkg = New System.Windows.Forms.Label()
         Me.chbVacuna = New System.Windows.Forms.CheckBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.tbxPeso = New System.Windows.Forms.TextBox()
         Me.dtpNacimiento = New System.Windows.Forms.DateTimePicker()
         Me.lblFecha = New System.Windows.Forms.Label()
         Me.cbxVacuna = New System.Windows.Forms.ComboBox()
@@ -34,7 +35,6 @@ Partial Class frmControl
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.tbxNum = New System.Windows.Forms.TextBox()
         Me.lblNumero = New System.Windows.Forms.Label()
-        Me.btnGuardar = New System.Windows.Forms.Button()
         Me.gbxGeneral.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -52,7 +52,7 @@ Partial Class frmControl
         Me.gbxGeneral.Controls.Add(Me.btnGuardar)
         Me.gbxGeneral.Controls.Add(Me.lblkg)
         Me.gbxGeneral.Controls.Add(Me.chbVacuna)
-        Me.gbxGeneral.Controls.Add(Me.TextBox1)
+        Me.gbxGeneral.Controls.Add(Me.tbxPeso)
         Me.gbxGeneral.Controls.Add(Me.dtpNacimiento)
         Me.gbxGeneral.Controls.Add(Me.lblFecha)
         Me.gbxGeneral.Controls.Add(Me.cbxVacuna)
@@ -63,6 +63,16 @@ Partial Class frmControl
         Me.gbxGeneral.Size = New System.Drawing.Size(657, 212)
         Me.gbxGeneral.TabIndex = 78
         Me.gbxGeneral.TabStop = False
+        '
+        'btnGuardar
+        '
+        Me.btnGuardar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnGuardar.Location = New System.Drawing.Point(507, 88)
+        Me.btnGuardar.Name = "btnGuardar"
+        Me.btnGuardar.Size = New System.Drawing.Size(118, 42)
+        Me.btnGuardar.TabIndex = 131
+        Me.btnGuardar.Text = "Guardar"
+        Me.btnGuardar.UseVisualStyleBackColor = True
         '
         'lblkg
         '
@@ -85,15 +95,15 @@ Partial Class frmControl
         Me.chbVacuna.Text = "Vacuna"
         Me.chbVacuna.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'tbxPeso
         '
-        Me.TextBox1.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox1.Location = New System.Drawing.Point(251, 94)
-        Me.TextBox1.MaxLength = 9
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(145, 32)
-        Me.TextBox1.TabIndex = 79
-        Me.TextBox1.Text = "000000000"
+        Me.tbxPeso.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.tbxPeso.Location = New System.Drawing.Point(251, 94)
+        Me.tbxPeso.MaxLength = 9
+        Me.tbxPeso.Name = "tbxPeso"
+        Me.tbxPeso.Size = New System.Drawing.Size(145, 32)
+        Me.tbxPeso.TabIndex = 79
+        Me.tbxPeso.Text = "000000000"
         '
         'dtpNacimiento
         '
@@ -164,16 +174,6 @@ Partial Class frmControl
         Me.lblNumero.TabIndex = 75
         Me.lblNumero.Text = "Numero"
         '
-        'btnGuardar
-        '
-        Me.btnGuardar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Location = New System.Drawing.Point(507, 88)
-        Me.btnGuardar.Name = "btnGuardar"
-        Me.btnGuardar.Size = New System.Drawing.Size(118, 42)
-        Me.btnGuardar.TabIndex = 131
-        Me.btnGuardar.Text = "Guardar"
-        Me.btnGuardar.UseVisualStyleBackColor = True
-        '
         'frmControl
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -203,7 +203,7 @@ Partial Class frmControl
     Friend WithEvents tbxNum As System.Windows.Forms.TextBox
     Friend WithEvents lblNumero As System.Windows.Forms.Label
     Friend WithEvents chbVacuna As System.Windows.Forms.CheckBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents tbxPeso As System.Windows.Forms.TextBox
     Friend WithEvents lblkg As System.Windows.Forms.Label
     Friend WithEvents btnGuardar As System.Windows.Forms.Button
 End Class
