@@ -41,6 +41,7 @@
         cbxEtapa.Items.Add(servicio)
         cbxEtapa.Items.Add(anestro)
     End Sub
+
     Public Sub execute_sql()
         Try
             CN.Execute(sql)
@@ -56,6 +57,7 @@
             MsgBox("Error open", MsgBoxStyle.OkOnly, "ERROR")
         End Try
     End Sub
+
     Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
         Dim acum As Integer
         acum = 0
