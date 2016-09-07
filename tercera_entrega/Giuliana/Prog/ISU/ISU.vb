@@ -132,14 +132,6 @@
         End If
     End Sub
 
-    Public Sub Open_sql()
-        Try
-            rs.Open(sql, CN)
-        Catch ex As Exception
-            MsgBox("Error open", MsgBoxStyle.OkOnly, "ERROR")
-        End Try
-    End Sub
-
     Private Sub btnInicio_Click(sender As System.Object, e As System.EventArgs) Handles btnInicio.Click
         Try
             CN.Open("MIODBC", tbxUser.Text, tbxPass.Text)
@@ -287,8 +279,7 @@
     End Sub
 
     Private Sub tsVaquillona_Click(sender As System.Object, e As System.EventArgs) Handles tsVaquillona.Click
-        sql = "select h.num, raza, nacimiento, lugar, progenitor_macho, progenitor_hembra from hembra h, estado e, pasa p, hay y, animal a where" + _
-        "h.num = p.animal_num And e.nombre = '" & preniada & "' and e.num=estado.num and a.num=h.num and h.num=y.num and h.serie=" & Val(TSERIE)
+
         opcion = 10
         frmEnlistar.Show()
     End Sub

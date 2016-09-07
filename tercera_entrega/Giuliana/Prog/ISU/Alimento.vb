@@ -37,25 +37,12 @@
         lblCantidad.Text = cantidad
     End Sub
 
-    Public Sub execute_sql()
-        Try
-            CN.Execute(sql)
-        Catch ex As Exception
-            MsgBox("Error Execute")
-            Exit Sub
-        End Try
-    End Sub
-    Public Sub Open_sql()
-        Try
-            rs.Open(sql, CN)
-        Catch ex As Exception
-            MsgBox("Error open", MsgBoxStyle.OkOnly, "ERROR")
-        End Try
-    End Sub
 
     Private Sub btnGuardar_Click(sender As System.Object, e As System.EventArgs) Handles btnGuardar.Click
         Dim acum As Integer
         Dim num As String
+        Dim acum2 As Integer
+        Dim max As Integer
         acum = 0
         acum = Validacion_numerica(tbxCantidad.Text, acum)
         sql = "Select num from alimento where tipo='" & cbxTipo.Text & "'"
@@ -68,7 +55,7 @@
                     sql = "Insert into proporciona (serie_tambo,num_alimento, cantidad, fecha, hora) values (" & Val(TSERIE) & ", " & Val(num) & ", '" & tbxCantidad.Text & _
                         "', '" & dtpFecha.Text & "', '" & dtpHora.Text & "')"
                 Case 1
-                    Dim acum2 As Integer
+
                     acum2 = 0
                     acum2 = Validacion_numerica(tbxNumLote.Text, acum2)
                     If acum2 = 0 Then
@@ -96,7 +83,7 @@
                 Case 4
                     sql = "Select max(serie) from coperativa"
                     Open_sql()
-                    Dim max As Integer
+
                     max = Val(rs(0).Value) + 1
                     rs.Close()
                     sql = "INSERT into retira(serie_tanque, serie_coop, fecha, cantidad) values (" & Val(TSERIE) & ", " & max & ", '" & dtpFecha.Text & "', " & tbxCantidad.Text & ")"

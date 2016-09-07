@@ -15,22 +15,6 @@
 
     End Sub
 
-    Public Sub Open_sql()
-        Try
-            rs.Open(sql, CN)
-        Catch ex As Exception
-            MsgBox("Error open", MsgBoxStyle.OkOnly, "ERROR")
-        End Try
-    End Sub
-    Public Sub execute_sql()
-        Try
-            CN.Execute(sql)
-        Catch ex As Exception
-            MsgBox("Error Execute")
-            Exit Sub
-        End Try
-    End Sub
-
     Private Sub btnAgregar_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregar.Click
         frmLote.Show()
     End Sub
@@ -41,6 +25,7 @@
 
     Private Sub btnOrdeñado_Click(sender As System.Object, e As System.EventArgs) Handles btnOrdeñado.Click
         Dim acum As Integer
+        Dim i As Integer
         acum = Validacion_numerica(tbxLitros.Text, acum)
         acum = Validacion_numerica(tbxGrasa.Text, acum)
         acum = Validacion_numerica(tbxProteina.Text, acum)
@@ -68,7 +53,6 @@
                     execute_sql()
                 End While
             Else
-                Dim i As Integer
                 For i = 0 To frmLote.lbxAgregar.Items.Count - 1
                     sql = "insert into produce(tipo, fecha, num_lote, cantidad, urea, recuento_bac, grasa, proteina, celulas_somaticas, num_hembra) values ('comerciable', '" & _
                             dtpFecha.Text & "', " & Val(tbxNumLote.Text) & ", " & Val(tbxConsumoe.Text) & ", " & Val(tbxUrea.Text) & ", " & _

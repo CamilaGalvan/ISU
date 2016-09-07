@@ -10,21 +10,7 @@
         btnGuardar.Text = guardar
     End Sub
 
-    Public Sub execute_sql()
-        Try
-            CN.Execute(sql)
-        Catch ex As Exception
-            MsgBox("Error Execute")
-            Exit Sub
-        End Try
-    End Sub
-    Public Sub Open_sql()
-        Try
-            rs.Open(sql, CN)
-        Catch ex As Exception
-            MsgBox("Error open", MsgBoxStyle.OkOnly, "ERROR")
-        End Try
-    End Sub
+    
 
     Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
         Dim acum As Integer

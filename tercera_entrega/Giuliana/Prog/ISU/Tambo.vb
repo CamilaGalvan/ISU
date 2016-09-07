@@ -21,24 +21,11 @@
         End If
     End Sub
 
-    Public Sub execute_sql()
-        Try
-            CN.Execute(sql)
-        Catch ex As Exception
-            MsgBox("Error Execute")
-            Exit Sub
-        End Try
-    End Sub
-    Public Sub Open_sql()
-        Try
-            rs.Open(sql, CN)
-        Catch ex As Exception
-            MsgBox("Error open", MsgBoxStyle.OkOnly, "ERROR")
-        End Try
-    End Sub
-
     Private Sub btnOpcion_Click(sender As System.Object, e As System.EventArgs) Handles btnOpcion.Click
         Dim acum As Integer
+        Dim Modifi_now(3) As String
+        Dim i As Integer
+        Dim change As Boolean = False
         acum = 0
         acum = Validacion_numerica(tbxGanado_max.Text, acum)
         acum = Validacion_numerica(tbxHectareas.Text, acum)
@@ -47,27 +34,24 @@
                 Case ingresar
                         sql = "insert into tambo(serie, nombre, hectareas, ganado_max) values (" & Val(tbxSerie.Text) & ", '" & tbxNombre.Text & "', " & Val(tbxHectareas.Text) & ", " & Val(tbxGanado_max.Text)
                 Case modificar
-                    Dim Modifi_now(3) As String
                     Modifi_now(0) = tbxNombre.Text
                     Modifi_now(1) = tbxHectareas.Text
                     Modifi_now(2) = tbxGanado_max.Text
-                    Dim i As Integer = 0
+                    i = 0
                     While i <= 8
                         If Modifi(i) <> Modifi_now(i) Then
-                            Select Case i
-                                Case 0
-                                    sql = "update tambo set nombre='" & tbxNombre.Text & "'  where nombre=" & tbxNombre.Text
-                                Case 1
-                                    sql = "update tambo set hectareas='" & tbxHectareas.Text & "'  where nombre=" & tbxNombre.Text
-                                Case 2
-                                    sql = "update tambo set ganado_max='" & tbxGanado_max.Text & "'  where nombre=" & tbxNombre.Text
-                            End Select
-                            execute_sql()
+                            change = True
+                            If change Then
+                                sql = "update tambo set nombre='" & tbxNombre.Text & "' and hectareas=" & Val(tbxHectareas.Text) & "and ganado_max='" & tbxGanado_max.Text & "  where serie=" & Val(TSERIE)
+                                execute_sql()
+                                i = 8
+                            End If
+                        Else
+                            i = i + 1
                         End If
-                        i = i + 1
                     End While
                 Case eliminar
-                    sql = "update tambo set activo=0 where nombre=" & tbxNombre.Text
+                    sql = "update tambo set activo=0 where serie=" & Val(TSERIE)
             End Select
         Else
             MsgBox("", MsgBoxStyle.OkOnly, "ERROR")

@@ -9,14 +9,6 @@
         btnConsultar.Text = consultar
     End Sub
 
-    Public Sub Open_sql()
-        Try
-            rs.Open(sql, CN)
-        Catch ex As Exception
-            MsgBox("Error open", MsgBoxStyle.OkOnly, "ERROR")
-        End Try
-    End Sub
-
     Private Sub btnAgregar_Click(sender As System.Object, e As System.EventArgs) Handles btnAgregar.Click
         Dim aux As Integer
         sql = "SELECT * from hembra he, tambo t, hay h where num=" & Val(tbxNumA.Text) & " and t.serie=h.serie and he.num=h.num and t.serie= " & Val(TSERIE)

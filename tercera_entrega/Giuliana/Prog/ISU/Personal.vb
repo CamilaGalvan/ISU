@@ -26,21 +26,6 @@
         cbxTelefono.Items.Clear()
     End Sub
 
-    Public Sub execute_sql()
-        Try
-            CN.Execute(sql)
-        Catch ex As Exception
-            MsgBox("Error Execute")
-            Exit Sub
-        End Try
-    End Sub
-    Public Sub Open_sql()
-        Try
-            rs.Open(sql, CN)
-        Catch ex As Exception
-            MsgBox("Error open", MsgBoxStyle.OkOnly, "ERROR")
-        End Try
-    End Sub
 
     Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
         Dim acum As Integer
@@ -105,6 +90,8 @@
         End If
     End Sub
     Private Sub btnOpcion_Click(sender As System.Object, e As System.EventArgs) Handles btnOpcion.Click
+        Dim Modifi_Now(8) As String
+        Dim change As Boolean = false
         Select Case btnOpcion.Text
             Case ingresar
                 sql = "insert into persona(ci, nombre, sexo, nacimiento, puesto) values (" & Val(tbxCI.Text) & ", '" & tbxNombre.Text & "', '" & cbxSexo.Text & "', '" _
@@ -112,7 +99,7 @@
                 execute_sql()
                 sql = "insert into tiene(ci, serie) values (" & Val(tbxCI.Text) & ", " & Val(TSERIE) & ")"
             Case modificar
-                Dim Modifi_Now(8) As String
+
                 Modifi_Now(0) = tbxNombre.Text
                 Modifi_Now(1) = cbxSexo.Text
                 Modifi_Now(2) = dtpNacimiento.Text
@@ -120,19 +107,15 @@
                 Dim i As Integer = 0
                 While i <= 8
                     If Modifi(i) <> Modifi_Now(i) Then
-                        Select Case i
-                            Case 0
-                                sql = "update persona set nombre=" & tbxNombre.Text & " where ci=" & Val(tbxCI.Text)
-                            Case 1
-                                sql = "update persona set sexo='" & cbxSexo.Text & "'  where ci=" & Val(tbxCI.Text)
-                            Case 2
-                                sql = "update persona set nacimiento='" & dtpNacimiento.Text & "'  where ci=" & Val(tbxCI.Text)
-                            Case 3
-                                sql = "update persona set puesto='" & cbxPuesto.Text & "'  where ci=" & Val(tbxCI.Text)
-                        End Select
-                        execute_sql()
+                        change = True
+                        If change Then
+                            sql = "update tambo set nombre='" & tbxNombre.Text & "' and sexo='" & cbxSexo.Text & "and nacimiento='" & dtpNacimiento.Text & "' and puesto='" & cbxPuesto.Text & "' where serie=" & Val(TSERIE)
+                            execute_sql()
+                            i = 8
+                        End If
+                    Else
+                        i = i + 1
                     End If
-                    i = i + 1
                 End While
             Case eliminar
                 sql = "update persona set activo=0 where ci=" & Val(tbxCI.Text)

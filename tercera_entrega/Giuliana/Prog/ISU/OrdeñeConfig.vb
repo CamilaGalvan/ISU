@@ -51,21 +51,6 @@
         cbxCantidad_SelectedIndexChanged(sender, e)
     End Sub
 
-    Public Sub execute_sql()
-        Try
-            CN.Execute(sql)
-        Catch ex As Exception
-            MsgBox("Error Execute")
-            Exit Sub
-        End Try
-    End Sub
-    Public Sub Open_sql()
-        Try
-            rs.Open(sql, CN)
-        Catch ex As Exception
-            MsgBox("Error open", MsgBoxStyle.OkOnly, "ERROR")
-        End Try
-    End Sub
 
     Public Sub Horas(ByVal dtpI As DateTimePicker, ByVal dtpF As DateTimePicker, num As Integer)
         sql = "select hora_inicio from ordenie where numero_ordenie=" & num
@@ -100,6 +85,9 @@
     End Sub
     Private Sub btnGuardar_Click(sender As System.Object, e As System.EventArgs) Handles btnGuardar.Click
         Dim acum As Integer
+        Dim aux As Integer
+        Dim Modifi_now(6) As String
+        Dim i As Integer
         If dtpIniciop.Value > dtpFinalp.Value Or dtpInicios.Value > dtpFinals.Value Or dtpIniciot.Value > dtpFinalt.Value Then
             acum = acum + 1
         End If
@@ -119,7 +107,7 @@
                     insertar(3, dtpIniciot.Text, dtpFinalt.Text)
                 End If
             Else
-                Dim Modifi_now(6) As String
+
                 Modifi_now(0) = dtpIniciop.Text
                 Modifi_now(1) = dtpFinalp.Text
                 Modifi_now(2) = dtpInicios.Text
@@ -127,7 +115,7 @@
                 Modifi_now(4) = dtpIniciot.Text
                 Modifi_now(5) = dtpFinalt.Text
                 Modifi_now(6) = cbxCantidad.Text
-                Dim i As Integer = 0
+                i = 0
                 While i <= 5
                     If Modifi(i) <> Modifi_now(i) Then
                         Select Case i
@@ -145,7 +133,7 @@
                                 sql = "update ordenie set hora_fin where numero_ordenie= 3"
                             Case 6
                                 If Modifi(i) < Modifi_now(i) Then
-                                    Dim aux As Integer
+
                                     aux = Modifi_now(i) - Modifi(i)
 
                                     Select Case aux
@@ -160,7 +148,6 @@
                                             insertar(2, dtpInicios.Text, dtpFinals.Text)
                                     End Select
                                 Else
-                                    Dim aux As Integer
                                     aux = Modifi(i) - Modifi_now(i)
                                     Select Case aux
                                         Case 1

@@ -42,21 +42,6 @@
         cbxEtapa.Items.Add(anestro)
     End Sub
 
-    Public Sub execute_sql()
-        Try
-            CN.Execute(sql)
-        Catch ex As Exception
-            MsgBox("Error Execute")
-            Exit Sub
-        End Try
-    End Sub
-    Public Sub Open_sql()
-        Try
-            rs.Open(sql, CN)
-        Catch ex As Exception
-            MsgBox("Error open", MsgBoxStyle.OkOnly, "ERROR")
-        End Try
-    End Sub
 
     Private Sub btnBuscar_Click(sender As System.Object, e As System.EventArgs) Handles btnBuscar.Click
         Dim acum As Integer
@@ -215,6 +200,8 @@
     End Sub
 
     Private Sub btnOpcion_Click(sender As System.Object, e As System.EventArgs) Handles btnOpcion.Click
+        Dim Modifi_Now(8) As String
+        Dim i As Integer
         Select Case btnOpcion.Text
             Case ingresar
                 sql = "INSERT into Animal(numero, nacimiento, lugar, raza, progenitor_macho, progenitor_hembra, activo) values (" & Val(tbxNum.Text) & ",'" & dtpNacimiento.Text & _
@@ -238,21 +225,20 @@
                 execute_sql()
 
             Case modificar
-                    Dim Modifi_Now(8) As String
-                    Modifi_Now(0) = cbxSexo.Text
-                    Modifi_Now(1) = dtpNacimiento.Text
-                    Modifi_Now(2) = cbxLugar.Text
-                    Modifi_Now(3) = cbxRaza.Text
-                    Modifi_Now(4) = cbxDivision.Text
-                    Modifi_Now(5) = tbxNumM.Text
-                    Modifi_Now(6) = tbxNumH.Text
-                    Modifi_Now(7) = dtprecriaida.Text
-                    Modifi_Now(8) = dtprecriavuelta.Text
-                    Dim i As Integer = 0
-                    While i <= 8
-                        If Modifi(i) <> Modifi_Now(i) Then
-                            Select Case i
-                                Case 0
+                Modifi_Now(0) = cbxSexo.Text
+                Modifi_Now(1) = dtpNacimiento.Text
+                Modifi_Now(2) = cbxLugar.Text
+                Modifi_Now(3) = cbxRaza.Text
+                Modifi_Now(4) = cbxDivision.Text
+                Modifi_Now(5) = tbxNumM.Text
+                Modifi_Now(6) = tbxNumH.Text
+                Modifi_Now(7) = dtprecriaida.Text
+                Modifi_Now(8) = dtprecriavuelta.Text
+                i = 0
+                While i <= 8
+                    If Modifi(i) <> Modifi_Now(i) Then
+                        Select Case i
+                            Case 0
                                 If Modifi(i) = hembra Then
                                     sql = "delete from hembra where num=" & Val(tbxNum.Text)
                                     execute_sql()
@@ -314,10 +300,10 @@
                                     sql = "update vuelve set fecha_vuelta='" & dtprecriavuelta.Text & "'  where num=" & tbxNum.Text
                                 End If
                         End Select
-                            execute_sql()
-                        End If
-                        i = i + 1
-                    End While
+                        execute_sql()
+                    End If
+                    i = i + 1
+                End While
 
             Case eliminar
                 sql = "update animal set activo=0 where num=" & tbxNum.Text
