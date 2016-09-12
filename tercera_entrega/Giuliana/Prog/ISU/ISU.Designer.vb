@@ -93,6 +93,7 @@ Partial Class frmISU
         Me.pnlInicio = New System.Windows.Forms.Panel()
         Me.gbxLog = New System.Windows.Forms.GroupBox()
         Me.cbxTambo = New System.Windows.Forms.ComboBox()
+        Me.tsClima = New System.Windows.Forms.ToolStripMenuItem()
         Me.mspEspanol.SuspendLayout()
         CType(Me.PbxISU, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnlInicio.SuspendLayout()
@@ -112,7 +113,7 @@ Partial Class frmISU
         'mspEspanol
         '
         Me.mspEspanol.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.mspEspanol.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsTambo, Me.tsPersonal, Me.tsAnimal, Me.tsAlimento, Me.tsEnlistar, Me.tsOrdenie, Me.tsVenta, Me.tsSesion, Me.tsSalir})
+        Me.mspEspanol.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.tsTambo, Me.tsPersonal, Me.tsAnimal, Me.tsAlimento, Me.tsEnlistar, Me.tsOrdenie, Me.tsVenta, Me.tsClima, Me.tsSesion, Me.tsSalir})
         Me.mspEspanol.Location = New System.Drawing.Point(0, 0)
         Me.mspEspanol.Name = "mspEspanol"
         Me.mspEspanol.Padding = New System.Windows.Forms.Padding(6, 3, 0, 3)
@@ -593,6 +594,12 @@ Partial Class frmISU
         Me.cbxTambo.TabIndex = 110
         Me.cbxTambo.Text = "Tambo"
         '
+        'tsClima
+        '
+        Me.tsClima.Name = "tsClima"
+        Me.tsClima.Size = New System.Drawing.Size(50, 19)
+        Me.tsClima.Text = "Clima"
+        '
         'frmISU
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -686,5 +693,6 @@ Partial Class frmISU
     Friend WithEvents tsAlimento_Consultar As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents cbxTambo As System.Windows.Forms.ComboBox
     Friend WithEvents tsAlimentoIngresar As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents tsClima As System.Windows.Forms.ToolStripMenuItem
 
 End Class

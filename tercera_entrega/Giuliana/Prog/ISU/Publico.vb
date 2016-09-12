@@ -3,7 +3,7 @@
     Public adm_establecimiento, adm_sistema, agregar, alimento, anestro, auxiliar, animal, antibiotico, buscar, campo, cantidad, capacidad, CI, configuracion, consultar, contrasenia, control, division, eliminar, enlistar, etapa, _
         fecha, fecha_ida, fecha_vuelta, fechaF, fechaI, ganado_act, ganado_max, gerente, guardar, hectareas, hembra, hora, ingresar, iniciar, lactancia, litros, lugar, macho, modificar, nacimiento, ninguno, nombre, novillo, numero, _
         ordenie, peso, puesto, personal, preniada, primer, raza, rodeo, salir, seca, segundo, serie, servicio, sesion, sexo, tambo, ternera, toro, usuario, tanque, tercero, ternero, tipo, vaca, vacuna, vaquillona, venta, sql, _
-        turno, grasa, proteina, urea, rec_bacteriano, rec_celulas, num_lote, inicio, fin, consumoe, consumoi, otorgar, almacenar, telefono, TSERIE As String
+        turno, grasa, proteina, urea, rec_bacteriano, rec_celulas, num_lote, inicio, fin, consumoe, consumoi, otorgar, almacenar, telefono, TSERIE, clima As String
     Public CN As New ADODB.Connection
     Public rs As New ADODB.Recordset
 
@@ -49,7 +49,8 @@
                     auxiliar = "Auxiliar"
                     animal = "Animal"
                     antibiotico = "Antibiótico"
-                    buscar = "Buscar"
+                buscar = "Buscar"
+                clima = "Clima"
                     campo = "Campo de recria"
                     cantidad = "Cantidad"
                     capacidad = "Capacidad"
@@ -136,8 +137,9 @@
                     auxiliar = "Auxiliary"
                     animal = "Animal"
                     antibiotico = "Antibiotic"
-                    buscar = "Search"
-                    campo = "Field of breeding"
+                buscar = "Search"
+                clima = "Weather"
+                campo = "Field of breeding"
                     cantidad = "Amount"
                     capacidad = "Capacity"
                     CI = "Identity Card"
@@ -221,7 +223,8 @@
                     alimento = "Comida"
                     auxiliar = " Auxiliar"
                     animal = "Animal"
-                    buscar = "Pesquisa"
+                buscar = "Pesquisa"
+                clima = "Tempo"
                     campo = "Campo da criaçâgo"
                     cantidad = " Quantidade"
                     capacidad = "Capacidade"
