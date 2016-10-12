@@ -1,0 +1,79 @@
+C:\Users\Usuario\AppData\Local\Temporary Projects\COWARE\bin\Debug\COWARE.exe
+C:\Users\Usuario\AppData\Local\Temporary Projects\COWARE\bin\Debug\COWARE.pdb
+C:\Users\Usuario\AppData\Local\Temporary Projects\COWARE\bin\Debug\COWARE.xml
+C:\Users\Usuario\AppData\Local\Temporary Projects\COWARE\obj\x86\Debug\COWARE.Resources.resources
+C:\Users\Usuario\AppData\Local\Temporary Projects\COWARE\obj\x86\Debug\COWARE.vbproj.GenerateResource.Cache
+C:\Users\Usuario\AppData\Local\Temporary Projects\COWARE\obj\x86\Debug\COWARE.exe
+C:\Users\Usuario\AppData\Local\Temporary Projects\COWARE\obj\x86\Debug\COWARE.xml
+C:\Users\Usuario\AppData\Local\Temporary Projects\COWARE\obj\x86\Debug\COWARE.pdb
+C:\Users\Usuario\AppData\Local\Temporary Projects\COWARE\obj\x86\Debug\COWARE.frmAnimal.resources
+C:\Users\Usuario\AppData\Local\Temporary Projects\COWARE\obj\x86\Debug\COWARE.frmArranque.resources
+C:\Users\Usuario\AppData\Local\Temporary Projects\COWARE\obj\x86\Debug\COWARE.frmContendor.resources
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.exe
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.xml
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.pdb
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\bin\Debug\COWARE.exe
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\bin\Debug\COWARE.pdb
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\bin\Debug\COWARE.xml
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmAnimal.resources
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmArranque.resources
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmContendor.resources
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.Resources.resources
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.vbproj.GenerateResource.Cache
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\obj\x86\Debug\Interop.ADODB.dll
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.vbproj.ResolveComReference.cache
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmAlimento.resources
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmClima.resources
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmControl.resources
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmEnlistar.resources
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmISU.resources
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmLote.resources
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmOrdenie.resources
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmOrdenieConfig.resources
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmPersonal.resources
+C:\Users\Usuario\Desktop\Gema\Estudio\UTU\Tercero\ISU\Programación\Entrega3\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmTambo.resources
+E:\COWARE\COWARE\COWARE\obj\x86\Debug\Interop.ADODB.dll
+E:\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.vbproj.ResolveComReference.cache
+E:\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.exe
+E:\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.xml
+E:\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.pdb
+E:\COWARE\COWARE\COWARE\bin\Debug\COWARE.exe
+E:\COWARE\COWARE\COWARE\bin\Debug\COWARE.pdb
+E:\COWARE\COWARE\COWARE\bin\Debug\COWARE.xml
+E:\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmAlimento.resources
+E:\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmAnimal.resources
+E:\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmArranque.resources
+E:\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmClima.resources
+E:\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmContendor.resources
+E:\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmControl.resources
+E:\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmEnlistar.resources
+E:\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmISU.resources
+E:\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmLote.resources
+E:\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.Resources.resources
+E:\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmOrdenie.resources
+E:\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmOrdenieConfig.resources
+E:\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmPersonal.resources
+E:\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmTambo.resources
+E:\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.vbproj.GenerateResource.Cache
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.vbproj.ResolveComReference.cache
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.exe
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.xml
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.pdb
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\obj\x86\Debug\Interop.ADODB.dll
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\bin\Debug\COWARE.exe
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\bin\Debug\COWARE.pdb
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\bin\Debug\COWARE.xml
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmAlimento.resources
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmAnimal.resources
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmArranque.resources
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmClima.resources
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmControl.resources
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmEnlistar.resources
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmLote.resources
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.Resources.resources
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmOrdenie.resources
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmOrdenieConfig.resources
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmPersonal.resources
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmTambo.resources
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.vbproj.GenerateResource.Cache
+C:\Users\Usuario\Desktop\COWARE\COWARE\COWARE\obj\x86\Debug\COWARE.frmComienzo.resources
