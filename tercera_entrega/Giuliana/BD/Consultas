@@ -1,0 +1,31 @@
+1. Select a.num 
+from va a, campo_de_recria c 
+where today-fecha_ida <= 3
+
+2.
+
+3. Select num_estado, num vaca
+from pasa
+where fecha_inicio <today <fecha_ida
+
+4. Select num_lote
+from lote, produce
+where max cantidad
+
+5. Select num
+from pasa
+where ...
+
+6. Select avg(cantidad)
+from produce
+where fecha=today
+
+7.
+
+8.
+
+9. Select a.num, raza, ¿edad?
+from animal a, hembra h
+where a.num=h.num
+
+10.
