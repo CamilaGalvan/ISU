@@ -21,21 +21,24 @@
         End Select
     End Sub
 
-    Public Sub execute_sql()
+    Public Function execute_sql() As Boolean
         Try
             CN.Execute(sql)
+            Return True
         Catch ex As Exception
-            MsgBox("Error Execute")
-            Exit Sub
+            MsgBox(sql + "Error Execute" + ex.ToString)
+            Return False
         End Try
-    End Sub
-    Public Sub Open_sql()
+    End Function
+    Public Function Open_sql() As Boolean
         Try
             rs.Open(sql, CN)
+            Return True
         Catch ex As Exception
-            MsgBox("Error open", MsgBoxStyle.OkOnly, "ERROR")
+            MsgBox(sql + "Error open" + ex.ToString, MsgBoxStyle.OkOnly, "ERROR")
+            Return False
         End Try
-    End Sub
+    End Function
 
     Public Sub Variables_asignacion()
         anestro = "Anestro"

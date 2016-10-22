@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmComienzo
+Partial Class frmISU
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
@@ -22,16 +22,12 @@ Partial Class frmComienzo
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmComienzo))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmISU))
+        Me.pnlBlue = New System.Windows.Forms.Panel()
         Me.cbxTambo = New System.Windows.Forms.ComboBox()
         Me.btnEliminar_Animal = New System.Windows.Forms.Button()
         Me.btnIngresar_Animal = New System.Windows.Forms.Button()
         Me.pnlMain = New System.Windows.Forms.Panel()
-        Me.btnEnlistar = New System.Windows.Forms.Button()
-        Me.cbxEnlistar = New System.Windows.Forms.ComboBox()
-        Me.btnLote_animal = New System.Windows.Forms.Button()
-        Me.btnControl_animal = New System.Windows.Forms.Button()
-        Me.btnConfiguracion_ordenie = New System.Windows.Forms.Button()
         Me.pbxVenta = New System.Windows.Forms.PictureBox()
         Me.gbxPersonal = New System.Windows.Forms.GroupBox()
         Me.btnIngresar_Personal = New System.Windows.Forms.Button()
@@ -63,8 +59,6 @@ Partial Class frmComienzo
         Me.pbxOrdenie = New System.Windows.Forms.PictureBox()
         Me.pbxTambo = New System.Windows.Forms.PictureBox()
         Me.pbxAnimal = New System.Windows.Forms.PictureBox()
-        Me.pbxClose = New System.Windows.Forms.PictureBox()
-        Me.pbxMini = New System.Windows.Forms.PictureBox()
         Me.pnlMain.SuspendLayout()
         CType(Me.pbxVenta, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.gbxPersonal.SuspendLayout()
@@ -79,9 +73,16 @@ Partial Class frmComienzo
         CType(Me.pbxOrdenie, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxTambo, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxAnimal, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbxClose, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pbxMini, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'pnlBlue
+        '
+        Me.pnlBlue.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.pnlBlue.Location = New System.Drawing.Point(803, 0)
+        Me.pnlBlue.Name = "pnlBlue"
+        Me.pnlBlue.Size = New System.Drawing.Size(24, 579)
+        Me.pnlBlue.TabIndex = 52
+        Me.pnlBlue.Visible = False
         '
         'cbxTambo
         '
@@ -95,7 +96,6 @@ Partial Class frmComienzo
         '
         'btnEliminar_Animal
         '
-        Me.btnEliminar_Animal.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnEliminar_Animal.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnEliminar_Animal.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar_Animal.Location = New System.Drawing.Point(6, 47)
@@ -107,7 +107,6 @@ Partial Class frmComienzo
         '
         'btnIngresar_Animal
         '
-        Me.btnIngresar_Animal.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnIngresar_Animal.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnIngresar_Animal.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnIngresar_Animal.ForeColor = System.Drawing.Color.Black
@@ -121,13 +120,6 @@ Partial Class frmComienzo
         'pnlMain
         '
         Me.pnlMain.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.pnlMain.Controls.Add(Me.pbxClose)
-        Me.pnlMain.Controls.Add(Me.pbxMini)
-        Me.pnlMain.Controls.Add(Me.btnEnlistar)
-        Me.pnlMain.Controls.Add(Me.cbxEnlistar)
-        Me.pnlMain.Controls.Add(Me.btnLote_animal)
-        Me.pnlMain.Controls.Add(Me.btnControl_animal)
-        Me.pnlMain.Controls.Add(Me.btnConfiguracion_ordenie)
         Me.pnlMain.Controls.Add(Me.pbxVenta)
         Me.pnlMain.Controls.Add(Me.gbxPersonal)
         Me.pnlMain.Controls.Add(Me.gbxOrdenie)
@@ -147,76 +139,10 @@ Partial Class frmComienzo
         Me.pnlMain.Size = New System.Drawing.Size(821, 573)
         Me.pnlMain.TabIndex = 111
         '
-        'btnEnlistar
-        '
-        Me.btnEnlistar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnEnlistar.Enabled = False
-        Me.btnEnlistar.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnEnlistar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEnlistar.ForeColor = System.Drawing.Color.Black
-        Me.btnEnlistar.Location = New System.Drawing.Point(353, 480)
-        Me.btnEnlistar.Name = "btnEnlistar"
-        Me.btnEnlistar.Size = New System.Drawing.Size(122, 32)
-        Me.btnEnlistar.TabIndex = 119
-        Me.btnEnlistar.Text = "Enlistar"
-        Me.btnEnlistar.UseVisualStyleBackColor = True
-        '
-        'cbxEnlistar
-        '
-        Me.cbxEnlistar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cbxEnlistar.FormattingEnabled = True
-        Me.cbxEnlistar.Location = New System.Drawing.Point(55, 480)
-        Me.cbxEnlistar.Name = "cbxEnlistar"
-        Me.cbxEnlistar.Size = New System.Drawing.Size(268, 32)
-        Me.cbxEnlistar.TabIndex = 118
-        '
-        'btnLote_animal
-        '
-        Me.btnLote_animal.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnLote_animal.Enabled = False
-        Me.btnLote_animal.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnLote_animal.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLote_animal.ForeColor = System.Drawing.Color.Black
-        Me.btnLote_animal.Location = New System.Drawing.Point(147, 215)
-        Me.btnLote_animal.Name = "btnLote_animal"
-        Me.btnLote_animal.Size = New System.Drawing.Size(100, 45)
-        Me.btnLote_animal.TabIndex = 117
-        Me.btnLote_animal.Text = "Lote"
-        Me.btnLote_animal.UseVisualStyleBackColor = True
-        '
-        'btnControl_animal
-        '
-        Me.btnControl_animal.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnControl_animal.Enabled = False
-        Me.btnControl_animal.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnControl_animal.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnControl_animal.ForeColor = System.Drawing.Color.Black
-        Me.btnControl_animal.Location = New System.Drawing.Point(55, 215)
-        Me.btnControl_animal.Name = "btnControl_animal"
-        Me.btnControl_animal.Size = New System.Drawing.Size(100, 45)
-        Me.btnControl_animal.TabIndex = 116
-        Me.btnControl_animal.Text = "Control"
-        Me.btnControl_animal.UseVisualStyleBackColor = True
-        '
-        'btnConfiguracion_ordenie
-        '
-        Me.btnConfiguracion_ordenie.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnConfiguracion_ordenie.Enabled = False
-        Me.btnConfiguracion_ordenie.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.btnConfiguracion_ordenie.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConfiguracion_ordenie.ForeColor = System.Drawing.Color.Black
-        Me.btnConfiguracion_ordenie.Location = New System.Drawing.Point(283, 215)
-        Me.btnConfiguracion_ordenie.Name = "btnConfiguracion_ordenie"
-        Me.btnConfiguracion_ordenie.Size = New System.Drawing.Size(192, 45)
-        Me.btnConfiguracion_ordenie.TabIndex = 11
-        Me.btnConfiguracion_ordenie.Text = "Configuracion"
-        Me.btnConfiguracion_ordenie.UseVisualStyleBackColor = True
-        '
         'pbxVenta
         '
-        Me.pbxVenta.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pbxVenta.Image = CType(resources.GetObject("pbxVenta.Image"), System.Drawing.Image)
-        Me.pbxVenta.Location = New System.Drawing.Point(516, 283)
+        Me.pbxVenta.Location = New System.Drawing.Point(516, 256)
         Me.pbxVenta.Name = "pbxVenta"
         Me.pbxVenta.Size = New System.Drawing.Size(131, 135)
         Me.pbxVenta.TabIndex = 115
@@ -236,7 +162,6 @@ Partial Class frmComienzo
         '
         'btnIngresar_Personal
         '
-        Me.btnIngresar_Personal.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnIngresar_Personal.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnIngresar_Personal.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnIngresar_Personal.ForeColor = System.Drawing.Color.Black
@@ -249,7 +174,6 @@ Partial Class frmComienzo
         '
         'btnEliminar_Personal
         '
-        Me.btnEliminar_Personal.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnEliminar_Personal.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnEliminar_Personal.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar_Personal.Location = New System.Drawing.Point(6, 47)
@@ -261,7 +185,6 @@ Partial Class frmComienzo
         '
         'btnConsultar_Personal
         '
-        Me.btnConsultar_Personal.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnConsultar_Personal.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnConsultar_Personal.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConsultar_Personal.Location = New System.Drawing.Point(7, 82)
@@ -273,7 +196,6 @@ Partial Class frmComienzo
         '
         'btnModificar_Personal
         '
-        Me.btnModificar_Personal.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnModificar_Personal.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnModificar_Personal.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnModificar_Personal.Location = New System.Drawing.Point(6, 117)
@@ -297,7 +219,6 @@ Partial Class frmComienzo
         '
         'btnIngresar_Ordenie
         '
-        Me.btnIngresar_Ordenie.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnIngresar_Ordenie.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnIngresar_Ordenie.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnIngresar_Ordenie.ForeColor = System.Drawing.Color.Black
@@ -310,7 +231,6 @@ Partial Class frmComienzo
         '
         'btnEliminar_Ordenie
         '
-        Me.btnEliminar_Ordenie.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnEliminar_Ordenie.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnEliminar_Ordenie.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar_Ordenie.Location = New System.Drawing.Point(6, 47)
@@ -322,7 +242,6 @@ Partial Class frmComienzo
         '
         'btnConsultar_Ordenie
         '
-        Me.btnConsultar_Ordenie.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnConsultar_Ordenie.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnConsultar_Ordenie.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConsultar_Ordenie.Location = New System.Drawing.Point(7, 82)
@@ -334,7 +253,6 @@ Partial Class frmComienzo
         '
         'btnModifcar_Ordenie
         '
-        Me.btnModifcar_Ordenie.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnModifcar_Ordenie.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnModifcar_Ordenie.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnModifcar_Ordenie.Location = New System.Drawing.Point(6, 117)
@@ -350,7 +268,7 @@ Partial Class frmComienzo
         Me.gbxAlimento.Controls.Add(Me.btnEliminar_Alimento)
         Me.gbxAlimento.Controls.Add(Me.btnConsultar_Alimento)
         Me.gbxAlimento.Controls.Add(Me.btnModificar_Alimento)
-        Me.gbxAlimento.Location = New System.Drawing.Point(420, 266)
+        Me.gbxAlimento.Location = New System.Drawing.Point(420, 239)
         Me.gbxAlimento.Name = "gbxAlimento"
         Me.gbxAlimento.Size = New System.Drawing.Size(55, 152)
         Me.gbxAlimento.TabIndex = 113
@@ -358,7 +276,6 @@ Partial Class frmComienzo
         '
         'btnIngresar_Alimento
         '
-        Me.btnIngresar_Alimento.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnIngresar_Alimento.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnIngresar_Alimento.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnIngresar_Alimento.ForeColor = System.Drawing.Color.Black
@@ -371,7 +288,6 @@ Partial Class frmComienzo
         '
         'btnEliminar_Alimento
         '
-        Me.btnEliminar_Alimento.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnEliminar_Alimento.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnEliminar_Alimento.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar_Alimento.Location = New System.Drawing.Point(6, 47)
@@ -383,7 +299,6 @@ Partial Class frmComienzo
         '
         'btnConsultar_Alimento
         '
-        Me.btnConsultar_Alimento.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnConsultar_Alimento.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnConsultar_Alimento.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConsultar_Alimento.Location = New System.Drawing.Point(7, 82)
@@ -395,7 +310,6 @@ Partial Class frmComienzo
         '
         'btnModificar_Alimento
         '
-        Me.btnModificar_Alimento.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnModificar_Alimento.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnModificar_Alimento.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnModificar_Alimento.Location = New System.Drawing.Point(6, 117)
@@ -411,7 +325,7 @@ Partial Class frmComienzo
         Me.gbxTambo.Controls.Add(Me.btnEliminar_Tambo)
         Me.gbxTambo.Controls.Add(Me.btnConsultar_Tambo)
         Me.gbxTambo.Controls.Add(Me.btnModificar_Tambo)
-        Me.gbxTambo.Location = New System.Drawing.Point(192, 266)
+        Me.gbxTambo.Location = New System.Drawing.Point(192, 239)
         Me.gbxTambo.Name = "gbxTambo"
         Me.gbxTambo.Size = New System.Drawing.Size(55, 152)
         Me.gbxTambo.TabIndex = 112
@@ -419,7 +333,6 @@ Partial Class frmComienzo
         '
         'btnIngresar_Tambo
         '
-        Me.btnIngresar_Tambo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnIngresar_Tambo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnIngresar_Tambo.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnIngresar_Tambo.ForeColor = System.Drawing.Color.Black
@@ -432,7 +345,6 @@ Partial Class frmComienzo
         '
         'btnEliminar_Tambo
         '
-        Me.btnEliminar_Tambo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnEliminar_Tambo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnEliminar_Tambo.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnEliminar_Tambo.Location = New System.Drawing.Point(6, 47)
@@ -444,7 +356,6 @@ Partial Class frmComienzo
         '
         'btnConsultar_Tambo
         '
-        Me.btnConsultar_Tambo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnConsultar_Tambo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnConsultar_Tambo.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConsultar_Tambo.Location = New System.Drawing.Point(7, 82)
@@ -456,7 +367,6 @@ Partial Class frmComienzo
         '
         'btnModificar_Tambo
         '
-        Me.btnModificar_Tambo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnModificar_Tambo.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnModificar_Tambo.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnModificar_Tambo.Location = New System.Drawing.Point(6, 117)
@@ -480,7 +390,6 @@ Partial Class frmComienzo
         '
         'btnConsultar_Animal
         '
-        Me.btnConsultar_Animal.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnConsultar_Animal.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnConsultar_Animal.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnConsultar_Animal.Location = New System.Drawing.Point(7, 82)
@@ -492,7 +401,6 @@ Partial Class frmComienzo
         '
         'btnModificar_Animal
         '
-        Me.btnModificar_Animal.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnModificar_Animal.FlatStyle = System.Windows.Forms.FlatStyle.Popup
         Me.btnModificar_Animal.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnModificar_Animal.Location = New System.Drawing.Point(6, 117)
@@ -504,9 +412,8 @@ Partial Class frmComienzo
         '
         'pbxSalir
         '
-        Me.pbxSalir.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pbxSalir.Image = CType(resources.GetObject("pbxSalir.Image"), System.Drawing.Image)
-        Me.pbxSalir.Location = New System.Drawing.Point(651, 437)
+        Me.pbxSalir.Location = New System.Drawing.Point(651, 410)
         Me.pbxSalir.Name = "pbxSalir"
         Me.pbxSalir.Size = New System.Drawing.Size(131, 121)
         Me.pbxSalir.TabIndex = 6
@@ -514,9 +421,8 @@ Partial Class frmComienzo
         '
         'pbxClima
         '
-        Me.pbxClima.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pbxClima.Image = CType(resources.GetObject("pbxClima.Image"), System.Drawing.Image)
-        Me.pbxClima.Location = New System.Drawing.Point(651, 283)
+        Me.pbxClima.Location = New System.Drawing.Point(651, 256)
         Me.pbxClima.Name = "pbxClima"
         Me.pbxClima.Size = New System.Drawing.Size(131, 135)
         Me.pbxClima.TabIndex = 5
@@ -524,7 +430,6 @@ Partial Class frmComienzo
         '
         'pbxPersonal
         '
-        Me.pbxPersonal.Image = CType(resources.GetObject("pbxPersonal.Image"), System.Drawing.Image)
         Me.pbxPersonal.Location = New System.Drawing.Point(507, 80)
         Me.pbxPersonal.Name = "pbxPersonal"
         Me.pbxPersonal.Size = New System.Drawing.Size(131, 135)
@@ -533,8 +438,7 @@ Partial Class frmComienzo
         '
         'pbxAlimento
         '
-        Me.pbxAlimento.Image = CType(resources.GetObject("pbxAlimento.Image"), System.Drawing.Image)
-        Me.pbxAlimento.Location = New System.Drawing.Point(283, 283)
+        Me.pbxAlimento.Location = New System.Drawing.Point(283, 256)
         Me.pbxAlimento.Name = "pbxAlimento"
         Me.pbxAlimento.Size = New System.Drawing.Size(131, 135)
         Me.pbxAlimento.TabIndex = 3
@@ -542,17 +446,15 @@ Partial Class frmComienzo
         '
         'pbxOrdenie
         '
-        Me.pbxOrdenie.Image = CType(resources.GetObject("pbxOrdenie.Image"), System.Drawing.Image)
         Me.pbxOrdenie.Location = New System.Drawing.Point(283, 80)
         Me.pbxOrdenie.Name = "pbxOrdenie"
-        Me.pbxOrdenie.Size = New System.Drawing.Size(131, 129)
+        Me.pbxOrdenie.Size = New System.Drawing.Size(131, 135)
         Me.pbxOrdenie.TabIndex = 2
         Me.pbxOrdenie.TabStop = False
         '
         'pbxTambo
         '
-        Me.pbxTambo.Image = CType(resources.GetObject("pbxTambo.Image"), System.Drawing.Image)
-        Me.pbxTambo.Location = New System.Drawing.Point(55, 283)
+        Me.pbxTambo.Location = New System.Drawing.Point(55, 256)
         Me.pbxTambo.Name = "pbxTambo"
         Me.pbxTambo.Size = New System.Drawing.Size(131, 135)
         Me.pbxTambo.TabIndex = 1
@@ -560,43 +462,24 @@ Partial Class frmComienzo
         '
         'pbxAnimal
         '
-        Me.pbxAnimal.Image = CType(resources.GetObject("pbxAnimal.Image"), System.Drawing.Image)
         Me.pbxAnimal.Location = New System.Drawing.Point(55, 80)
         Me.pbxAnimal.Name = "pbxAnimal"
-        Me.pbxAnimal.Size = New System.Drawing.Size(131, 129)
+        Me.pbxAnimal.Size = New System.Drawing.Size(131, 135)
         Me.pbxAnimal.TabIndex = 0
         Me.pbxAnimal.TabStop = False
         '
-        'pbxClose
-        '
-        Me.pbxClose.Image = CType(resources.GetObject("pbxClose.Image"), System.Drawing.Image)
-        Me.pbxClose.Location = New System.Drawing.Point(768, 16)
-        Me.pbxClose.Name = "pbxClose"
-        Me.pbxClose.Size = New System.Drawing.Size(51, 50)
-        Me.pbxClose.TabIndex = 121
-        Me.pbxClose.TabStop = False
-        '
-        'pbxMini
-        '
-        Me.pbxMini.Image = CType(resources.GetObject("pbxMini.Image"), System.Drawing.Image)
-        Me.pbxMini.Location = New System.Drawing.Point(721, 16)
-        Me.pbxMini.Name = "pbxMini"
-        Me.pbxMini.Size = New System.Drawing.Size(51, 50)
-        Me.pbxMini.TabIndex = 120
-        Me.pbxMini.TabStop = False
-        '
-        'frmComienzo
+        'frmISU
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ClientSize = New System.Drawing.Size(832, 574)
+        Me.Controls.Add(Me.pnlBlue)
         Me.Controls.Add(Me.pnlMain)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.IsMdiContainer = True
-        Me.Name = "frmComienzo"
-        Me.Text = "COWARE"
+        Me.Name = "frmISU"
+        Me.Text = "ISU"
         Me.pnlMain.ResumeLayout(False)
         CType(Me.pbxVenta, System.ComponentModel.ISupportInitialize).EndInit()
         Me.gbxPersonal.ResumeLayout(False)
@@ -611,11 +494,10 @@ Partial Class frmComienzo
         CType(Me.pbxOrdenie, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxTambo, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pbxAnimal, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbxClose, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pbxMini, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
+    Friend WithEvents pnlBlue As System.Windows.Forms.Panel
     Friend WithEvents cbxTambo As System.Windows.Forms.ComboBox
     Friend WithEvents btnEliminar_Animal As System.Windows.Forms.Button
     Friend WithEvents btnIngresar_Animal As System.Windows.Forms.Button
@@ -651,12 +533,5 @@ Partial Class frmComienzo
     Friend WithEvents btnConsultar_Tambo As System.Windows.Forms.Button
     Friend WithEvents btnModificar_Tambo As System.Windows.Forms.Button
     Friend WithEvents gbxAnimal As System.Windows.Forms.GroupBox
-    Friend WithEvents btnControl_animal As System.Windows.Forms.Button
-    Friend WithEvents btnConfiguracion_ordenie As System.Windows.Forms.Button
-    Friend WithEvents btnLote_animal As System.Windows.Forms.Button
-    Friend WithEvents btnEnlistar As System.Windows.Forms.Button
-    Friend WithEvents cbxEnlistar As System.Windows.Forms.ComboBox
-    Friend WithEvents pbxClose As System.Windows.Forms.PictureBox
-    Friend WithEvents pbxMini As System.Windows.Forms.PictureBox
 
 End Class

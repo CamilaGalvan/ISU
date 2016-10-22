@@ -43,7 +43,7 @@ Partial Class frmArranque
         'pbxLog
         '
         Me.pbxLog.Image = CType(resources.GetObject("pbxLog.Image"), System.Drawing.Image)
-        Me.pbxLog.Location = New System.Drawing.Point(24, 72)
+        Me.pbxLog.Location = New System.Drawing.Point(12, 12)
         Me.pbxLog.Name = "pbxLog"
         Me.pbxLog.Size = New System.Drawing.Size(431, 327)
         Me.pbxLog.TabIndex = 0
@@ -51,8 +51,9 @@ Partial Class frmArranque
         '
         'pbxMini
         '
+        Me.pbxMini.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pbxMini.Image = CType(resources.GetObject("pbxMini.Image"), System.Drawing.Image)
-        Me.pbxMini.Location = New System.Drawing.Point(343, 72)
+        Me.pbxMini.Location = New System.Drawing.Point(331, 12)
         Me.pbxMini.Name = "pbxMini"
         Me.pbxMini.Size = New System.Drawing.Size(51, 50)
         Me.pbxMini.TabIndex = 1
@@ -60,8 +61,9 @@ Partial Class frmArranque
         '
         'pbxClose
         '
+        Me.pbxClose.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pbxClose.Image = CType(resources.GetObject("pbxClose.Image"), System.Drawing.Image)
-        Me.pbxClose.Location = New System.Drawing.Point(390, 72)
+        Me.pbxClose.Location = New System.Drawing.Point(378, 12)
         Me.pbxClose.Name = "pbxClose"
         Me.pbxClose.Size = New System.Drawing.Size(51, 50)
         Me.pbxClose.TabIndex = 2
@@ -69,8 +71,9 @@ Partial Class frmArranque
         '
         'pbxgspot
         '
+        Me.pbxgspot.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pbxgspot.Image = CType(resources.GetObject("pbxgspot.Image"), System.Drawing.Image)
-        Me.pbxgspot.Location = New System.Drawing.Point(366, 331)
+        Me.pbxgspot.Location = New System.Drawing.Point(354, 271)
         Me.pbxgspot.Name = "pbxgspot"
         Me.pbxgspot.Size = New System.Drawing.Size(51, 50)
         Me.pbxgspot.TabIndex = 3
@@ -128,7 +131,7 @@ Partial Class frmArranque
         Me.cbxIdioma.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.cbxIdioma.FormattingEnabled = True
         Me.cbxIdioma.Items.AddRange(New Object() {"Español", "English", "Português"})
-        Me.cbxIdioma.Location = New System.Drawing.Point(142, 141)
+        Me.cbxIdioma.Location = New System.Drawing.Point(130, 81)
         Me.cbxIdioma.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cbxIdioma.Name = "cbxIdioma"
         Me.cbxIdioma.Size = New System.Drawing.Size(183, 32)
@@ -143,7 +146,7 @@ Partial Class frmArranque
         Me.gbxLog.Controls.Add(Me.tbxUser)
         Me.gbxLog.Controls.Add(Me.Lblpass)
         Me.gbxLog.ForeColor = System.Drawing.SystemColors.ActiveCaption
-        Me.gbxLog.Location = New System.Drawing.Point(123, 180)
+        Me.gbxLog.Location = New System.Drawing.Point(111, 120)
         Me.gbxLog.Name = "gbxLog"
         Me.gbxLog.Size = New System.Drawing.Size(228, 156)
         Me.gbxLog.TabIndex = 62
@@ -154,7 +157,7 @@ Partial Class frmArranque
         Me.AutoScaleDimensions = New System.Drawing.SizeF(11.0!, 22.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.ClientSize = New System.Drawing.Size(492, 428)
+        Me.ClientSize = New System.Drawing.Size(452, 349)
         Me.Controls.Add(Me.cbxIdioma)
         Me.Controls.Add(Me.pbxgspot)
         Me.Controls.Add(Me.pbxClose)

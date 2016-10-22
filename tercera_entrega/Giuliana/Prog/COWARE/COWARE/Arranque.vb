@@ -15,20 +15,18 @@
         Me.WindowState = FormWindowState.Minimized
     End Sub
     Private Sub Pbxlogin_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pbxgspot.Click
-        'Try
-        'CN.Open("MIODBC", tbxUser.Text, tbxPass.Text)
-        '   conexion = 1
-        'Catch ex As Exception
-        'MsgBox("Error :" + usuario + " / " + contrasenia)
-        'Exit Sub
-        'End Try
-        'CN.CursorLocation = ADODB.CursorLocationEnum.adUseClient
-        'conexion = 1
-        'If conexion = 1 Then       
-        Me.Hide()
-        frmComienzo.Show()
-        'End If
-
+        Try
+            CN.Open("MIODBC", tbxUser.Text, tbxPass.Text)
+            conexion = 1
+        Catch ex As Exception
+            MsgBox("Error :" + usuario + " / " + contrasenia)
+            Exit Sub
+        End Try
+        CN.CursorLocation = ADODB.CursorLocationEnum.adUseClient
+        If conexion = 1 Then
+            Me.Hide()
+            frmComienzo.Show()
+        End If
     End Sub
 
     Private Sub cbxIdioma_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cbxIdioma.SelectedIndexChanged
