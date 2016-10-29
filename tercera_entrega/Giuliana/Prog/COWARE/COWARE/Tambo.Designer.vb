@@ -33,7 +33,6 @@ Partial Class frmTambo
         Me.lblganado_max = New System.Windows.Forms.Label()
         Me.gbxGeneral = New System.Windows.Forms.GroupBox()
         Me.gbxTanque = New System.Windows.Forms.GroupBox()
-        Me.btnTanque_Consultar = New System.Windows.Forms.Button()
         Me.btnTanque_Quitar = New System.Windows.Forms.Button()
         Me.btnTanque_Agregar = New System.Windows.Forms.Button()
         Me.tbxCapacidad = New System.Windows.Forms.TextBox()
@@ -52,7 +51,6 @@ Partial Class frmTambo
         '
         'btnOpcion
         '
-        Me.btnOpcion.Enabled = False
         Me.btnOpcion.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnOpcion.Location = New System.Drawing.Point(529, 36)
         Me.btnOpcion.Name = "btnOpcion"
@@ -136,7 +134,6 @@ Partial Class frmTambo
         Me.gbxGeneral.Controls.Add(Me.lblganado_max)
         Me.gbxGeneral.Controls.Add(Me.tbxHectareas)
         Me.gbxGeneral.Controls.Add(Me.lblHectareas)
-        Me.gbxGeneral.Enabled = False
         Me.gbxGeneral.Location = New System.Drawing.Point(12, 103)
         Me.gbxGeneral.Name = "gbxGeneral"
         Me.gbxGeneral.Size = New System.Drawing.Size(785, 369)
@@ -145,7 +142,6 @@ Partial Class frmTambo
         '
         'gbxTanque
         '
-        Me.gbxTanque.Controls.Add(Me.btnTanque_Consultar)
         Me.gbxTanque.Controls.Add(Me.btnTanque_Quitar)
         Me.gbxTanque.Controls.Add(Me.btnTanque_Agregar)
         Me.gbxTanque.Controls.Add(Me.tbxCapacidad)
@@ -160,20 +156,10 @@ Partial Class frmTambo
         Me.gbxTanque.TabStop = False
         Me.gbxTanque.Text = "Tanques"
         '
-        'btnTanque_Consultar
-        '
-        Me.btnTanque_Consultar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTanque_Consultar.Location = New System.Drawing.Point(254, 143)
-        Me.btnTanque_Consultar.Name = "btnTanque_Consultar"
-        Me.btnTanque_Consultar.Size = New System.Drawing.Size(118, 42)
-        Me.btnTanque_Consultar.TabIndex = 125
-        Me.btnTanque_Consultar.Text = "Consultar"
-        Me.btnTanque_Consultar.UseVisualStyleBackColor = True
-        '
         'btnTanque_Quitar
         '
         Me.btnTanque_Quitar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTanque_Quitar.Location = New System.Drawing.Point(130, 143)
+        Me.btnTanque_Quitar.Location = New System.Drawing.Point(205, 141)
         Me.btnTanque_Quitar.Name = "btnTanque_Quitar"
         Me.btnTanque_Quitar.Size = New System.Drawing.Size(118, 42)
         Me.btnTanque_Quitar.TabIndex = 123
@@ -183,7 +169,7 @@ Partial Class frmTambo
         'btnTanque_Agregar
         '
         Me.btnTanque_Agregar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnTanque_Agregar.Location = New System.Drawing.Point(6, 143)
+        Me.btnTanque_Agregar.Location = New System.Drawing.Point(81, 141)
         Me.btnTanque_Agregar.Name = "btnTanque_Agregar"
         Me.btnTanque_Agregar.Size = New System.Drawing.Size(118, 42)
         Me.btnTanque_Agregar.TabIndex = 115
@@ -309,7 +295,6 @@ Partial Class frmTambo
     Friend WithEvents lblNSerie As System.Windows.Forms.Label
     Friend WithEvents lblCapacidad As System.Windows.Forms.Label
     Friend WithEvents tbxNserie As System.Windows.Forms.TextBox
-    Friend WithEvents btnTanque_Consultar As System.Windows.Forms.Button
     Friend WithEvents pbxClose As System.Windows.Forms.PictureBox
     Friend WithEvents pbxMini As System.Windows.Forms.PictureBox
 End Class

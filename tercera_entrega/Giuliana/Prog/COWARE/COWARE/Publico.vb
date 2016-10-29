@@ -3,7 +3,7 @@
     Public adm_establecimiento, adm_sistema, agregar, alimento, anestro, auxiliar, animal, antibiotico, buscar, campo, cantidad, capacidad, CI, configuracion, consultar, contrasenia, control, division, eliminar, enlistar, etapa, _
         fecha, fecha_ida, fecha_vuelta, fechaF, fechaI, ganado_act, ganado_max, gerente, guardar, hectareas, hembra, hora, ingresar, iniciar, lactancia, litros, lugar, macho, modificar, nacimiento, ninguno, nombre, novillo, numero, _
         ordenie, peso, puesto, personal, preniada, primer, raza, rodeo, salir, seca, segundo, serie, servicio, sesion, sexo, tambo, ternera, toro, usuario, tanque, tercero, ternero, tipo, vaca, vacuna, vaquillona, venta, sql, _
-        turno, grasa, proteina, urea, rec_bacteriano, rec_celulas, num_lote, lote, inicio, fin, consumoe, consumoi, otorgar, almacenar, telefono, TSERIE, clima As String
+        turno, grasa, proteina, urea, rec_bacteriano, rec_celulas, num_lote, lote, inicio, fin, consumoe, consumoi, otorgar, almacenar, telefono, TSERIE, clima, exito As String
     Public CN As New ADODB.Connection
     Public rs As New ADODB.Recordset
 
@@ -26,7 +26,7 @@
             CN.Execute(sql)
             Return True
         Catch ex As Exception
-            MsgBox(sql + "Error Execute" + ex.ToString)
+            MsgBox(sql + "\n Error Execute. \n" + ex.ToString)
             Return False
         End Try
     End Function
@@ -35,7 +35,7 @@
             rs.Open(sql, CN)
             Return True
         Catch ex As Exception
-            MsgBox(sql + "Error open" + ex.ToString, MsgBoxStyle.OkOnly, "ERROR")
+            MsgBox(sql + "\n Error open. \n" + ex.ToString, MsgBoxStyle.OkOnly, "ERROR")
             Return False
         End Try
     End Function
@@ -45,6 +45,7 @@
         tambo = "Tambo"
         Select Case idioma
             Case 0
+                exito = "¡Exito!"
                 adm_establecimiento = "Adm. de establecimiento"
                 adm_sistema = "Adm. de sistema"
                 agregar = "Agregar"
@@ -53,11 +54,11 @@
                 animal = "Animal"
                 antibiotico = "Antibiótico"
                 buscar = "Buscar"
-                clima = "Clima"
                 campo = "Campo de recria"
                 cantidad = "Cantidad"
                 capacidad = "Capacidad"
-                CI = "Cedula de identidad"
+                Clima = "Clima"
+                CI = "CI"
                 configuracion = "Configuracion"
                 consultar = "Consultar"
                 contrasenia = "Contraseña"
@@ -134,6 +135,7 @@
                 almacenar = "Almacenar"
                 telefono = "Telefono"
             Case 1
+                exito = "Succes!"
                 adm_establecimiento = "Establishment manager"
                 adm_sistema = "System Mananger"
                 agregar = "Add"
@@ -222,6 +224,7 @@
                 almacenar = "Save"
                 telefono = "Telephone"
             Case 2
+                exito = "¡Sucesso!"
                 adm_establecimiento = " Administrador de bens"
                 adm_sistema = "Administrador do sistema"
                 agregar = "Adicionar"

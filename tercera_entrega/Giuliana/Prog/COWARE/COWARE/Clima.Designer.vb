@@ -23,7 +23,7 @@ Partial Class frmClima
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmClima))
-        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
+        Me.wbClima = New System.Windows.Forms.WebBrowser()
         Me.cbxInUMet = New System.Windows.Forms.CheckBox()
         Me.pbxClose = New System.Windows.Forms.PictureBox()
         Me.pbxMini = New System.Windows.Forms.PictureBox()
@@ -31,14 +31,14 @@ Partial Class frmClima
         CType(Me.pbxMini, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'WebBrowser1
+        'wbClima
         '
-        Me.WebBrowser1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
-        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(832, 536)
-        Me.WebBrowser1.TabIndex = 0
+        Me.wbClima.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.wbClima.Location = New System.Drawing.Point(0, 0)
+        Me.wbClima.MinimumSize = New System.Drawing.Size(20, 20)
+        Me.wbClima.Name = "wbClima"
+        Me.wbClima.Size = New System.Drawing.Size(832, 536)
+        Me.wbClima.TabIndex = 0
         '
         'cbxInUMet
         '
@@ -77,7 +77,7 @@ Partial Class frmClima
         Me.Controls.Add(Me.pbxClose)
         Me.Controls.Add(Me.pbxMini)
         Me.Controls.Add(Me.cbxInUMet)
-        Me.Controls.Add(Me.WebBrowser1)
+        Me.Controls.Add(Me.wbClima)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frmClima"
         Me.Text = "Form1"
@@ -87,7 +87,7 @@ Partial Class frmClima
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents WebBrowser1 As System.Windows.Forms.WebBrowser
+    Friend WithEvents wbClima As System.Windows.Forms.WebBrowser
     Friend WithEvents cbxInUMet As System.Windows.Forms.CheckBox
     Friend WithEvents pbxClose As System.Windows.Forms.PictureBox
     Friend WithEvents pbxMini As System.Windows.Forms.PictureBox

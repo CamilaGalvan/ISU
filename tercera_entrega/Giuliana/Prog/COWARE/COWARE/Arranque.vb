@@ -41,4 +41,5 @@
         Lblpass.Text = contrasenia
         lblUser.Text = usuario
     End Sub
+
 End Class

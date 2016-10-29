@@ -1,5 +1,4 @@
 ﻿Public Class frmOrdenieConfig
-    Dim Modifi(5) As String
     Private Sub frmordenieConfig_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         Me.Text = ordenie + ", " + configuracion
         lblFinalp.Text = hora + " " + fin
@@ -38,16 +37,9 @@
                 Else
                     opcion = 10
                 End If
-                rs.Close()
             End If
+            rs.Close()
         End If
-        Modifi(0) = dtpIniciop.Text
-        Modifi(1) = dtpFinalp.Text
-        Modifi(2) = dtpInicios.Text
-        Modifi(3) = dtpFinals.Text
-        Modifi(4) = dtpIniciot.Text
-        Modifi(5) = dtpFinalt.Text
-        Modifi(6) = cbxCantidad.Text
         cbxCantidad_SelectedIndexChanged(sender, e)
     End Sub
 
@@ -77,17 +69,31 @@
             gbxSegundo.Enabled = True
             gbxTercer.Enabled = True
         End If
+        If Val(cbxCantidad.Text) < 3 Then
+            sql = "Select * from parametros where numero_ordenie=3 and serie_tambo=" & Val(TSERIE)
+            Open_sql()
+            If rs.RecordCount <> 0 Then
+                sql = "delete from parametros where numero_ordenie=3 and serie_tambo=" & Val(TSERIE)
+            End If
+            rs.Close()
+        End If
+        If Val(cbxCantidad.Text) < 2 Then
+            sql = "Select * from parametros where numero_ordenie=2 and serie_tambo=" & Val(TSERIE)
+            Open_sql()
+            If rs.RecordCount <> 0 Then
+                sql = "delete from parametros where numero_ordenie=2 and serie_tambo=" & Val(TSERIE)
+            End If
+            rs.Close()
+        End If
         btnGuardar.Enabled = True
     End Sub
     Private Sub insertar(numero As Integer, horainicio As String, horafinal As String)
-        sql = "insert into ordenie values (numero_ordenie, hora_inicio, hora_fin) values (" & numero & ", '" & horainicio & "', '" & horafinal & "')"
+        sql = "insert into parametros values (numero_ordenie, hora_inicio, hora_fin, serie_tambo) values (" & numero & ", '" & horainicio & "', '" & horafinal & "', " & Val(TSERIE) & ")"
         execute_sql()
     End Sub
     Private Sub btnGuardar_Click(sender As System.Object, e As System.EventArgs) Handles btnGuardar.Click
         Dim acum As Integer
-        Dim aux As Integer
         Dim Modifi_now(6) As String
-        Dim i As Integer
         If dtpIniciop.Value > dtpFinalp.Value Or dtpInicios.Value > dtpFinals.Value Or dtpIniciot.Value > dtpFinalt.Value Then
             acum = acum + 1
         End If
@@ -95,79 +101,40 @@
             acum = acum + 1
         End If
         If acum = 0 Then
-            If opcion = 10 Then
-                If cbxCantidad.Text = "1" Then
+            If Val(cbxCantidad.Text) >= 1 Then
+                sql = "Select * from parametros where numero_ordenie=1 and serie_tambo=" & Val(TSERIE)
+                Open_sql()
+                If rs.RecordCount = 0 Then
                     insertar(1, dtpIniciop.Text, dtpFinalp.Text)
-                ElseIf cbxCantidad.Text = "2" Then
-                    insertar(1, dtpIniciop.Text, dtpFinalp.Text)
-                    insertar(2, dtpInicios.Text, dtpFinals.Text)
-                ElseIf cbxCantidad.Text = "3" Then
-                    insertar(1, dtpIniciop.Text, dtpFinalp.Text)
-                    insertar(2, dtpInicios.Text, dtpFinals.Text)
-                    insertar(3, dtpIniciot.Text, dtpFinalt.Text)
+                Else
+                    sql = "update ordenie set hora_inicio=" & dtpIniciop.Text & ", hora_fin=" & dtpFinalp.Text & " where numero_ordenie=1 and serie_tambo=" & Val(TSERIE)
                 End If
-            Else
-
-                Modifi_now(0) = dtpIniciop.Text
-                Modifi_now(1) = dtpFinalp.Text
-                Modifi_now(2) = dtpInicios.Text
-                Modifi_now(3) = dtpFinals.Text
-                Modifi_now(4) = dtpIniciot.Text
-                Modifi_now(5) = dtpFinalt.Text
-                Modifi_now(6) = cbxCantidad.Text
-                i = 0
-                While i <= 5
-                    If Modifi(i) <> Modifi_now(i) Then
-                        Select Case i
-                            Case 0
-                                sql = "update ordenie set hora_inicio where numero_ordenie= 1"
-                            Case 1
-                                sql = "update ordenie set hora_fin where numero_ordenie= 1"
-                            Case 2
-                                sql = "update ordenie set hora_inicio where numero_ordenie= 2"
-                            Case 3
-                                sql = "update ordenie set hora_fin where numero_ordenie= 2"
-                            Case 4
-                                sql = "update ordenie set hora_inicio where numero_ordenie= 3"
-                            Case 5
-                                sql = "update ordenie set hora_fin where numero_ordenie= 3"
-                            Case 6
-                                If Modifi(i) < Modifi_now(i) Then
-
-                                    aux = Modifi_now(i) - Modifi(i)
-
-                                    Select Case aux
-                                        Case 1
-                                            If Modifi(i) = 1 Then
-                                                insertar(2, dtpInicios.Text, dtpFinals.Text)
-                                            Else
-                                                insertar(3, dtpIniciot.Text, dtpFinalt.Text)
-                                            End If
-                                        Case 2
-                                            insertar(3, dtpIniciot.Text, dtpFinalt.Text)
-                                            insertar(2, dtpInicios.Text, dtpFinals.Text)
-                                    End Select
-                                Else
-                                    aux = Modifi(i) - Modifi_now(i)
-                                    Select Case aux
-                                        Case 1
-                                            If Modifi(i) = 1 Then
-                                                sql = "delete from ordenie where num=3"
-                                            Else
-                                                sql = "delete from ordenie where num=2"
-                                            End If
-                                        Case 2
-                                            sql = "delete from ordenie where num=2"
-                                            execute_sql()
-                                            sql = "delete from ordenie where num=3"
-                                    End Select
-                                    execute_sql()
-                                End If
-                        End Select
-                    End If
-                End While
+                rs.Close()
+            End If
+            If Val(cbxCantidad.Text) >= 2 Then
+                sql = "Select * from parametros where numero_ordenie=2 and serie_tambo=" & Val(TSERIE)
+                Open_sql()
+                If rs.RecordCount <> 0 Then
+                    rs.Close()
+                    insertar(2, dtpIniciop.Text, dtpFinalp.Text)
+                Else
+                    sql = "update ordenie set hora_inicio=" & dtpIniciop.Text & ", hora_fin=" & dtpFinalp.Text & " where numero_ordenie=2 and serie_tambo=" & Val(TSERIE)
+                End If
+                rs.Close()
+            End If
+            If Val(cbxCantidad.Text) = 3 Then
+                sql = "Select * from parametros where numero_ordenie=3 and serie_tambo=" & Val(TSERIE)
+                Open_sql()
+                If rs.RecordCount <> 0 Then
+                    rs.Close()
+                    insertar(2, dtpIniciop.Text, dtpFinalp.Text)
+                Else
+                    sql = "update ordenie set hora_inicio=" & dtpIniciop.Text & ", hora_fin=" & dtpFinalp.Text & " where numero_ordenie=3 and serie_tambo=" & Val(TSERIE)
+                End If
+                rs.Close()
             End If
         End If
+
     End Sub
 
     Private Sub pbxMini_Click(sender As System.Object, e As System.EventArgs) Handles pbxMini.Click

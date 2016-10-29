@@ -5,9 +5,9 @@ Public Class frmClima
         Me.Text = clima
         If NetworkInformation.NetworkInterface.GetIsNetworkAvailable Then
             If cbxInUMet.Checked = True Then
-                WebBrowser1.Navigate("http://www.meteorologia.com.uy/")
+                wbClima.Navigate("http://www.meteorologia.com.uy/")
             Else
-                WebBrowser1.Navigate("https://www.wunderground.com/")
+                wbClima.Navigate("https://www.wunderground.com/")
             End If
         Else
             MsgBox("Error, Internet")
@@ -27,4 +27,5 @@ Public Class frmClima
         frmComienzo.pnlMain.Show()
         Me.Close()
     End Sub
+
 End Class

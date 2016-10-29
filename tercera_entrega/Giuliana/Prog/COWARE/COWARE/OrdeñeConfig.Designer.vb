@@ -58,7 +58,7 @@ Partial Class frmOrdenieConfig
         Me.gbxTercer.Controls.Add(Me.lblIniciot)
         Me.gbxTercer.Enabled = False
         Me.gbxTercer.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxTercer.Location = New System.Drawing.Point(432, 338)
+        Me.gbxTercer.Location = New System.Drawing.Point(423, 143)
         Me.gbxTercer.Name = "gbxTercer"
         Me.gbxTercer.Size = New System.Drawing.Size(345, 136)
         Me.gbxTercer.TabIndex = 112
@@ -107,7 +107,7 @@ Partial Class frmOrdenieConfig
         '
         Me.lblOrdeniecant.AutoSize = True
         Me.lblOrdeniecant.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblOrdeniecant.Location = New System.Drawing.Point(12, 209)
+        Me.lblOrdeniecant.Location = New System.Drawing.Point(32, 19)
         Me.lblOrdeniecant.Name = "lblOrdeniecant"
         Me.lblOrdeniecant.Size = New System.Drawing.Size(204, 24)
         Me.lblOrdeniecant.TabIndex = 108
@@ -121,7 +121,7 @@ Partial Class frmOrdenieConfig
         Me.gbxSegundo.Controls.Add(Me.lblInicios)
         Me.gbxSegundo.Enabled = False
         Me.gbxSegundo.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxSegundo.Location = New System.Drawing.Point(433, 196)
+        Me.gbxSegundo.Location = New System.Drawing.Point(37, 212)
         Me.gbxSegundo.Name = "gbxSegundo"
         Me.gbxSegundo.Size = New System.Drawing.Size(345, 136)
         Me.gbxSegundo.TabIndex = 111
@@ -171,7 +171,7 @@ Partial Class frmOrdenieConfig
         Me.cbxCantidad.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cbxCantidad.FormattingEnabled = True
         Me.cbxCantidad.Items.AddRange(New Object() {"1", "2", "3"})
-        Me.cbxCantidad.Location = New System.Drawing.Point(276, 206)
+        Me.cbxCantidad.Location = New System.Drawing.Point(296, 16)
         Me.cbxCantidad.Name = "cbxCantidad"
         Me.cbxCantidad.Size = New System.Drawing.Size(121, 32)
         Me.cbxCantidad.TabIndex = 109
@@ -184,7 +184,7 @@ Partial Class frmOrdenieConfig
         Me.gbxPrimer.Controls.Add(Me.lblIniciop)
         Me.gbxPrimer.Enabled = False
         Me.gbxPrimer.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.gbxPrimer.Location = New System.Drawing.Point(432, 54)
+        Me.gbxPrimer.Location = New System.Drawing.Point(36, 70)
         Me.gbxPrimer.Name = "gbxPrimer"
         Me.gbxPrimer.Size = New System.Drawing.Size(345, 136)
         Me.gbxPrimer.TabIndex = 110
@@ -233,7 +233,7 @@ Partial Class frmOrdenieConfig
         '
         Me.btnGuardar.Enabled = False
         Me.btnGuardar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGuardar.Location = New System.Drawing.Point(121, 296)
+        Me.btnGuardar.Location = New System.Drawing.Point(496, 10)
         Me.btnGuardar.Name = "btnGuardar"
         Me.btnGuardar.Size = New System.Drawing.Size(118, 42)
         Me.btnGuardar.TabIndex = 113
@@ -263,7 +263,7 @@ Partial Class frmOrdenieConfig
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(793, 497)
+        Me.ClientSize = New System.Drawing.Size(793, 386)
         Me.Controls.Add(Me.pbxClose)
         Me.Controls.Add(Me.pbxMini)
         Me.Controls.Add(Me.btnGuardar)

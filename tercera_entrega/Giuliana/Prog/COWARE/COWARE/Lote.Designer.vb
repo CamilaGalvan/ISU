@@ -40,6 +40,7 @@ Partial Class frmLote
         Me.rbnNumLoteC = New System.Windows.Forms.RadioButton()
         Me.pbxClose = New System.Windows.Forms.PictureBox()
         Me.pbxMini = New System.Windows.Forms.PictureBox()
+        Me.btnModificar = New System.Windows.Forms.Button()
         Me.gbxC.SuspendLayout()
         CType(Me.pbxClose, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pbxMini, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -48,7 +49,7 @@ Partial Class frmLote
         'btnConsultar
         '
         Me.btnConsultar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnConsultar.Location = New System.Drawing.Point(439, 109)
+        Me.btnConsultar.Location = New System.Drawing.Point(420, 109)
         Me.btnConsultar.Name = "btnConsultar"
         Me.btnConsultar.Size = New System.Drawing.Size(118, 42)
         Me.btnConsultar.TabIndex = 131
@@ -79,7 +80,7 @@ Partial Class frmLote
         'btnAgregar
         '
         Me.btnAgregar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAgregar.Location = New System.Drawing.Point(121, 109)
+        Me.btnAgregar.Location = New System.Drawing.Point(99, 109)
         Me.btnAgregar.Name = "btnAgregar"
         Me.btnAgregar.Size = New System.Drawing.Size(118, 42)
         Me.btnAgregar.TabIndex = 134
@@ -89,7 +90,7 @@ Partial Class frmLote
         'tbxNumA
         '
         Me.tbxNumA.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.tbxNumA.Location = New System.Drawing.Point(198, 47)
+        Me.tbxNumA.Location = New System.Drawing.Point(181, 46)
         Me.tbxNumA.MaxLength = 9
         Me.tbxNumA.Name = "tbxNumA"
         Me.tbxNumA.Size = New System.Drawing.Size(125, 32)
@@ -100,7 +101,7 @@ Partial Class frmLote
         '
         Me.lblAnimalnuma.AutoSize = True
         Me.lblAnimalnuma.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblAnimalnuma.Location = New System.Drawing.Point(12, 50)
+        Me.lblAnimalnuma.Location = New System.Drawing.Point(12, 49)
         Me.lblAnimalnuma.Name = "lblAnimalnuma"
         Me.lblAnimalnuma.Size = New System.Drawing.Size(155, 24)
         Me.lblAnimalnuma.TabIndex = 132
@@ -111,9 +112,9 @@ Partial Class frmLote
         Me.lbxAgregar.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbxAgregar.FormattingEnabled = True
         Me.lbxAgregar.ItemHeight = 32
-        Me.lbxAgregar.Location = New System.Drawing.Point(4, 160)
+        Me.lbxAgregar.Location = New System.Drawing.Point(43, 157)
         Me.lbxAgregar.Name = "lbxAgregar"
-        Me.lbxAgregar.Size = New System.Drawing.Size(319, 260)
+        Me.lbxAgregar.Size = New System.Drawing.Size(235, 260)
         Me.lbxAgregar.TabIndex = 135
         '
         'lbxConsultar
@@ -121,9 +122,9 @@ Partial Class frmLote
         Me.lbxConsultar.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbxConsultar.FormattingEnabled = True
         Me.lbxConsultar.ItemHeight = 32
-        Me.lbxConsultar.Location = New System.Drawing.Point(341, 160)
+        Me.lbxConsultar.Location = New System.Drawing.Point(357, 160)
         Me.lbxConsultar.Name = "lbxConsultar"
-        Me.lbxConsultar.Size = New System.Drawing.Size(356, 260)
+        Me.lbxConsultar.Size = New System.Drawing.Size(240, 260)
         Me.lbxConsultar.TabIndex = 136
         '
         'tbxNumLote
@@ -177,7 +178,7 @@ Partial Class frmLote
         Me.gbxC.Controls.Add(Me.lblAnimalnumC)
         Me.gbxC.Controls.Add(Me.tbxNumLotec)
         Me.gbxC.Controls.Add(Me.lblNumLotec)
-        Me.gbxC.Location = New System.Drawing.Point(341, 12)
+        Me.gbxC.Location = New System.Drawing.Point(312, 12)
         Me.gbxC.Name = "gbxC"
         Me.gbxC.Size = New System.Drawing.Size(356, 91)
         Me.gbxC.TabIndex = 141
@@ -221,12 +222,23 @@ Partial Class frmLote
         Me.pbxMini.TabIndex = 142
         Me.pbxMini.TabStop = False
         '
+        'btnModificar
+        '
+        Me.btnModificar.Font = New System.Drawing.Font("Arial", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnModificar.Location = New System.Drawing.Point(357, 435)
+        Me.btnModificar.Name = "btnModificar"
+        Me.btnModificar.Size = New System.Drawing.Size(118, 42)
+        Me.btnModificar.TabIndex = 144
+        Me.btnModificar.Text = "Cambiar"
+        Me.btnModificar.UseVisualStyleBackColor = True
+        '
         'frmLote
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ClientSize = New System.Drawing.Size(812, 517)
+        Me.Controls.Add(Me.btnModificar)
         Me.Controls.Add(Me.pbxClose)
         Me.Controls.Add(Me.pbxMini)
         Me.Controls.Add(Me.gbxC)
@@ -266,4 +278,5 @@ Partial Class frmLote
     Friend WithEvents rbnNumAnimalC As System.Windows.Forms.RadioButton
     Friend WithEvents pbxClose As System.Windows.Forms.PictureBox
     Friend WithEvents pbxMini As System.Windows.Forms.PictureBox
+    Friend WithEvents btnModificar As System.Windows.Forms.Button
 End Class
